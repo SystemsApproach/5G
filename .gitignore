@@ -5,3 +5,6 @@ _book/
 *.sh
 private/
 scripts/
+node_modules/
+cover.pdf
+cover.docx

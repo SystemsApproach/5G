@@ -1,7 +1,7 @@
 # README
 
-This site contains source text for an auxilary chapter of
-*Computer Networks: A Systems Approach*, available under terms of the
+This repository contains source text for an auxilary chapter of
+*5G Cellular Networks: A Systems Approach*, available under terms of the
 [Creative Commons (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0)
 license. The community is invited to contribute corrections,
 improvements, updates, and new material under the same terms.
@@ -11,7 +11,7 @@ following information:
 
 > *Title: 5G Cellular Networks: A Systems Approach  
 > Authors: Larry Peterson and Oguz Sunay  
-> Source: https://github.com/SystemsApproach  
+> Source: https://github.com/SystemsApproach/5G  
 > License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0)*
 
 ## Build the Book 
@@ -27,7 +27,7 @@ Then do the following to download the source:
 ```shell 
 mkdir ~/5G
 cd ~/5G
-git clone https://github.com/llpeterson/5g.git 
+git clone https://github.com/SystemsApproach/5g.git 
 cd 5G
 ```
 
