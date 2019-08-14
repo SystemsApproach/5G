@@ -27,7 +27,7 @@ Then do the following to download the source:
 ```shell 
 mkdir ~/5G
 cd ~/5G
-git clone https://github.com/SystemsApproach/5g.git 
+git clone https://github.com/SystemsApproach/5G.git 
 cd 5G
 ```
 
