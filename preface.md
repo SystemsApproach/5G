@@ -5,7 +5,7 @@ a rock, you've been bombarded by the hype. But if you are like 99% of
 the systems-oriented, CS-trained, cloud-savvy, IETF-participating,
 people in the world, the cellular network is largely a mystery. You
 know it's an important technology used in the last mile to connect
-people to the Interent, but otherwise you've largely abstracted it out
+people to the Internet, but otherwise you've largely abstracted it out
 of your scope-of-concerns.
 
 The big thing to understand about 5G is that it implies much more than
@@ -19,7 +19,7 @@ years from now.
 This book is written for someone that has a working understanding of
 the Internet and Cloud, but has had limited success penetrating the
 myriad of acronyms that dominate the cellular domain. In fairness, the
-Interent has its share acronyms, but it also comes with a sufficient
+Internet has its share acronyms, but it also comes with a sufficient
 set of abstractions to help manage the complexity. It's hard to say
 the same for the cellular network, where pulling on one thread
 seemingly unravels the entire space. It has also been the case that
@@ -33,6 +33,12 @@ software developers, and we are hopeful it will be useful to others
 that want a deeper understanding of 5G and the opportunity for
 innovation it provides. Readers that want hands-on experience can also
 access the open source software introduced in the book.
+
+This book is likely to be a work-in-progress for the foreseeable
+future. It's not intended to be encyclopedic—favoring perspective
+and end-to-end completeness over every last bit of detail—but we do
+plan to flesh out the content over time. Your suggestions (and
+contributions) are welcome.
 
 Larry Peterson and Oguz Sunay, ONF  
 August 2019
