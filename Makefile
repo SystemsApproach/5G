@@ -1,6 +1,6 @@
 # Makefile for building a full book
 # Requires the following tools:
-#  - Gitbook toolchain: https://toolchain.gitbook.com/setup.html
+#  - Gitbook toolchain: https://github.com/GitbookIO/gitbook/blob/master/docs/setup.md
 #  - NPM (for Gitbook and Swagger)
 #  - Python (for build glossary script)
 #  - linkchecker (for test target) http://wummel.github.io/linkchecker/
