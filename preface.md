@@ -29,8 +29,8 @@ devices, which has made it impossible to figure it out for yourself.
 This book is the result of a cellular networking expert teaching a
 systems person about 5G as we've collaborated on an open source
 5G implementation. The material has been used to train other
-software developers, and we are hopeful it will be useful to others
-that want a deeper understanding of 5G and the opportunity for
+software developers, and we are hopeful it will be useful to anyone
+that wants a deeper understanding of 5G and the opportunity for
 innovation it provides. Readers that want hands-on experience can also
 access the open source software introduced in the book.
 
