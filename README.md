@@ -17,7 +17,7 @@ following information:
 ## Read the Book
 
 An online version of the book is published at
-[https://cellular.systemsapproach.org](https://cellular.systemsapproach.org).
+[https://5G.systemsapproach.org](https://5g.systemsapproach.org).
 You can also find PDF and eBook versions
 [here](https://github.com/SystemsApproach/5G/tree/master/published).
 
