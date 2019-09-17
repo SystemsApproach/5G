@@ -38,7 +38,7 @@ def get_version():
 
 # -- Project information -----------------------------------------------------
 
-project = u'Cellular Networks: A Systems Approach'
+project = u'5G Networks: A Systems Approach'
 copyright = u'2019'
 author = u'Larry Peterson and Oguz Sunay'
 
@@ -127,6 +127,9 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# HTML Favicon
+html_favicon = 'bridge.ico'
+
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
@@ -149,11 +152,11 @@ htmlhelp_basename = 'SystemsApproach'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'letterpaper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
+    'pointsize': '11pt',
 
     # Additional stuff for the LaTeX preamble.
     #
@@ -161,16 +164,18 @@ latex_elements = {
 
     # Latex figure (float) alignment
     #
-    # 'figure_align': 'htbp',
+    'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'TrellisDocs.tex', u'Trellis Docs',
-     u'Trellis Team', 'manual'),
+    (master_doc, 'book.tex', u'5G Networks: A Systems Approach',
+     u'Peterson and Sunay', 'manual'),
 ]
+
+latex_toplevel_sectioning = 'chapter'
 
 
 # -- Options for manual page output ------------------------------------------
@@ -178,7 +183,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'Trellis Docs', u'Trellis Docs',
+    (master_doc, 'Systems Approach', u'Systems Approach',
      [author], 1)
 ]
 

@@ -242,7 +242,7 @@ which user’s segment is affected by each translation.
     :align: center
 
     Figure 5.6: Wireless Hypervisor mapping virtual resource blocks to
-    physical resource blocks
+    physical resource blocks.
 
 Having decoupled the Virtual RBs from Physical RBs, it is now possible
 to define multiple Virtual RB sets (of varying sizes), each with its own

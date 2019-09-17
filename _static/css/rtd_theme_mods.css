@@ -28,7 +28,7 @@
 h1, h2 {
   font-weight: bold;
   line-height: 1.25;
-  color: #254356;
+  color: #3279a8
   text-rendering: optimizeLegibility;
 }
 
@@ -43,7 +43,6 @@ h3, h4, h5, h6 {
 h1 {
   margin-bottom: 2rem;
   font-size: 2rem;
-  border-bottom: 4px solid #254356;
 }
 
 h2 {

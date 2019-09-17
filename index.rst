@@ -2,13 +2,8 @@
    :width: 250px
    :align: center
 
-Cellular Networks: A Systems Approach 
-=====================================
-
-Larry Peterson and Oguz Sunay
------------------------------
-
-| 
+5G Networks: A Systems Approach
+===============================
 
 .. toctree::
    :maxdepth: 2 
@@ -22,4 +17,4 @@ Larry Peterson and Oguz Sunay
    disaggregate.rst
    impl.rst
    cloud.rst
-   About this Book <README.rst>
+   README.rst
