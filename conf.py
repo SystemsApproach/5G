@@ -38,7 +38,7 @@ def get_version():
 
 # -- Project information -----------------------------------------------------
 
-project = u'5G Networks: A Systems Approach'
+project = u'5G Mobile Networks: A Systems Approach'
 copyright = u'2019'
 author = u'Larry Peterson and Oguz Sunay'
 
@@ -105,9 +105,9 @@ pygments_style = None
 # numfig = True
 
 # Ignore link check for the following websites
-linkcheck_ignore = [
-    'https://www.opennetworking.org/trellis/',
-]
+# linkcheck_ignore = [
+#     'https://www.opennetworking.org/trellis/',
+# ]
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -171,8 +171,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'book.tex', u'5G Networks: A Systems Approach',
-     u'Peterson and Sunay', 'manual'),
+    (master_doc, 'book.tex', u'5G Mobile Networks: A Systems Approach',
+     u'Peterson and Sunay', 'manual', True),
 ]
 
 latex_toplevel_sectioning = 'chapter'

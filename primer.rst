@@ -17,29 +17,37 @@ contention is detected), while 4G and 5G cellular networks assume (and
 strive for) high utilization (and hence explicitly assign different
 users to different “shares” of the available radio spectrum).
 
-We start by giving short primer on radio transmission as a way of laying
-a foundation for understanding the rest of the 5G architecture. The
-following is not a substitute for a theoretical treatment of the topic,
+We start by giving a short primer on radio transmission as a way of
+laying a foundation for understanding the rest of the 5G architecture.
+The following is not a substitute for a theoretical treatment of the topic,
 but is instead intended as a way of grounding the systems-oriented
 description of 5G that follows in the reality of wireless communication.
 
 2.1 Coding and Modulation
 -------------------------
 
-At its core, coding inserts extra bits into the data to account for
-environmental factors that interfere with signal propagation, and
-modulation translates the encoded data into electromagnetic signals by
-varying the signal’s amplitude and phase. This relationship is depicted
-in :ref:`Figure 2.1 <fig-modulation>`, where coding typically implies
+The mobile channel over which digital data needs to be reliably
+transmitted brings a number of impairments, including noise,
+attenuation, distortion, fading, and interference. At its core, coding
+inserts extra bits into the data to help recover for all the environmental
+factors that interfere with signal propagation.  Modulation on the
+other hand, generates signals that represent the encoded data stream
+into signals, and it does so in a way that matches the channel
+characteristics: It matches the transmission bandwidth to channel
+bandwidth and it uses a signal format that maximizes the number of
+reliably transmitted bits every second based on the specifics of the
+channel impairments that are present. This operation is depicted in
+:ref:`Figure 2.1 <fig-modulation>`, where coding typically implies
 some form of *Forward Error Correction* (e.g., turbo codes, polar
-codes) and modulation is done relative to an assigned *carrier signal*.
+codes) and modulation is done in two stages—the first digital and the
+second analog—relative to an assigned *carrier signal*.
 
 .. _fig-modulation:
 .. figure:: figures/Slide09.png 
     :width: 500px
     :align: center
 
-    Figure 2.1: The role of coding and modulation in wireless communication.
+    Figure 2.1: The role of coding and modulation in mobile communication.
 
 When dealing with radio signals propagating through the air,
 opportunities for interference abound. As illustrated in
@@ -105,11 +113,12 @@ transmitter must receive feedback from every receiver to judge how to
 best utilize the wireless medium on their behalf. 3GPP specifies a
 *Channel Quality Indicator (CQI)* for this purpose, where in practice
 the receiver sends a CQI status report to the base station periodically
-(e.g., every millisecond). These CQI messages report the observed
+(e.g., every millisecond in LTE). These CQI messages report the observed
 signal-to-noise ratio, which impacts the receiver’s ability to recover
 the data bits. The base station then uses this information to adapt how
 it allocates the available radio spectrum to the subscribers it is
-serving. This allocation decision is the job of the scheduler.
+serving, as well as which coding and modulation scheme to employ.
+All of these decisions are made by  the scheduler.
 
 How the scheduler does its job is one of the most important properties
 of each generation of the cellular network, which in turn depends on the

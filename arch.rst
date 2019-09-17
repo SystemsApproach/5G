@@ -18,7 +18,7 @@ in 5G). We address situations like this by using generic terminology
 (e.g., base station), and referencing the 3GPP-specific counterpart only
 when the distinction is helpful.
 
-.. seealso::
+.. note::
    This example is only the tip of the terminology iceberg. For a
    slightly broader perspective on the complexity of terminology in 5G,
    see Marcin Dryjanski’s `blog

@@ -1,19 +1,19 @@
 Preface 
 =======
 
-The transition to 5G is happening, and unless you’ve been living under a 
-rock, you’ve surely heard the hype. But if you are like 99% of the 
-CS-trained, systems-oriented, cloud-savvy, IETF-participating people in 
-the world, the cellular network is largely a mystery. You know it’s an 
-important technology used in the last mile to connect people to the 
-Internet, but you’ve otherwise abstracted it out of your 
-scope-of-concerns. 
+The transition to 5G is happening, and unless you’ve been actively
+trying to ignore it, you’ve likely heard the hype. But if you are like
+99% of the CS-trained, systems-oriented, cloud-savvy, code-writing,
+IETF-participating people in the world, the cellular network is
+largely a mystery. You know it’s an important technology used in the
+last mile to connect people to the Internet, but you’ve otherwise
+abstracted it out of your scope-of-concerns. 
 
 The important thing to understand about 5G is that it implies much more 
 than a generational upgrade in bandwidth. It involves transformative 
 changes that blur the line between the access network and the cloud. And 
 it will encompass enough value that it has the potential to turn the 
-“Access-as-part-of-Internet” perspective on its head. We will just as 
+“Access-as-frontent-to-Internet” perspective on its head. We will just as 
 likely be talking about “Internet-as-backend-to-Access” ten years from 
 now. 
 

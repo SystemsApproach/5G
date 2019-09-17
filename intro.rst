@@ -54,7 +54,7 @@ this rich and rapidly evolving system.
 
 As of 3G, the generational designation corresponds to a standard defined
 by the 3GPP (3rd Generation Partnership Project). Even though its name
-has “3G” in it, the 3GPP continues to define the standard for 4G and 5G,
+has “3G” in it, the 3GPP continues to define the standards for 4G and 5G,
 each of which corresponds to a sequence of releases of the standard.
 Release 15 is considered the demarcation point between 4G and 5G, with
 Release 16 expected by the end of 2019. Complicating the terminology, 4G
@@ -78,7 +78,7 @@ subscribers.
 
 There is also a shared-license band at 3.5-GHz, called *Citizens
 Broadband Radio Service (CBRS)*, set aside in North America for cellular
-use. Similar spectrum being set aside in other countries. The CBRS band
+use. Similar spectrum is being set aside in other countries. The CBRS band
 allows three tiers of users to share the spectrum: first right of use
 goes to the original owners of this spectrum, naval radars and satellite
 ground stations; followed by priority users who receive this right over
@@ -112,19 +112,19 @@ Internet’s so-called *last mile*. Other access technologies include
 *Passive Optical Networks (PON)*, colloquially known as
 Fiber-to-the-Home. These access networks are provided by both big and
 small network operators. Global network operators like AT&T run access
-networks at thousands of points-of-presence across a country like the
-US, along with a national backbone that interconnects those sites. Small
-regional and municipal network operators might run an access network
-with one or two points-of-presence, and then connect to the rest of the
-Internet through some large operator’s backbone.
+networks at thousands of aggregation points-of-presence across a
+country like the US, along with a national backbone that interconnects
+those sites. Small regional and municipal network operators might run
+an access network with one or two points-of-presence, and then connect
+to the rest of the Internet through some large operator’s backbone.
 
 In either case, access networks are physically anchored at thousands of
-points-of-presence within close proximity to end users, each of which
-serves anywhere from 1,000 to 100,000 subscribers, depending on
-population density. In practice, the physical deployment of these ”edge”
-locations vary from operator to operator, but one possible scenario is
-to anchor both the cellular and wireline access networks in Telco
-*Central Offices*.
+aggregation points-of-presence within close proximity to end users,
+each of which serves anywhere from 1,000 to 100,000 subscribers,
+depending on population density. In practice, the physical deployment
+of these ”edge” locations vary from operator to operator, but one
+possible scenario is to anchor both the cellular and wireline access
+networks in Telco *Central Offices*.
 
 Historically, the Central Office—officially known as the *PSTN
 (Packet-Switched Telephone Network) Central Office*—anchored wired
@@ -136,13 +136,6 @@ purposes, the important idea is that such aggregation points exist, and
 it is reasonable to think of them as defining the edge of the
 operator-managed access network. For simplicity, we sometimes use the
 term “Central Office” as a synonym for both types of edge sites.
-
-Note that in addition to these edge locations, there are also
-centralized components of the cellular network that track subscribers as
-they move from one location to another, but each individual access
-network site is limited in size due to the technology it employs. For
-example, PON and RAN both have a maximum reach measured in a few
-kilometers.
 
 1.3 Edge Cloud
 --------------
@@ -183,6 +176,15 @@ Central Offices). So while we shouldn’t limit ourselves to the Central
 Office as the only answer to the question of where the edge cloud is
 located, it is becoming a viable option.
 
+.. note::
+
+    To better understand the case for CORD (and CORD-inspired
+    technologies), see the A.D. Little report `Who Dares Win!
+    How Access Transformation Can Fast-Track Evolution of
+    Operator Production Platforms
+    <https://www.adlittle.com/en/who-dares-wins>`__, published
+    in September 2019.
+
 When we get into the details of how 5G can be implemented in practice,
 we use CORD as our exemplar. For now, the important thing to understand
 is that 5G is being implemented as software running on commodity
@@ -193,13 +195,11 @@ become yet another software-based component in the cloud, as opposed to
 an isolated and specialized technology attached to the periphery of the
 cloud.
 
-.. note::
-   
-   Our use of CORD as an exemplar is not to imply that the edge cloud is
-   limited to Central Offices. CORD is a good exemplar because it is
-   designed to host both edge services and access technologies like 5G
-   on a common platform, where the Telco Central Office is one possible
-   location to deploy such a platform.
+Keep in mind that our use of CORD as an exemplar is not to imply that
+the edge cloud is limited to Central Offices. CORD is a good exemplar
+because it is designed to host both edge services and access
+technologies like 5G on a common platform, where the Telco Central
+Office is one possible location to deploy such a platform.
 
 An important takeaway from this discussion is that to understand how 5G
 is being implemented, it is helpful to have a working understanding of

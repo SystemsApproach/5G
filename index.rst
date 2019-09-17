@@ -2,8 +2,8 @@
    :width: 250px
    :align: center
 
-5G Networks: A Systems Approach
-===============================
+5G Mobile Networks: A Systems Approach
+======================================
 
 .. toctree::
    :maxdepth: 2 

@@ -300,7 +300,7 @@ But packet scheduling and CPU scheduling are low-level mechanisms. What
 makes slicing work is to also virtualize and replicate the entire
 service mesh that implements the Mobile Core. If you think of a slice as
 a system abstraction, then that abstraction needs to keep track of the
-set of interconnected set of microservices that implement each slice,
+set of interconnected microservices that implement each slice,
 and then instruct the underlying packet schedulers to allocate
 sufficient network bandwidth to the slice’s flows and the underlying CPU
 schedulers to allocate sufficient compute cycles to the slice’s
