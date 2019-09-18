@@ -8,7 +8,7 @@ those users to remain connected while moving. This has resulted in a
 highly dynamic and adaptive approach, in which coding, modulation and
 scheduling play a central role.
 
-As we will see later in this chapter, cellular networks use a
+As we will see in this chapter, cellular networks use a
 reservation-based strategy, whereas Wi-Fi is contention-based. This
 difference is rooted in each system’s fundamental assumption about
 utilization: Wi-Fi assumes a lightly loaded network (and hence

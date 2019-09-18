@@ -3,7 +3,7 @@ Preface
 
 The transition to 5G is happening, and unless you’ve been actively
 trying to ignore it, you’ve likely heard the hype. But if you are like
-99% of the CS-trained, systems-oriented, cloud-savvy, code-writing,
+99% of the CS-trained, systems-oriented, cloud-savvy, code-slinging,
 IETF-participating people in the world, the cellular network is
 largely a mystery. You know it’s an important technology used in the
 last mile to connect people to the Internet, but you’ve otherwise
