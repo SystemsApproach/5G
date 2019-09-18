@@ -8,3 +8,4 @@ scripts/
 node_modules/
 cover.pdf
 cover.docx
+doc_venv
