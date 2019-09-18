@@ -28,19 +28,9 @@ description of 5G that follows in the reality of wireless communication.
 
 The mobile channel over which digital data needs to be reliably
 transmitted brings a number of impairments, including noise,
-attenuation, distortion, fading, and interference. At its core, coding
-inserts extra bits into the data to help recover for all the environmental
-factors that interfere with signal propagation.  Modulation on the
-other hand, generates signals that represent the encoded data stream
-into signals, and it does so in a way that matches the channel
-characteristics: It matches the transmission bandwidth to channel
-bandwidth and it uses a signal format that maximizes the number of
-reliably transmitted bits every second based on the specifics of the
-channel impairments that are present. This operation is depicted in
-:ref:`Figure 2.1 <fig-modulation>`, where coding typically implies
-some form of *Forward Error Correction* (e.g., turbo codes, polar
-codes) and modulation is done in two stages—the first digital and the
-second analog—relative to an assigned *carrier signal*.
+attenuation, distortion, fading, and interference. This challenge is
+addressed by a combination of coding and modulation, as depicted in
+:ref:`Figure 2.1 <fig-modulation>`.
 
 .. _fig-modulation:
 .. figure:: figures/Slide09.png 
@@ -48,6 +38,19 @@ second analog—relative to an assigned *carrier signal*.
     :align: center
 
     Figure 2.1: The role of coding and modulation in mobile communication.
+     
+At its core, coding inserts extra bits into the data to help recover
+from all the environmental factors that interfere with signal
+propagation. This typically implies some form of *Forward Error
+Correction* (e.g., turbo codes, polar codes). Modulation then
+generates signals that represent the encoded data stream, and it does
+so in a way that matches the channel characteristics: It first uses a
+digital modulation signal format that maximizes the number of reliably
+transmitted bits every second based on the specifics of the observed
+channel impairments; it next matches the transmission
+bandwidth to channel bandwidth using pulse shaping; and finally, it
+uses RF modulation to transmit the signal as an electromagnetic wave
+over an assigned *carrier frequency.*
 
 When dealing with radio signals propagating through the air,
 opportunities for interference abound. As illustrated in
@@ -67,7 +70,6 @@ also be moving.
 As a consequence of these multiple paths, the original signal arrives at
 the receiver spread over time, as illustrated in
 :ref:`Figure 2.3 <fig-coherence>`. Empirical evidence shows that the
-
 Multipath Spread—the time between the first and last signals of one
 transmission arriving at the receiver—is 1 to 10μs in urban
 environments and 10 to 30μs in suburban environments. Theoretical
