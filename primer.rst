@@ -1,4 +1,4 @@
-Chapter 2:  Wireless Transmission
+Chapter 2:  Radio Transmission
 =================================
 
 For anyone familiar with wireless access technologies like Wi-Fi, the

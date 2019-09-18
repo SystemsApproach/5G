@@ -178,12 +178,16 @@ located, it is becoming a viable option.
 
 .. note::
 
-    To better understand the case for CORD (and CORD-inspired
+    To learn about the technical origins of CORD, which was first 
+    applied to fiber-based access networks (PON), see `Central Office 
+    Re-architected as a Datacenter, IEEE Communications, October 2016 
+    <https:wiki.opencord.org/download/attachments/1278027/PETERSON_CORD.pdf>`__. 
+
+    To understand the business case for CORD (and CORD-inspired
     technologies), see the A.D. Little report `Who Dares Win!
     How Access Transformation Can Fast-Track Evolution of
-    Operator Production Platforms
-    <https://www.adlittle.com/en/who-dares-wins>`__, published
-    in September 2019.
+    Operator Production Platforms, September 2019
+    <https://www.adlittle.com/en/who-dares-wins>`__.
 
 When we get into the details of how 5G can be implemented in practice,
 we use CORD as our exemplar. For now, the important thing to understand
@@ -215,7 +219,7 @@ One final note about terminology. Anyone that has been paying attention
 to the discussion surrounding 5G will have undoubtedly heard about
 *Network Function Virtualization (NFV)*, which involves moving
 functionality that was once embedded in hardware appliances into VMs
-running on a commodity server. In our experience, NFV is a stepping
+running on commodity servers. In our experience, NFV is a stepping
 stone towards the fully disaggregated solution we describe, and so we do
 not dwell on it. You can think of NFV as an alternative to the cloud
 native exemplar presented here.
