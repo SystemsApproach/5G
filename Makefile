@@ -1,4 +1,4 @@
-# Makefile for Trellis documentation created with Sphinx
+# Makefile for ONF documentation created with Sphinx
 
 # use bash for pushd/popd, and to fail quickly. virtualenv's activate
 # has undefined variables, so no -u

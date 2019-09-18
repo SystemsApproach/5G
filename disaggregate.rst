@@ -1,12 +1,12 @@
 Chapter 5:  Advanced Capabilities
 =================================
 
-Disaggregating the cellular network pays dividends. This section
-explores three examples. Stepping back to look at the big picture, the
-Architecture section described “what is” (the basics of 3GPP) and the
-RAN Internals section described “what will be” (where the industry, led
-by the O-RAN Alliance, is clearly headed), whereas this section
-describes “what could be” (our best judgement on cutting-edge
+Disaggregating the cellular network pays dividends. This chapter
+explores three examples. Stepping back to look at the big picture,
+Chapter 3 (Architecture) described “what is” (the basics of 3GPP) and
+the Chapter 4 (RAN Internals) described “what will be” (where the
+industry, led by the O-RAN Alliance, is clearly headed), whereas this
+chapter describes “what could be” (our best judgement on cutting-edge
 capabilities that will eventually be realized).
 
 5.1 Optimized Data Plane
@@ -78,12 +78,12 @@ between the control plane and user plane falls to the RLC.
 
 :ref:`Figure 5.2 <fig-e2e-p4>` shows why we disaggregated these
 components: it allows us to realize the three user plane elements
-(PGW-U, SGW-U, PDCP-U) in switching hardware. As we will expand on in
-more detail in a later section, this can be done using a combination
-of a language that is tailored for programming forwarding pipelines
-(e.g., P4), and a protocol-independent switching architecture (e.g.,
-Tofino). For now, the important takeaway is that the RAN and Mobile
-Core user plane can be mapped directly onto an SDN-enabled data plane.
+(PGW-U, SGW-U, PDCP-U) in switching hardware. This can be done using a
+combination of a language that is tailored for programming forwarding
+pipelines (e.g., P4), and a protocol-independent switching
+architecture (e.g., Tofino). For now, the important takeaway is that
+the RAN and Mobile Core user plane can be mapped directly onto an
+SDN-enabled data plane.
 
 Pushing RAN and Mobile Core forwarding functionality into the switching
 hardware results in overlapping terminology that can sometimes be
@@ -125,7 +125,7 @@ This means the three control applications must work in concert to
 implement an end-to-end path through the fabric, which in practice
 happens with the aid of other, fabric aware, control applications (as
 implied by the “…” in the Figure). We describe the complete picture in
-more detail in a later section, but for now, the big takeaway is that
+more detail in the next chapter, but for now, the big takeaway is that
 the control plane components of the 5G overlay can be realized as
 control applications for an SDN-based underlay.
 
@@ -147,8 +147,8 @@ already benefit from elasticity and economies of scale. :ref:`Figure
 the Mobile Core. We leave the user plane at the edge of the network (e.g.,
 in the Central Office) and move control plane to a centralized cloud. It
 could even be a public cloud like Google or Amazon. This includes not
-only the MME, PCRF and HSS, but also the PGW-C and SGW-C we decoupled in
-the previous section. (Note that :ref:`Figure 5.4 <fig-multicloud>`
+only the MME, PCRF and HSS, but also the PGW-C and SGW-C we decoupled
+in the previous section. (Note that :ref:`Figure 5.4 <fig-multicloud>`
 renames the PDCP-U from earlier diagrams as the CU-U; either label is
 valid.)
 
@@ -210,7 +210,7 @@ RAN Slicing
 ~~~~~~~~~~~
 
 We start by reviewing the basic scheduling challenge previewed in
-Section 2. As depicted in :ref:`Figure 5.5 <fig-slice-sched>`,
+Chapter 2. As depicted in :ref:`Figure 5.5 <fig-slice-sched>`,
 the radio spectrum can be conceptualized as a two-dimensional grid of
 *Resource Blocks (RB)*, where the scheduler’s job is to decide how to fill the
 grid with the available segments from each user’s transmission queue
@@ -321,5 +321,5 @@ and the other optimized for high-bandwidth AR/VR applications.
 The one remaining mechanism we need is a demultiplexing function that
 maps a given packet flow (e.g., between UE and some Internet
 application) onto the appropriate instance of the service mesh. This is
-the job of the NSSF described in an earlier section: it is responsible
+the job of the NSSF described in an Chapter 3: it is responsible
 for selecting the mesh instance a given slice’s traffic is to traverse.

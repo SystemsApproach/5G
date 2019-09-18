@@ -1,10 +1,10 @@
 Chapter 3:  Basic Architecture
 ==============================
 
-This section identifies the main architectural components of cellular
+This chapter identifies the main architectural components of cellular
 access networks. It focuses on the components that are common to both 4G
 and 5G, and as such, establishes a foundation for understanding the
-advanced features of 5G presented in the sections that follow.
+advanced features of 5G presented in later chapters.
 
 This overview is partly an exercise in introducing 3GPP terminology. For
 someone that is familiar with the Internet, this terminology can seem
@@ -225,7 +225,7 @@ multiple paths to reach the UE. The third case has the option of either
 spreading the physical payloads across multiple base stations or across
 multiple carrier frequencies of a single base station (including Wi-Fi).
 
-Note that as outlined in the previous section, scheduling is complex and
+Note that as outlined in the previous chapter, scheduling is complex and
 multi-faceted, even when viewed as a localized decision at a single base
 station. What we now see is that there is also a global element, whereby
 it’s possible to forward traffic to a different base station (or to
@@ -237,7 +237,7 @@ station) not only supports handovers (an obvious requirement for
 mobility), but also *link aggregation* and *load balancing*, mechanisms
 that are familiar to anyone that understands the Internet. We will
 revisit how such RAN-wide (global) decisions can be made using SDN
-techniques in a later section.
+techniques in a later chapter.
 
 3.3 Mobile Core
 ---------------
@@ -433,7 +433,7 @@ implemented from scratch, but would likely start with the existing EPC
 code base.
 
 One reason we call attention to the phasing issue is that we face a
-similar challenge in the sections that follow. The closer the following
+similar challenge in the chapters that follow. The closer the following
 discussion gets to implementation details, the more specific we have to
 be about whether we are using 4G components or 5G components. As a
 general rule, we use 4G components—particularly with respect to the

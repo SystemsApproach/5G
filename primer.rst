@@ -288,7 +288,7 @@ accurate to say that each QCI is associated with a class of traffic
 (often corresponding to some type of application), where a given
 subscriber might be sending and receiving traffic that belongs to
 multiple classes at any given time. We explore this idea in much more
-depth in a later section.
+depth in a later chapter.
 
 .. _fig-scheduler:
 .. figure:: figures/Slide13.png 
