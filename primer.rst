@@ -52,9 +52,9 @@ bandwidth to channel bandwidth using pulse shaping; and finally, it
 uses RF modulation to transmit the signal as an electromagnetic wave
 over an assigned *carrier frequency.*
 
-When dealing with radio signals propagating through the air,
-opportunities for interference abound. As illustrated in
-:ref:`Figure 2.2 <fig-multipath>`,
+For a deeper appreciation of the challenges of reliably transmitting
+data by propagating radio signals through the air, consider the
+scenario depicted in :ref:`Figure 2.2 <fig-multipath>`, where
 the signal bounces off various stationary and moving objects,
 following multiple paths from the transmitter to the receiver, who may
 also be moving.
