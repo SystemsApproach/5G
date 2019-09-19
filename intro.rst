@@ -184,7 +184,7 @@ located, it is becoming a viable option.
     <https:wiki.opencord.org/download/attachments/1278027/PETERSON_CORD.pdf>`__. 
 
     To understand the business case for CORD (and CORD-inspired
-    technologies), see the A.D. Little report `Who Dares Win!
+    technologies), see the A.D. Little report `Who Dares Wins!
     How Access Transformation Can Fast-Track Evolution of
     Operator Production Platforms, September 2019
     <https://www.adlittle.com/en/who-dares-wins>`__.
