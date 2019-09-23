@@ -162,7 +162,7 @@ symbol and 64-QAM yields 16 bits per symbol
     schedulable Resource Elements.
 
 A scheduler allocates some number of REs to each user that has data to
-transmit during each 1ms *Transmission Time Interval (TTI*, where users
+transmit during each 1ms *Transmission Time Interval (TTI)*, where users
 are depicted by different colored blocks in :ref:`Figure 2.4 <fig-sched-grid>`.
 The only constraint on the scheduler is that it must make its allocation
 decisions on blocks of 7x12=84 resource elements, called a *Physical
