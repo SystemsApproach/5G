@@ -4,10 +4,10 @@ Chapter 5:  Advanced Capabilities
 Disaggregating the cellular network pays dividends. This chapter
 explores three examples. Stepping back to look at the big picture,
 Chapter 3 (Architecture) described “what is” (the basics of 3GPP) and
-the Chapter 4 (RAN Internals) described “what will be” (where the
-industry, led by the O-RAN Alliance, is clearly headed), whereas this
-chapter describes “what could be” (our best judgement on cutting-edge
-capabilities that will eventually be realized).
+Chapter 4 (RAN Internals) described “what will be” (where the industry
+is clearly headed), whereas this chapter describes “what might be”
+(our best judgement on cutting-edge capabilities that will eventually
+be realized).
 
 5.1 Optimized Data Plane
 ------------------------
@@ -226,8 +226,8 @@ the flexibility it provides in how this mapping is performed.
 
 While in principle one could define an uber scheduler that takes dozens
 of different factors into account, the key to network slicing is to add
-a layer of indirection, such that (as shown in :ref:`Figure 5.6
-<fig-hypervisor>`, we perform a second mapping of Virtual RBs to
+a layer of indirection. As shown in :ref:`Figure 5.6 <fig-hypervisor>`,
+the idea is to perform a second mapping of Virtual RBs to
 Physical RBs. This sort of virtualization is common in resource
 allocators throughout computing systems because we want to separate how
 many resources are allocated to each user from the decision as to which

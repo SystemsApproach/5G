@@ -20,13 +20,16 @@ hardware/software combination a CORD POD, where the idea is to deploy a
 POD at each edge site that is part of a cellular network. The following
 describes CORD in terms of a set of engineering decisions. It is not a
 substitute for detailed documentation for installing, developing, and
-operating CORD, which can be found elsewhere:
-https://guide.opencord.org.
+operating CORD. Also keep in mind that even though CORD includes
+“Central Office” in its name, a CORD POD is a general design, and not
+strictly limited to being deployed in a conventional Central Office.
 
 .. note::
-   As discussed in the Introduction, even though CORD includes “Central
-   Office” in its name, a CORD POD is a general design, and not strictly
-   limited to being deployed in a conventional Central Office.
+   
+   To learn how to install, operate, and contribute to the CORD open
+   source software platform, see the `CORD Guide
+   <https://guide.opencord.org>`__, where you will find information
+   about both the fiber (SEBA) and cellular (COMAC) profiles.
 
 Before getting into the specifics, it is important to understand that
 CORD is a work-in-progress, with a sizable open source community
@@ -74,16 +77,18 @@ scope of this book.
 The RAN and Core related components are ones we’ve described in earlier
 chapters. They include the Control and User planes of the CU and Mobile
 Core, respectively, where to simplify the diagram, we show the SGW and
-PGW merged into a single S/PGW. One aspect of Figure E that requires
-further elaboration is how each of the RAN and Mobile Core components
-are actually realized. There are three different manifestations of the
-functional components implied by the Figure: (1) the data plane layer of
-the CU-U and S/PGW-U are realized as P4 programs loaded into the
-programmable switches; (2) the control plane layer of the CU-U and
-S/PGW-U (as well as the Trellis platform module) are realized as control
-applications loaded onto the ONOS Network OS; and the remaining
-components are realized as Kubernetes-managed microservices. (Kubernetes
-is implicit, and not shown in the figure.)
+PGW merged into a single S/PGW. One aspect of :ref:`Figure 6.1 <fig-cord>`
+that requires further elaboration is how each of the RAN and Mobile
+Core components are actually realized.
+
+Specifically, there are three different manifestations of the functional
+components implied by the Figure: (1) the data plane layer of the CU-U
+and S/PGW-U are realized as P4 programs loaded into the programmable
+switches; (2) the control plane layer of the CU-U and S/PGW-U (as well
+as the Trellis platform module) are realized as control applications
+loaded onto the ONOS Network OS; and (3) the remaining components are
+realized as Kubernetes-managed microservices. (Kubernetes is implied,
+but not shown in the figure.)
 
 To expand on this idea, :ref:`Figure 6.2 <fig-ci-cd>` gives an alternative
 view of a CORD POD, abstracting away the details of *what* services it
@@ -133,8 +138,8 @@ complete to operate a CORD POD in a production environment.
 6.2 Platform Components
 -----------------------
 
-We now return to the three platform-related components shown in `Figures
-:ref:`Figure 6.1 <fig-cord>` and :ref:`6.2 <fig-ci-cd>`. Each is a
+We now return to the three platform-related components shown in
+:ref:`Figures 6.1 <fig-cord>` and :ref:`6.2 <fig-ci-cd>`. Each is a
 substantial open source component in its own right, but for our
 purposes, it is enough to understand the role each plays in supporting
 a 5G-based profile of CORD.
