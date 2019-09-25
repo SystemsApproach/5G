@@ -19,8 +19,28 @@ vehicles), and the Internet-of-Things (IoT). Because these use cases
 will include everything from home appliances to industrial robots to
 self-driving cars, 5G won’t just support humans accessing the Internet
 from their smartphones, but also swarms of autonomous devices working
-together on their behalf. All of this requires a fundamentally different
-architecture.
+together on their behalf. All of this requires a fundamentally
+different architecture.
+
+The requirements for this architecture are ambitious. They can be
+summarized along three dimensions:
+
+- *Massive Internet-of-Things*, potentially including devices with
+  ultra-low energy (10+ years of battery life), ultra-low complexity
+  (10s of bits-per-second), and ultra-high density (1 million nodes
+  per squared-km).
+
+- *Mission-Critical Control*, potentially including ultra-high availability
+  (greater than :math:`10^{-5}` per ms), ultra-low latency
+  (as low as 1 ms), and extreme mobility (up to 100 km/h).
+
+- *Enhaned Mobile Broadband*, potentially including extreme capacity
+  (10 Tbps per squared-km) and extreme data rates
+  (multi-Gbps peak, 100+ Mbps sustained).
+
+These goals will certainly not be met overnight, but that's in keeping
+with each generation of the mobile network being a decade-long
+endeavor.
 
 This book describes the 5G cellular network, which because it is on an
 evolutionary path and not a point solution, includes standardized
