@@ -348,37 +348,37 @@ the EPC:
 -  AUSF (Authentication Server Function): Essentially an authentication
    server. Includes part of the functionality in the EPC’s HSS.
 
-The second group also runs in the Control Plane (CP) but does not have a
-counterpart in the EPC:
+The second group also runs in the Control Plane (CP) but does not have
+a direct counterpart in the EPC:
 
 -  SDSF (Structured Data Storage Network Function): A “helper” service
-   used to store structured data. Might be implemented by an “SQL
+   used to store structured data. Could be implemented by an “SQL
    Database” in a microservices-based system.
 
 -  UDSF (Unstructured Data Storage Network Function): A “helper” service
-   used to store unstructured data. Might be implemented by a “Key/Value
+   used to store unstructured data. Could be implemented by a “Key/Value
    Store” in a microservices-based system.
 
 -  NEF (Network Exposure Function): A means to expose select
    capabilities to third-party services, including translation between
-   internal and external representations for data. Might be implemented
+   internal and external representations for data. Could be implemented
    by an “API Server” in a microservices-based system.
 
 -  NFR (NF Repository Function): A means to discover available services.
-   Might be implemented by a “Discovery Service” in a
+   Could be implemented by a “Discovery Service” in a
    microservices-based system.
 
 -  NSSF (Network Slicing Selector Function): A means to select a Network
    Slice to serve a given UE. Network slices are essentially a way to
    differentiate service given to different users. It is a key feature
-   of 5G that we discuss in depth later in this tutorial.
+   of 5G that we discuss in depth later in a later chapter.
 
 The third group includes the one component that runs in the User Plane
 (UP):
 
 -  UPF (User Plane Function): Forwards traffic between RAN and the
    Internet, corresponding to the S/PGW combination in EPC. In addition
-   to packet forwarding, responsible for policy enforcement, lawful
+   to packet forwarding, it responsible for policy enforcement, lawful
    intercept, traffic usage reporting, and QoS policing.
 
 Of these, the first and third groups are best viewed as a
@@ -388,7 +388,7 @@ to a cloud native solution as the desired end-state for the Mobile Core.
 Of particular note, introducing distinct storage services means that all
 the other services can be stateless, and hence, more readily scalable.
 Also note that :ref:`Figure 3.10 <fig-5g-core>` adopts an idea that’s
-common in microservice-based systems, namely, to show a “message bus”
+common in microservice-based systems, namely, to show a *message bus*
 interconnecting all the components rather than including a full set of
 pairwise connections. This also suggests a well-understood
 implementation strategy.
@@ -437,7 +437,7 @@ similar challenge in the chapters that follow. The closer the following
 discussion gets to implementation details, the more specific we have to
 be about whether we are using 4G components or 5G components. As a
 general rule, we use 4G components—particularly with respect to the
-Mobile Core, since that’s the available open source software—and trust
+Mobile Core, since that’s what's available in open source today—and trust
 the reader can make the appropriate substitution without loss of
 generality. Like the broader industry, the open source community is in
 the process of incrementally evolving its 4G code base into its

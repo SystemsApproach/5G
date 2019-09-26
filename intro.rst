@@ -22,27 +22,28 @@ from their smartphones, but also swarms of autonomous devices working
 together on their behalf. All of this requires a fundamentally
 different architecture.
 
-The requirements for this architecture are ambitious. They can be
-summarized along three dimensions:
+The requirements for this architecture are ambitious, and can be
+summarized as having three primary objectives:
 
-- *Massive Internet-of-Things*, potentially including devices with
-  ultra-low energy (10+ years of battery life), ultra-low complexity
-  (10s of bits-per-second), and ultra-high density (1 million nodes
-  per squared-km).
+- To support *Massive Internet-of-Things*, potentially including
+  devices with ultra-low energy (10+ years of battery life), ultra-low
+  complexity (10s of bits-per-second), and ultra-high density (1
+  million nodes per square kilometer).
 
-- *Mission-Critical Control*, potentially including ultra-high availability
-  (greater than :math:`10^{-5}` per ms), ultra-low latency
-  (as low as 1 ms), and extreme mobility (up to 100 km/h).
-
-- *Enhaned Mobile Broadband*, potentially including extreme capacity
-  (10 Tbps per squared-km) and extreme data rates
+- To support *Mission-Critical Control*, potentially including
+  ultra-high availability (greater than :math:`10^{-5}` per ms),
+  ultra-low latency (as low as 1 ms), and extreme mobility (up to 100
+  km/h).
+  
+- To support *Enhaned Mobile Broadband*, potentially including extreme
+  capacity (10 Tbps per square kilometer) and extreme data rates
   (multi-Gbps peak, 100+ Mbps sustained).
-
-These goals will certainly not be met overnight, but that's in keeping
+  
+These targets will certainly not be met overnight, but that's in keeping
 with each generation of the mobile network being a decade-long
 endeavor.
 
-This book describes the 5G cellular network, which because it is on an
+The 5G mobile network, because it is on an
 evolutionary path and not a point solution, includes standardized
 specifications, a range of implementation choices, and a long list of
 aspirational goals. Because this leaves so much room for interpretation,
@@ -121,7 +122,7 @@ allocations opening above 24-GHz.
 While the specific frequency band is not directly relevant to
 understanding 5G from an architectural perspective, it does impact the
 physical-layer components, which in turn has indirect ramifications on
-the overall 5G system. We will identify and explain these ramifications
+the overall 5G system. We identify and explain these ramifications
 in later chapters.
 
 1.2 Access Networks
