@@ -63,7 +63,7 @@ compute, networking, and connectivity resources they need.
 --------------------------
 
 In order for the scenario depicted in :ref:`Figure 7.1 <fig-cloud>`
-to become a reality, a wealth of research problems that need to be
+to become a reality, a wealth of research problems need to be
 addressed, many of which are a consequence of the blurring line
 between access networks and the edge cloud. We refer to this as
 the *access-edge*, and we conclude by identifying some example
