@@ -77,18 +77,24 @@ we do not try to answer in this book.
 The RAN and Core related components are ones we’ve described in earlier
 chapters. They include the Control and User planes of the CU and Mobile
 Core, respectively, where to simplify the diagram, we show the SGW and
-PGW merged into a single S/PGW. One aspect of :ref:`Figure 6.1 <fig-cord>`
-that requires further elaboration is how each of the RAN and Mobile
-Core components are actually realized.
+PGW merged into a single S/PGW. One other detail that deserves closer
+attention is the RAN Control component included in the CU Control Plane.
+This is the near real-time controller introduced in Section 4.3, which
+means a CORD POD includes two SDN Controllers: this one control the
+RAN and ONOS shown in :ref:`Figure 6.1 <fig-cord>` controls the fabric.
+(We actually use a second instantiation of ONOS for the former, but
+that's an implementation detail.)
 
-Specifically, there are three different manifestations of the functional
-components implied by the Figure: (1) the data plane layer of the CU-U
-and S/PGW-U are realized as P4 programs loaded into the programmable
-switches; (2) the control plane layer of the CU-U and S/PGW-U (as well
-as the Trellis platform module) are realized as control applications
-loaded onto the ONOS Network OS; and (3) the remaining components are
-realized as Kubernetes-managed microservices. (Kubernetes is implied,
-but not shown in the figure.)
+One aspect of :ref:`Figure 6.1 <fig-cord>` that requires further
+elaboration is how each of the RAN and Mobile Core components are
+actually realized. Specifically, there are three different
+manifestations of the functional components implied by the Figure: (1)
+the data plane layer of the CU-U and S/PGW-U are realized as P4
+programs loaded into the programmable switches; (2) the control plane
+layer of the CU-U and S/PGW-U (as well as the Trellis platform module)
+are realized as control applications loaded onto the ONOS Network OS;
+and (3) the remaining components are realized as Kubernetes-managed
+microservices. (Kubernetes is implied, but not shown in the figure.)
 
 To expand on this idea, :ref:`Figure 6.2 <fig-ci-cd>` gives an alternative
 view of a CORD POD, abstracting away the details of *what* services it
