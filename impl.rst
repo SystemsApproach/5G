@@ -71,8 +71,8 @@ implementing a multi-tenant cloud on top of which many different
 scalable services can run. The RAN and Mobile Core are two such tenants.
 The CORD platform can also host other edge services (which is one reason
 CORD is built using cloud technology in the first place), but exactly
-what other edge services might run on a given CORD POD is beyond the
-scope of this book.
+what other edge services might run on a given CORD POD is a question
+we do not try to answer in this book.
 
 The RAN and Core related components are ones we’ve described in earlier
 chapters. They include the Control and User planes of the CU and Mobile
@@ -141,7 +141,7 @@ complete to operate a CORD POD in a production environment.
 We now return to the three platform-related components shown in
 :ref:`Figures 6.1 <fig-cord>` and :ref:`6.2 <fig-ci-cd>`. Each is a
 substantial open source component in its own right, but for our
-purposes, it is enough to understand the role each plays in supporting
+purposes, it is enough to understand the role they play in supporting
 a 5G-based profile of CORD.
 
 -  **Stratum:** A thin operating system that runs locally on each

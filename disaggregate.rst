@@ -86,10 +86,10 @@ the RAN and Mobile Core user plane can be mapped directly onto an
 SDN-enabled data plane.
 
 Pushing RAN and Mobile Core forwarding functionality into the switching
-hardware results in overlapping terminology that can sometimes be
-confusing. 5G separates the functional blocks into control and user
-planes, while SDN disaggregates a given functional block into control
-and data plane halves. The overlap comes from our choosing to implement
+hardware results in overlapping terminology that can be confusing.
+5G separates the functional blocks into control and user planes,
+while SDN disaggregates a given functional block into control and data
+plane halves. The overlap comes from our choosing to implement
 the 5G user plane by splitting it into its SDN-based control and data
 plane parts. As one simplification, we refer to the Control Plane
 (Forwarding) and PDCP-C combination as the CU-C (Central Unit - Control)
