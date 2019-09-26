@@ -231,10 +231,16 @@ is being implemented, it is helpful to have a working understanding of
 how clouds are built. This includes the use of *commodity hardware*
 (both servers and white-box switches), horizontally scalable
 *microservices* (also referred to as *cloud native*), and
-*Software-Defined Networks (SDN)*. is also helpful to have an
+*Software-Defined Networks (SDN)*. It is also helpful to have an
 appreciation for how cloud software is developed, tested, deployed and
 operated, including practices like *DevOps* and *Continuous Integration
 / Continuous Deployment (CI/CD)*.
+
+.. note::
+
+   If you are unfamiliar with DevOps—or more generally, with the
+   operational issues cloud providers face—we recommend you read *Site
+   Reliability Engineering: How Google Runs Production Systems*.
 
 One final note about terminology. Anyone that has been paying attention
 to the discussion surrounding 5G will have undoubtedly heard about
