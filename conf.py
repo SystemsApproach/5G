@@ -106,7 +106,7 @@ pygments_style = None
 
 # Ignore link check for the following websites
 # linkcheck_ignore = [
-#     'https://www.opennetworking.org/trellis/',
+#     'https://5G.systemspproach.org/',
 # ]
 
 # -- Options for HTML output -------------------------------------------------
@@ -194,8 +194,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Trellis Docs', u'Trellis Docs',
-     author, 'TrellisDocs', 'One line description of project.',
+    (master_doc, '5G Mobile Networks', u'5G Mobile Networks',
+     author, 'Peterson and Sunay', 'One line description of project.',
      'Miscellaneous'),
 ]
 
