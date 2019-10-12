@@ -47,7 +47,7 @@ The 5G mobile network, because it is on an
 evolutionary path and not a point solution, includes standardized
 specifications, a range of implementation choices, and a long list of
 aspirational goals. Because this leaves so much room for interpretation,
-xour approach to describing 5G is grounded in two mutually-supportive
+our approach to describing 5G is grounded in two mutually-supportive
 principles. The first is to apply a *systems lens*, which is to say, we
 explain the sequence of design decisions that lead to a solution rather
 than fall back on enumerating the overwhelming number of acronyms as a
