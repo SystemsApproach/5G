@@ -21,7 +21,7 @@ Read the Book
 An online version of the book is published at
 `https://5G.systemsapproach.org <https://5g.systemsapproach.org>`__. You
 can also find PDF and eBook versions
-`here <https://github.com/SystemsApproach/5G/tree/master/published>`__.
+`here <https://github.com/SystemsApproach/5G/releases>`__.
 
 To track progress and receive notices about new versions, you can follow
 the project on
