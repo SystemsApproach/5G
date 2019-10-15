@@ -295,6 +295,6 @@ depth in a later chapter.
     :width: 600px
     :align: center
 
-    Figure 2.5: Scheduler allocates Resource Elements to user data
+    Figure 2.5: Scheduler allocates Resource Blocks to user data
     streams based on CQI feedback from receivers and the QCI
     parameters associated with each class of service.
