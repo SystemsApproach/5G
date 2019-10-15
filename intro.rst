@@ -148,7 +148,7 @@ possible scenario is to anchor both the cellular and wireline access
 networks in Telco *Central Offices*.
 
 Historically, the Central Office—officially known as the *PSTN
-(Packet-Switched Telephone Network) Central Office*—anchored wired
+(Public Switched Telephone Network) Central Office*—anchored wired
 access (both telephony and broadband), while the cellular network
 evolved independently by deploying a parallel set of *Mobile Telephone
 Switching Offices (MTSO)*. Each MTSO serves as a *mobile aggregation*
