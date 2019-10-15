@@ -35,7 +35,7 @@ summarized as having three primary objectives:
   ultra-low latency (as low as 1 ms), and extreme mobility (up to 100
   km/h).
   
-- To support *Enhaned Mobile Broadband*, potentially including extreme
+- To support *Enhanced Mobile Broadband*, potentially including extreme
   capacity (10 Tbps per square kilometer) and extreme data rates
   (multi-Gbps peak, 100+ Mbps sustained).
   
