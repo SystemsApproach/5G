@@ -202,7 +202,7 @@ located, it is becoming a viable option.
     To learn about the technical origins of CORD, which was first 
     applied to fiber-based access networks (PON), see `Central Office 
     Re-architected as a Datacenter, IEEE Communications, October 2016 
-    <https:wiki.opencord.org/download/attachments/1278027/PETERSON_CORD.pdf>`__. 
+    <https://wiki.opencord.org/download/attachments/1278027/PETERSON_CORD.pdf>`__. 
 
     To understand the business case for CORD (and CORD-inspired
     technologies), see the A.D. Little report `Who Dares Wins!
