@@ -378,7 +378,7 @@ The third group includes the one component that runs in the User Plane
 
 -  UPF (User Plane Function): Forwards traffic between RAN and the
    Internet, corresponding to the S/PGW combination in EPC. In addition
-   to packet forwarding, it responsible for policy enforcement, lawful
+   to packet forwarding, it is responsible for policy enforcement, lawful
    intercept, traffic usage reporting, and QoS policing.
 
 Of these, the first and third groups are best viewed as a

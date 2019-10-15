@@ -215,7 +215,7 @@ we use CORD as our exemplar. For now, the important thing to understand
 is that 5G is being implemented as software running on commodity
 hardware, rather than embedded in the special-purpose proprietary
 hardware used in past generations. This has a significant impact on how
-we think about 5G (and how we describes 5G), which will increasingly
+we think about 5G (and how we describe 5G), which will increasingly
 become yet another software-based component in the cloud, as opposed to
 an isolated and specialized technology attached to the periphery of the
 cloud.

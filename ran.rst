@@ -144,7 +144,7 @@ API for exerting software-based control over the pipeline that
 implements the RAN user plane. To be more specific, the left
 sub-component simply forwards control packets between the Mobile Core
 and the PDCP, providing a path over which the Mobile Core can
-communication with the UE for control purposes, whereas the right
+communicate with the UE for control purposes, whereas the right
 sub-component implements the core of the RCC’s control functionality.
 
 .. _fig-rrc-split:
