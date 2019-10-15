@@ -216,7 +216,7 @@ the scheduler operates with even more degrees of freedom.
 2.3 Scheduling: 5G
 ------------------
 
-The transition from 4G to 5G introduces additional degrees-of-freedom in
+The transition from 4G to 5G introduces additional flexibility in
 how the radio spectrum is scheduled, making it possible to adapt the
 cellular network to a more diverse set of devices and applications
 domains.

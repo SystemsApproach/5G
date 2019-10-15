@@ -137,7 +137,7 @@ provide a bearer service.
 
     Figure 3.3: Base Station detects (and connects to) active UEs.
 
-Second, each base station establishes ”3GPP Control Plane” connectivity
+Second, each base station establishes "3GPP Control Plane” connectivity
 between the UE and the corresponding Mobile Core Control Plane
 component, and forwards signaling traffic between the two. This
 signaling traffic enables UE authentication, registration, mobility
@@ -364,7 +364,7 @@ a direct counterpart in the EPC:
    internal and external representations for data. Could be implemented
    by an “API Server” in a microservices-based system.
 
--  NFR (NF Repository Function): A means to discover available services.
+-  NRF (NF Repository Function): A means to discover available services.
    Could be implemented by a “Discovery Service” in a
    microservices-based system.
 
