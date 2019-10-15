@@ -239,8 +239,9 @@ operated, including practices like *DevOps* and *Continuous Integration
 .. note::
 
    If you are unfamiliar with DevOps—or more generally, with the
-   operational issues cloud providers face—we recommend you read *Site
-   Reliability Engineering: How Google Runs Production Systems*.
+   operational issues cloud providers face—we recommend you read `Site
+   Reliability Engineering: How Google Runs Production Systems
+   <https://landing.google.com/sre/books/>`__.
 
 One final note about terminology. Anyone that has been paying attention
 to the discussion surrounding 5G will have undoubtedly heard about
