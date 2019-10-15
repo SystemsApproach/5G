@@ -64,11 +64,11 @@ of 5G, any more than there is for the Internet. It is a complex and
 evolving system, constrained by a set of standards that purposely give
 all the stakeholders many degrees of freedom. In the chapters that
 follow, it should be clear from the context whether we are talking about
-*standards* (what everyone must do), *trends* (where the industry seems
-to be headed), or *implementation choices* (examples to make the
-discussion more concrete). By adopting a systems perspective throughout,
-our intent is to describe 5G in a way that helps the reader navigate
-this rich and rapidly evolving system.
+*standards* (what everyone must do to interoperate), *trends* (where
+the industry seems to be headed), or *implementation choices*
+(examples to make the discussion more concrete). By adopting a systems
+perspective throughout, our intent is to describe 5G in a way that
+helps the reader navigate this rich and rapidly evolving system.
 
 1.1 Standardization Landscape
 -----------------------------
