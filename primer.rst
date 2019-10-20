@@ -151,7 +151,7 @@ corresponds to a 15kHz-wide band around one subcarrier frequency and the
 time it takes to transmit one OFDMA symbol. The number of bits that can
 be encoded in each symbol depends on the modulation rate, so for example
 using *Quadrature Amplitude Modulation (QAM)*, 16-QAM yields 4 bits per
-symbol and 64-QAM yields 16 bits per symbol
+symbol and 64-QAM yields 6 bits per symbol
 
 .. _fig-sched-grid:
 .. figure:: figures/Slide12.png 
