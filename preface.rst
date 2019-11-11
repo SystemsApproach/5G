@@ -3,11 +3,11 @@ Preface
 
 The transition to 5G is happening, and unless you’ve been actively
 trying to ignore it, you’ve undoubtedly heard the hype. But if you are
-like 99% of the CS-trained, systems-oriented, Internet-raised,
-cloud-savvy people in the world, the cellular network is
-largely a mystery. You know it’s an important technology used in the
-last mile to connect people to the Internet, but you’ve otherwise
-abstracted it out of your scope-of-concerns. 
+like 99% of the CS-trained, systems-oriented, cloud-savvy people in
+the world, the cellular network is largely a mystery. You know it’s an
+important technology used in the last mile to connect people to the
+Internet, but you’ve otherwise abstracted it out of your
+scope-of-concerns.
 
 The important thing to understand about 5G is that it implies much more 
 than a generational upgrade in bandwidth. It involves transformative 

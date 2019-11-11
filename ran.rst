@@ -215,12 +215,11 @@ scheduler. Specifically, the R-NIB includes the following state:
     Near Real-Time RAN Controller.
 
 The example Control Apps in :ref:`Figure 4.5 <fig-ran-controller>`
-include a
-range of possibilities, but is not intended to be an exhaustive list.
-The right-most example, RAN Slicing, is the most ambitious in that it
-introduces a new capability: Virtualizing the RAN. It is also an idea
-that has been implemented, which we describe in more detail in the next
-chapter.
+include a range of possibilities, but is not intended to be an
+exhaustive list.  The right-most example, RAN Slicing, is the most
+ambitious in that it introduces a new capability: Virtualizing the
+RAN. It is also an idea that has been implemented, which we describe
+in more detail in the next chapter.
 
 The next three (RF Configuration, Semi-Persistent Scheduling, Cipher Key
 Assignment) are examples of configuration-oriented applications. They
@@ -228,3 +227,21 @@ provide a programmatic way to manage seldom-changing configuration
 state, thereby enabling zero-touch operations. Coming up with meaningful
 policies (perhaps driven by analytics) is likely to be an avenue for
 innovation in the future.
+
+The left-most four example Control Applications are the sweet spot for
+SDN. These functions—Link Aggregation Control, Interference
+Management, Load Balancing, and Handover Control—are currently
+implemented by individual base stations with only local visibility,
+but they have global consequenes. The SDN approach is to collect the
+available input data centrally, make a globally optimal decision, and
+then push the respective control parametes back to the base stations
+for execution. Realizing this value in the RAN is still a
+work-in-progress, but evidence using the same approach to optimize
+wide-are networks is compelling.
+
+.. note::
+
+   For an example of how SDN principles have been successfully applied
+   to a production network, we recommend `B4: Experience with a
+   Globally-Deployed Software Defined WAN, SICOMM 2013
+   <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.

@@ -10,7 +10,7 @@ typically measured in the few megabits-per-second) and starting the
 transition to 5G, with the promise of a tenfold increase in data rates.
 
 But 5G is about much more than increased bandwidth. In the same way 3G
-defined the transition from voice to broadband, 5G’s promise is mostly
+defined the transition from voice to broadband, 5G’s promise is primarily
 about the transition from a single access service (broadband
 connectivity) to a richer collection of edge services and devices,
 including support for immersive user interfaces (e.g., AR/VR),
@@ -23,7 +23,7 @@ together on their behalf. All of this requires a fundamentally
 different architecture.
 
 The requirements for this architecture are ambitious, and can be
-summarized as having three primary objectives:
+summarized as having three main objectives:
 
 - To support *Massive Internet-of-Things*, potentially including
   devices with ultra-low energy (10+ years of battery life), ultra-low
@@ -143,7 +143,7 @@ In either case, access networks are physically anchored at thousands of
 aggregation points-of-presence within close proximity to end users,
 each of which serves anywhere from 1,000 to 100,000 subscribers,
 depending on population density. In practice, the physical deployment
-of these ”edge” locations vary from operator to operator, but one
+of these “edge” locations vary from operator to operator, but one
 possible scenario is to anchor both the cellular and wireline access
 networks in Telco *Central Offices*.
 
@@ -243,11 +243,14 @@ operated, including practices like *DevOps* and *Continuous Integration
    Reliability Engineering: How Google Runs Production Systems
    <https://landing.google.com/sre/books/>`__.
 
-One final note about terminology. Anyone that has been paying attention
-to the discussion surrounding 5G will have undoubtedly heard about
-*Network Function Virtualization (NFV)*, which involves moving
+One final note about terminology. Anyone that has been paying
+attention to the discussion surrounding 5G will have undoubtedly heard
+about *Network Function Virtualization (NFV)*, which involves moving
 functionality that was once embedded in hardware appliances into VMs
 running on commodity servers. In our experience, NFV is a stepping
-stone towards the fully disaggregated solution we describe, and so we do
-not dwell on it. You can think of NFV as an alternative to the cloud
-native exemplar presented here.
+stone towards the fully disaggregated and cloud native solution we
+describe, and so we do not dwell on it. In effect, you can think of
+the NFV initiative as largely consistent with the approach taken in
+this book, but making some different engineering choices when we get
+down into the specifics of the implementation.
+
