@@ -36,12 +36,12 @@ as to subsume the access network.
     :width: 700px
     :align: center
 
-    Figure 7.1: A multi-tenant / multi-cloud—including virtualized RAN
+    A multi-tenant / multi-cloud—including virtualized RAN
     resources alongside conventional compute, storage, and network
     resources—hosting both Telco and Over-the-Top (OTT) services and
     applications.
 
-:ref:`Figure 7.1 <fig-cloud>` gives a high-level overview of how the
+:numref:`Figure %s <fig-cloud>` gives a high-level overview of how the
 transformation might play out, with the global cloud spanning edge
 clouds, private Telco clouds, and the familiar public clouds. Each
 individual cloud site is potentially owned by a different organization
@@ -62,11 +62,11 @@ compute, networking, and connectivity resources they need.
 7.2 Research Opportunities
 --------------------------
 
-In order for the scenario depicted in :ref:`Figure 7.1 <fig-cloud>`
+In order for the scenario depicted in :numref:`Figure %s <fig-cloud>`
 to become a reality, a wealth of research problems need to be
 addressed, many of which are a consequence of the blurring line
-between access networks and the edge cloud. We refer to this as
-the *access-edge*, and we conclude by identifying some example
+between access networks and the edge cloud. We refer to this as the
+*access-edge*, and we conclude by identifying some example
 challenges/opportunities.
 
 - **Multi-Access:** The access-edge will need to support multiple

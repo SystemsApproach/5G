@@ -30,14 +30,14 @@ The mobile channel over which digital data needs to be reliably
 transmitted brings a number of impairments, including noise,
 attenuation, distortion, fading, and interference. This challenge is
 addressed by a combination of coding and modulation, as depicted in
-:ref:`Figure 2.1 <fig-modulation>`.
+:numref:`Figure %s <fig-modulation>`.
 
 .. _fig-modulation:
 .. figure:: figures/Slide09.png 
     :width: 500px
     :align: center
 
-    Figure 2.1: The role of coding and modulation in mobile communication.
+    The role of coding and modulation in mobile communication.
      
 At its core, coding inserts extra bits into the data to help recover
 from all the environmental factors that interfere with signal
@@ -54,7 +54,7 @@ over an assigned *carrier frequency.*
 
 For a deeper appreciation of the challenges of reliably transmitting
 data by propagating radio signals through the air, consider the
-scenario depicted in :ref:`Figure 2.2 <fig-multipath>`, where
+scenario depicted in :numref:`Figure %s <fig-multipath>`, where
 the signal bounces off various stationary and moving objects,
 following multiple paths from the transmitter to the receiver, who may
 also be moving.
@@ -64,12 +64,12 @@ also be moving.
     :width: 600px
     :align: center
 
-    Figure 2.2: Signals propagate along multiple paths from
+    Signals propagate along multiple paths from
     transmitter to receiver.
 
 As a consequence of these multiple paths, the original signal arrives at
 the receiver spread over time, as illustrated in
-:ref:`Figure 2.3 <fig-coherence>`. Empirical evidence shows that the
+:numref:`Figure %s <fig-coherence>`. Empirical evidence shows that the
 Multipath Spread—the time between the first and last signals of one
 transmission arriving at the receiver—is 1 to 10μs in urban
 environments and 10 to 30μs in suburban environments. Theoretical
@@ -97,11 +97,11 @@ transmitted without undue risk of interference.
     :width: 500px
     :align: center
 
-    Figure 2.3: Received data spread over time due to multipath
+    Received data spread over time due to multipath
     variation.
 
 To complicate matters further,    
-:ref:`Figure 2.2 <fig-multipath>` and :ref:`2.3 <fig-coherence>` imply
+:numref:`Figure %s <fig-multipath>` and :numref:`%s <fig-coherence>` imply
 the transmission originates from a single
 antenna, but cell towers are equipped with an array of antennas, each
 transmitting in a different (but overlapping) direction. This
@@ -145,7 +145,7 @@ of user data into OFDMA symbols is designed to minimize the risk of data
 loss due to interference between adjacent bands.
 
 The use of OFDMA naturally leads to conceptualizing the radio spectrum
-as a two-dimensional resource, as shown in :ref:`Figure 2.4 <fig-sched-grid>`.
+as a two-dimensional resource, as shown in :numref:`Figure %s <fig-sched-grid>`.
 The minimal schedulable unit, called a *Resource Element (RE)*,
 corresponds to a 15kHz-wide band around one subcarrier frequency and the
 time it takes to transmit one OFDMA symbol. The number of bits that can
@@ -158,15 +158,15 @@ symbol and 64-QAM yields 6 bits per symbol
     :width: 600px
     :align: center
 	    
-    Figure 2.4: Spectrum abstractly represented by a 2-D grid of
+    Spectrum abstractly represented by a 2-D grid of
     schedulable Resource Elements.
 
 A scheduler allocates some number of REs to each user that has data to
 transmit during each 1ms *Transmission Time Interval (TTI)*, where users
-are depicted by different colored blocks in :ref:`Figure 2.4 <fig-sched-grid>`.
+are depicted by different colored blocks in :numref:`Figure %s <fig-sched-grid>`.
 The only constraint on the scheduler is that it must make its allocation
 decisions on blocks of 7x12=84 resource elements, called a *Physical
-Resource Block (PRB)*. :ref:`Figure 2.4 <fig-sched-grid>` shows two
+Resource Block (PRB)*. :numref:`Figure %s <fig-sched-grid>` shows two
 back-to-back PRBs. Of course time continues to flow along one axis, and
 depending on the size of the available frequency band (e.g., it might be
 100MHz wide), there may be many more subcarrier slots (and hence PRBs)
@@ -195,7 +195,7 @@ such classes, in total) indicates whether the traffic has a *Guaranteed
 Bit Rate (GBR)* or not *(non-GBR)*, plus the class’s relative priority
 within those two categories.
 
-Finally, keep in mind that :ref:`Figure 2.4 <fig-sched-grid>` focuses on
+Finally, keep in mind that :numref:`Figure %s <fig-sched-grid>` focuses on
 scheduling transmissions from a single antenna, but the MIMO technology
 described above means the scheduler also has to determine which antenna
 (or more generally, what subset of antennas) will most effectively reach
@@ -243,10 +243,10 @@ section).
 -  For sub-1GHz bands, 5G allows maximum 50MHz bandwidths. In this case,
    there are two waveforms: one with subcarrier spacing of 15kHz and
    another of 30kHz. (We used 15kHz in the example shown in
-   :ref:`Figure 2.4 <fig-sched-grid>`.)
+   :numref:`Figure %s <fig-sched-grid>`.)
    The corresponding scheduling intervals are
    0.5ms and 0.25ms, respectively. (We used 0.5ms in the example shown
-   in :ref:`Figure 2.4 <fig-sched-grid>`.)
+   in :numref:`Figure %s <fig-sched-grid>`.)
 
 -  For 1GHz-6GHz bands, maximum bandwidths go up to 100MHz.
    Correspondingly, there are three waveforms with subcarrier spacings
@@ -267,7 +267,7 @@ We instead use more abstract terminology, and talk about allocating
 the size and number of Resource Blocks allocated during each time
 interval.
 
-:ref:`Figure 2.5 <fig-scheduler>` depicts the role of the scheduler
+:numref:`Figure %s <fig-scheduler>` depicts the role of the scheduler
 from this more abstract perspective, where just as with 4G, CQI
 feedback from the receivers and the QCI quality-of-service class
 selected by the subscriber are the two key pieces of input to the
@@ -295,6 +295,6 @@ depth in a later chapter.
     :width: 600px
     :align: center
 
-    Figure 2.5: Scheduler allocates Resource Blocks to user data
+    Scheduler allocates Resource Blocks to user data
     streams based on CQI feedback from receivers and the QCI
     parameters associated with each class of service.

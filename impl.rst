@@ -46,7 +46,7 @@ illustrative purposes.)
 6.1 Framework
 -------------
 
-:ref:`Figure 6.1 <fig-cord>` gives a schematic overview of a CORD POD. It
+:numref:`Figure %s <fig-cord>` gives a schematic overview of a CORD POD. It
 connects downstream to a set of DUs (and associated RUs), and upstream
 to the rest of the Internet. Internally, it includes a set of commodity
 servers (the figure shows four racks of three servers each, but the
@@ -61,31 +61,31 @@ switches as necessary to provide sufficient east-to-west bandwidth).
     :width: 650px
     :align: center
 	    
-    Figure 6.1: CORD implementation of RAN and Mobile Core.
+    CORD implementation of RAN and Mobile Core.
 
-With respect to software, :ref:`Figure 6.1 <fig-cord>` shows a combination of
-RAN (red) and Mobile Core (blue) components, plus the modules that
-define the CORD platform (orange). We describe the platform components
-later in this chapter, but you can think of them as collectively
-implementing a multi-tenant cloud on top of which many different
-scalable services can run. The RAN and Mobile Core are two such tenants.
-The CORD platform can also host other edge services (which is one reason
-CORD is built using cloud technology in the first place), but exactly
-what other edge services might run on a given CORD POD is a question
-we do not try to answer in this book.
+With respect to software, :numref:`Figure %s <fig-cord>` shows a
+combination of RAN (red) and Mobile Core (blue) components, plus the
+modules that define the CORD platform (orange). We describe the
+platform components later in this chapter, but you can think of them
+as collectively implementing a multi-tenant cloud on top of which many
+different scalable services can run. The RAN and Mobile Core are two
+such tenants.  The CORD platform can also host other edge services
+(which is one reason CORD is built using cloud technology in the first
+place), but exactly what other edge services might run on a given CORD
+POD is a question we do not try to answer in this book.
 
-The RAN and Core related components are ones we’ve described in earlier
-chapters. They include the Control and User planes of the CU and Mobile
-Core, respectively, where to simplify the diagram, we show the SGW and
-PGW merged into a single S/PGW. One other detail that deserves closer
-attention is the RAN Control component included in the CU Control Plane.
-This is the near real-time controller introduced in Section 4.3, which
-means a CORD POD includes two SDN Controllers: this one control the
-RAN and ONOS shown in :ref:`Figure 6.1 <fig-cord>` controls the fabric.
-(We actually use a second instantiation of ONOS for the former, but
-that's an implementation detail.)
+The RAN and Core related components are ones we’ve described in
+earlier chapters. They include the Control and User planes of the CU
+and Mobile Core, respectively, where to simplify the diagram, we show
+the SGW and PGW merged into a single S/PGW. One other detail that
+deserves closer attention is the RAN Control component included in the
+CU Control Plane.  This is the near real-time controller introduced in
+Section 4.3, which means a CORD POD includes two SDN Controllers: this
+one control the RAN and ONOS shown in :numref:`Figure %s <fig-cord>`
+controls the fabric.  (We actually use a second instantiation of ONOS
+for the former, but that's an implementation detail.)
 
-One aspect of :ref:`Figure 6.1 <fig-cord>` that requires further
+One aspect of :numref:`Figure %s <fig-cord>` that requires further
 elaboration is how each of the RAN and Mobile Core components are
 actually realized. Specifically, there are three different
 manifestations of the functional components implied by the Figure: (1)
@@ -96,19 +96,19 @@ are realized as control applications loaded onto the ONOS Network OS;
 and (3) the remaining components are realized as Kubernetes-managed
 microservices. (Kubernetes is implied, but not shown in the figure.)
 
-To expand on this idea, :ref:`Figure 6.2 <fig-ci-cd>` gives an alternative
-view of a CORD POD, abstracting away the details of *what* services it
-hosts, and focusing instead on *how* those services are instantiated on
-the POD. In this figure, all the functionality instantiated onto the POD
-runs as a combination of Kubernetes-based microservices and ONOS-based
-control applications.
+To expand on this idea, :numref:`Figure %s <fig-ci-cd>` gives an
+alternative view of a CORD POD, abstracting away the details of *what*
+services it hosts, and focusing instead on *how* those services are
+instantiated on the POD. In this figure, all the functionality
+instantiated onto the POD runs as a combination of Kubernetes-based
+microservices and ONOS-based control applications.
 
 .. _fig-ci-cd:
 .. figure:: figures/Slide26.png 
     :width: 350px
     :align: center
 
-    Figure 6.2: Alternative view of CORD, with a CI/CD toolchain
+    Alternative view of CORD, with a CI/CD toolchain
     managing the platform and set of services implemented by a
     combination of ONOS-based control apps and Kubernetes-based
     microservices.
@@ -145,10 +145,10 @@ complete to operate a CORD POD in a production environment.
 -----------------------
 
 We now return to the three platform-related components shown in
-:ref:`Figures 6.1 <fig-cord>` and :ref:`6.2 <fig-ci-cd>`. Each is a
-substantial open source component in its own right, but for our
-purposes, it is enough to understand the role they play in supporting
-a 5G-based profile of CORD.
+:numref:`Figure %s <fig-cord>` and :numref:`Figure %s
+<fig-ci-cd>`. Each is a substantial open source component in its own
+right, but for our purposes, it is enough to understand the role they
+play in supporting a 5G-based profile of CORD.
 
 -  **Stratum:** A thin operating system that runs locally on each
    white-box switch. It’s purpose is to provide a hardware-independent
@@ -209,7 +209,7 @@ Trellis, as an SDN control application running on top of ONOS, controls
 packet forwarding across the switching fabric internal to a CORD POD
 (i.e., within a single site). But Trellis can also be extended across
 multiple sites deeper into the network using multiple stages of spines,
-as shown in :ref:`Figure 6.3 <fig-trellis>`. This means Trellis has the
+as shown in :numref:`Figure %s <fig-trellis>`. This means Trellis has the
 potential to play a role in implementing the backhaul and midhaul
 network for the RAN, or alternatively, extending the RAN into customer
 premises (denoted “On Site” in the figure).
@@ -219,5 +219,5 @@ premises (denoted “On Site” in the figure).
     :width: 600px
     :align: center
 
-    Figure 6.3: Trellis control application managing a (possibly
+    Trellis control application managing a (possibly
     distributed) leaf-spine fabric.

@@ -11,7 +11,7 @@ showing how these stages can be distributed and implemented.
 4.1 Packet Processing Pipeline
 ------------------------------
 
-:ref:`Figure 4.1 <fig-pipeline>` shows the packet processing stages
+:numref:`Figure %s <fig-pipeline>` shows the packet processing stages
 implemented by the base station. These stages are specified by the 3GPP
 standard. Note that the figure depicts the base station as a pipeline
 (running left-to-right) but it is equally valid to view it as a protocol
@@ -26,7 +26,7 @@ helpful).
     :width: 600px
     :align: center
 	    
-    Figure 4.1: RAN processing pipeline, including both user and
+    RAN processing pipeline, including both user and
     control plane components.
 
 The key stages are as follows:
@@ -55,10 +55,10 @@ The key stages are as follows:
 -  PHY (Physical Layer) → Responsible for coding and modulation (as
    discussed in an earlier chapter), including FEC.
 
-The last two stages in :ref:`Figure 4.1 <fig-pipeline>` (D/A
+The last two stages in :numref:`Figure %s <fig-pipeline>` (D/A
 conversion and the RF front-end) are beyond the scope of this book.
 
-While it is simplest to view the stages in :ref:`Figure 4.1 <fig-pipeline>`
+While it is simplest to view the stages in :numref:`Figure %s <fig-pipeline>`
 as a pure left-to-right pipeline, in practice the Scheduler running in the
 MAC stage implements the “main loop” for outbound traffic, reading data
 from the upstream RLC and scheduling transmissions to the downstream
@@ -75,7 +75,7 @@ scheduling interval can range from a few bytes to an entire IP packet.
 The next step is understanding how the functionality outlined above is
 partitioned between physical elements, and hence, “split” across
 centralized and distributed locations. Although the 3GPP standard allows
-for multiple split-points, the partition shown in :ref:`Figure 4.2 <fig-split-ran>`
+for multiple split-points, the partition shown in :numref:`Figure %s <fig-split-ran>`
 is the one being actively pursued by the
 operator-led O-RAN (Open RAN) Alliance. It is the split we adopt
 throughout the rest of this book.
@@ -85,11 +85,11 @@ throughout the rest of this book.
     :width: 600px
     :align: center
 
-    Figure 4.2: Split-RAN processing pipeline distributed across a
+    Split-RAN processing pipeline distributed across a
     Central Unit (CU), Distributed Unit (DU), and Radio Unit (RU).
 
 This results in a RAN-wide configuration similar to that shown in
-:ref:`Figure 4.3 <fig-ran-hierarchy>`, where a single *Central Unit (CU)*
+:numref:`Figure %s <fig-ran-hierarchy>`, where a single *Central Unit (CU)*
 running in the cloud serves multiple *Distributed Units (DUs)*, each of
 which in turn serves multiple *Radio Units (RUs)*. Critically, the RRC
 (centralized in the CU) is responsible for only near-real time
@@ -102,7 +102,7 @@ decisions.
     :width: 400px
     :align: center
 	    
-    Figure 4.3: Split-RAN hierarchy, with one CU serving multiple DUs,
+    Split-RAN hierarchy, with one CU serving multiple DUs,
     each of which serves multiple RUs.
 
 Clearly, a DU needs to be “near” (within 1ms) the RUs it manages since
@@ -135,8 +135,8 @@ scheduler.
 
 Finally, we describe how the RAN is implemented according to SDN
 principles, resulting in an SD-RAN. The key architectural insight is
-shown in :ref:`Figure 4.4 <fig-rrc-split>`, where the RRC from
-:ref:`Figure 4.1 <fig-pipeline>` is partitioned into two
+shown in :numref:`Figure %s <fig-rrc-split>`, where the RRC from
+:numref:`Figure %s <fig-pipeline>` is partitioned into two
 sub-components: the one on
 the left provides a 3GPP-compliant way for the RAN to interface to the
 Mobile Core’s control plane, while the latter opens a new programmatic
@@ -152,14 +152,14 @@ sub-component implements the core of the RCC’s control functionality.
     :width: 600px
     :align: center
 	    
-    Figure 4.4: RRC disaggregated into a Mobile Core facing control
+    RRC disaggregated into a Mobile Core facing control
     plane component and a Near Real-Time Controller.
 
-Although not shown in :ref:`Figure 4.4 <fig-rrc-split>`, keep in mind
-(from :ref:`Figure 4.2 <fig-split-ran>`) that all constituent parts of
+Although not shown in :numref:`Figure %s <fig-rrc-split>`, keep in mind
+(from :numref:`Figure %s <fig-split-ran>`) that all constituent parts of
 the RRC, plus the PDCP, form the CU.
 
-Completing the picture, :ref:`Figure 4.5 <fig-ran-controller>` shows
+Completing the picture, :numref:`Figure %s <fig-ran-controller>` shows
 the Near-RT RAN Controller implemented as a traditional SDN Controller
 hosting a set of SDN control apps. The Near Real-Time Controller
 maintains a RAN Network Information Base (R-NIB) that includes
@@ -185,7 +185,7 @@ scheduler. Specifically, the R-NIB includes the following state:
       -  Measurement Config
       -  State (Active/Idle)
 
--  LINKS: Physical between two nodes and potential between UEs and all
+-  LINKS: *Actual* between two nodes and *Potential* between UEs and all
    neighbor cells
 
    -  Link Attributes:
@@ -195,7 +195,7 @@ scheduler. Specifically, the R-NIB includes the following state:
       -  Config / Bearer Parameters
       -  QCI Value
 
--  SLICES: Virtualized RAN construct
+-  SLICES: Virtualized RAN Construct
 
    -  Slice Attributes:
 
@@ -211,10 +211,10 @@ scheduler. Specifically, the R-NIB includes the following state:
     :width: 500px
     :align: center
 	    
-    Figure 4.5: Example set of control applications running on top of
+    Example set of control applications running on top of
     Near Real-Time RAN Controller.
 
-The example Control Apps in :ref:`Figure 4.5 <fig-ran-controller>`
+The example Control Apps in :numref:`Figure %s <fig-ran-controller>`
 include a range of possibilities, but is not intended to be an
 exhaustive list.  The right-most example, RAN Slicing, is the most
 ambitious in that it introduces a new capability: Virtualizing the

@@ -38,10 +38,10 @@ robots, home appliances, medical devices, and so on.
     :width: 600px
     :align: center
 	    
-    Figure 3.1: Cellular networks consists of a Radio Access Network
+    Cellular networks consists of a Radio Access Network
     (RAN) and a Mobile Core.
 
-As shown in :ref:`Figure 3.1 <fig-cellular>`,
+As shown in :numref:`Figure %s <fig-cellular>`,
 the cellular network consists of
 two main subsystems: the *Radio Access Network (RAN)* and the *Mobile
 Core*. The RAN manages the radio spectrum, making sure it is both used
@@ -66,7 +66,7 @@ Even though the word “Core” is in its name, from an Internet
 perspective, the Mobile Core is still part of the access network,
 effectively providing a bridge between the RAN and the IP-world.
 
-Taking a closer look at :ref:`Figure 3.1 <fig-cellular>`, we see that a
+Taking a closer look at :numref:`Figure %s <fig-cellular>`, we see that a
 *Backhaul Network* interconnects the eNBs that implement the RAN with
 the Mobile Core. This network is typically wired, may or may not have
 the ring topology shown in the Figure, and is often constructed from
@@ -89,8 +89,8 @@ vendors—there is significant opportunity to open and disaggregate both
 the RAN and the Mobile Core. The following two sections describe each,
 in turn.
 
-Before getting to those details, :ref:`Figure 3.2 <fig-cups>`
-redraws components from :ref:`Figure 3.1 <fig-cellular>`
+Before getting to those details, :numref:`Figure %s <fig-cups>`
+redraws components from :numref:`Figure %s <fig-cellular>`
 to highlight two important
 distinctions. The first is that the eNB (which we will refer to as the
 Base Station from here on) has an analog component (depicted by an
@@ -107,7 +107,7 @@ distinctions will become clear in the following discussion.
     :width: 400px
     :align: center
     
-    Figure 3.2: Mobile Core divided into a Control Plan and a User
+    Mobile Core divided into a Control Plan and a User
     Plane, an architectural feature known as CUPS: Control and User
     Plane Separation
 
@@ -135,7 +135,7 @@ provide a bearer service.
     :width: 500px
     :align: center
 
-    Figure 3.3: Base Station detects (and connects to) active UEs.
+    Base Station detects (and connects to) active UEs.
 
 Second, each base station establishes "3GPP Control Plane” connectivity
 between the UE and the corresponding Mobile Core Control Plane
@@ -148,7 +148,7 @@ tracking.
     :width: 500px
     :align: center
 	    
-    Figure 3.4: Base Station establishes control plane connectivity
+    Base Station establishes control plane connectivity
     between each UE and the Mobile Core.
 
 Third, for each active UE, the base station establishes one or more
@@ -159,7 +159,7 @@ tunnels between the corresponding Mobile Core User Plane component.
     :width: 500px
     :align: center
 	    
-    Figure 3.5: Base station establishes one or more tunnels between
+    Base station establishes one or more tunnels between
     each UE and the Mobile Core’s User Plane.
 
 Fourth, the base station forwards both control and user plane packets
@@ -182,7 +182,7 @@ network.
     :width: 500px
     :align: center
 	    
-    Figure 3.6: Base Station to Mobile Core (and Base Station to Base
+    Base Station to Mobile Core (and Base Station to Base
     Station) control plane tunneled over SCTP/IP and user plane
     tunneled over GTP/UDP/IP.
 
@@ -197,7 +197,7 @@ are used to transfer both control plane (SCTP over IP) and user plane
     :width: 500px
     :align: center
 	    
-    Figure 3.7: Base Stations cooperate to implement UE hand over.
+    Base Stations cooperate to implement UE hand over.
     
 Sixth, the base station coordinates wireless multi-point transmission to
 a UE from multiple base stations, which may or may not be part of a UE
@@ -208,7 +208,7 @@ handover from one base station to another.
     :width: 500px
     :align: center
 	    
-    Figure 3.8: Base Stations cooperate to implement multipath
+    Base Stations cooperate to implement multipath
     transmission (link aggregation) to UEs.
 
 For our purposes, the main takeaway is that the base station can be
@@ -294,14 +294,14 @@ the User Plane (UP):
 Although specified as distinct components, in practice the SGW
 (RAN-facing) and PGW (Internet-facing) are often combined in a single
 device, commonly referred to as an S/PGW. The end result is illustrated
-in :ref:`Figure 3.9 <fig-4g-core>`.
+in :numref:`Figure %s <fig-4g-core>`.
 
 .. _fig-4g-core:
 .. figure:: figures/Slide20.png 
     :width: 700px
     :align: center
 	    
-    Figure 3.9: 4G Mobile Core (Evolved Packet Core).
+    4G Mobile Core (Evolved Packet Core).
 
 Note that 3GPP is flexible in how the Mobile Core components are
 deployed to serve a geographic area. For example, a single MME/PGW pair
@@ -320,7 +320,7 @@ is really just prescribing a set of functional blocks and not an
 implementation. Keeping in mind a set of functional blocks is very
 different from the collection of engineering decisions that go into
 designing a microservice-based system, viewing the collection of
-components shown in :ref:`Figure 3.10 <fig-5g-core>` 
+components shown in :numref:`Figure %s <fig-5g-core>` 
 as a set of microservices is a good working model.
 
 The following organizes the set of functional blocks into three groups.
@@ -387,7 +387,7 @@ the gratuitous introduction of new terminology—is 3GPP’s way of pointing
 to a cloud native solution as the desired end-state for the Mobile Core.
 Of particular note, introducing distinct storage services means that all
 the other services can be stateless, and hence, more readily scalable.
-Also note that :ref:`Figure 3.10 <fig-5g-core>` adopts an idea that’s
+Also note that :numref:`Figure %s <fig-5g-core>` adopts an idea that’s
 common in microservice-based systems, namely, to show a *message bus*
 interconnecting all the components rather than including a full set of
 pairwise connections. This also suggests a well-understood
@@ -398,7 +398,7 @@ implementation strategy.
     :width: 700px
     :align: center
 	    
-    Figure 3.10: 5G Mobile Core (NG-Core).
+    5G Mobile Core (NG-Core).
 
 Stepping back from these details, and with the caveat that we are
 presuming an implementation, the main takeaway is that we can

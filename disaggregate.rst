@@ -18,7 +18,7 @@ possible to optimize the data path. This can be done, for example, by
 programming it into specialized hardware. Modern white-box switches with
 programmable packet forwarding pipelines are a perfect example of
 specialized hardware we can exploit in the cellular network.
-:ref:`Figure 5.1 <fig-e2e>` shows the first step in the process
+:numref:`Figure %s <fig-e2e>` shows the first step in the process
 of doing this. The figure also pulls together all the elements we’ve
 been describing up to this point. There are several things to note
 about this diagram.
@@ -28,7 +28,7 @@ about this diagram.
     :width: 600px
     :align: center
 
-    Figure 5.1: End-to-end disaggregated system, including Mobile Core
+    End-to-end disaggregated system, including Mobile Core
     and Split-RAN.
 
 First, the figure combines both the Mobile Core and RAN elements,
@@ -57,7 +57,7 @@ specialized hardware (e.g., a Digital Signal Processor). These two
 subsets of functional blocks map to the PHY Upper (part of the DU) and
 the PHY Lower (part of the RU), respectively.
 
-Fourth, and somewhat confusingly, :ref:`Figure 5.1 <fig-e2e>`
+Fourth, and somewhat confusingly, :numref:`Figure %s <fig-e2e>`
 shows the PCDP-C
 element and the Control Plane (Forwarding) element combined into a
 single functional block, with a data path (blue line) connecting that
@@ -73,10 +73,10 @@ between the control plane and user plane falls to the RLC.
     :width: 600px
     :align: center
 
-    Figure 5.2: Implementing data plane elements of the User Plane in
+    Implementing data plane elements of the User Plane in
     programmable switches.
 
-:ref:`Figure 5.2 <fig-e2e-p4>` shows why we disaggregated these
+:numref:`Figure %s <fig-e2e-p4>` shows why we disaggregated these
 components: it allows us to realize the three user plane elements
 (PGW-U, SGW-U, PDCP-U) in switching hardware. This can be done using a
 combination of a language that is tailored for programming forwarding
@@ -111,23 +111,23 @@ applications running on top of ONOS.
     :width: 400px
     :align: center
 
-    Figure 5.3: Control Plane elements of the User Plane implemented
+    Control Plane elements of the User Plane implemented
     as Control Applications running on an SDN Controller (e.g., ONOS).
 
-:ref:`Figure 5.3 <fig-onos>` shows one possible configuration, in which the
-underlying switches are interconnected to form a leaf-spine fabric. Keep
-in mind that the linear sequence of switches implied by :ref:`Figure
-5.2 <fig-e2e-p4>` is logical, but that in no way restricts the actual
-hardware to the same topology. The reason we use a leaf-spine topology
-is related to our ultimate goal of building an edge cloud, and
-leaf-spine is the proto-typical structure for such cloud-based clusters.
-This means the three control applications must work in concert to
-implement an end-to-end path through the fabric, which in practice
-happens with the aid of other, fabric aware, control applications (as
-implied by the “…” in the Figure). We describe the complete picture in
-more detail in the next chapter, but for now, the big takeaway is that
-the control plane components of the 5G overlay can be realized as
-control applications for an SDN-based underlay.
+:numref:`Figure %s <fig-onos>` shows one possible configuration, in
+which the underlying switches are interconnected to form a leaf-spine
+fabric. Keep in mind that the linear sequence of switches implied by
+:numref:`Figure %s <fig-e2e-p4>` is logical, but that in no way
+restricts the actual hardware to the same topology. The reason we use
+a leaf-spine topology is related to our ultimate goal of building an
+edge cloud, and leaf-spine is the proto-typical structure for such
+cloud-based clusters.  This means the three control applications must
+work in concert to implement an end-to-end path through the fabric,
+which in practice happens with the aid of other, fabric aware, control
+applications (as implied by the “…” in the Figure). We describe the
+complete picture in more detail in the next chapter, but for now, the
+big takeaway is that the control plane components of the 5G overlay
+can be realized as control applications for an SDN-based underlay.
 
 5.2 Multi-Cloud
 ---------------
@@ -142,22 +142,22 @@ power, and cooling constraints.
 
 This process can be repeated by distributing the more centralized
 elements across multiple clouds, including large datacenters that
-already benefit from elasticity and economies of scale. :ref:`Figure
-5.4 <fig-multicloud>` shows the resulting multi-cloud realization of
-the Mobile Core. We leave the user plane at the edge of the network (e.g.,
-in the Central Office) and move control plane to a centralized cloud. It
-could even be a public cloud like Google or Amazon. This includes not
-only the MME, PCRF and HSS, but also the PGW-C and SGW-C we decoupled
-in the previous section. (Note that :ref:`Figure 5.4 <fig-multicloud>`
-renames the PDCP-U from earlier diagrams as the CU-U; either label is
-valid.)
+already benefit from elasticity and economies of
+scale. :numref:`Figure %s <fig-multicloud>` shows the resulting
+multi-cloud realization of the Mobile Core. We leave the user plane at
+the edge of the network (e.g., in the Central Office) and move control
+plane to a centralized cloud. It could even be a public cloud like
+Google or Amazon. This includes not only the MME, PCRF and HSS, but
+also the PGW-C and SGW-C we decoupled in the previous section. (Note
+that :numref:`Figure %s <fig-multicloud>` renames the PDCP-U from
+earlier diagrams as the CU-U; either label is valid.)
 
 .. _fig-multicloud:
 .. figure:: figures/Slide24.png 
     :width: 600px
     :align: center
 
-    Figure 5.4: Multi-Cloud implementation, with MME, HSS, PCRF and
+    Multi-Cloud implementation, with MME, HSS, PCRF and
     Control Plane elements of the PGW and SGW running in a centralized
     cloud.
 
@@ -210,7 +210,7 @@ RAN Slicing
 ~~~~~~~~~~~
 
 We start by reviewing the basic scheduling challenge previewed in
-Chapter 2. As depicted in :ref:`Figure 5.5 <fig-slice-sched>`,
+Chapter 2. As depicted in :numref:`Figure %s <fig-slice-sched>`,
 the radio spectrum can be conceptualized as a two-dimensional grid of
 *Resource Blocks (RB)*, where the scheduler’s job is to decide how to fill the
 grid with the available segments from each user’s transmission queue
@@ -222,11 +222,11 @@ the flexibility it provides in how this mapping is performed.
     :width: 450px
     :align: center
 
-    Figure 5.5: Scheduler allocating resource blocks to UEs.
+    Scheduler allocating resource blocks to UEs.
 
 While in principle one could define an uber scheduler that takes dozens
 of different factors into account, the key to network slicing is to add
-a layer of indirection. As shown in :ref:`Figure 5.6 <fig-hypervisor>`,
+a layer of indirection. As shown in :numref:`Figure %s <fig-hypervisor>`,
 the idea is to perform a second mapping of Virtual RBs to
 Physical RBs. This sort of virtualization is common in resource
 allocators throughout computing systems because we want to separate how
@@ -241,12 +241,12 @@ which user’s segment is affected by each translation.
     :width: 600px
     :align: center
 
-    Figure 5.6: Wireless Hypervisor mapping virtual resource blocks to
+    Wireless Hypervisor mapping virtual resource blocks to
     physical resource blocks.
 
 Having decoupled the Virtual RBs from Physical RBs, it is now possible
 to define multiple Virtual RB sets (of varying sizes), each with its own
-scheduler. :ref:`Figure 5.7 <fig-multi-sched>` gives an example with two
+scheduler. :numref:`Figure %s <fig-multi-sched>` gives an example with two
 equal-sized RB sets, where the important consequence is that having made
 the macro-decision that the Physical RBs are divided into two equal
 partitions, the scheduler associated with each partition is free to
@@ -262,13 +262,13 @@ could be reserved for premium customers or other high-priority traffic
     :width: 600px
     :align: center
 
-    Figure 5.7: Multiple schedulers running on top of wireless
+    Multiple schedulers running on top of wireless
     hypervisor.
 
 Going one level deeper in the implementation details, the real-time
 scheduler running in each DU receives high-level directives from the
 near real-time scheduler running in the CU, and as depicted in
-:ref:`Figure 5.8 <fig-slicing-control>`, these directives make dual
+:numref:`Figure %s <fig-slicing-control>`, these directives make dual
 transmission, handoff, and interference decisions on a per-slice
 basis. A single RAN Slicing control application is responsible for the
 macro-scheduling decision by allocating resources among a set of
@@ -282,7 +282,7 @@ the underlying system, as they have historically been in 4G’s eNodeBs.
     :width: 350px
     :align: center
 
-    Figure 5.8: Centralized near-realtime control applications
+    Centralized near-realtime control applications
     cooperating with distribute real-time RAN schedulers.
 
 Core Slicing
@@ -307,16 +307,17 @@ schedulers to allocate sufficient compute cycles to the slice’s
 containers.
 
 For example, if there are two network slices (analogous to the two RAN
-schedulers shown in :ref:`Figure 5.7 <fig-multi-sched>` and
-:ref:`5.8 <fig-slicing-control>`), then there would also need to be two Mobile
-Core service meshes: One set of AMF, SMF, UPF,… microservices running on
-behalf of the first slice and a second set of AMF, SMF, UPF,…
-microservices running on behalf of the second slice. These two meshes
-would scale independently (i.e., include a different number of container
-instances), depending on their respective workloads and QoS guarantees.
-The two slices would also be free to make different implementation
-choices, for example, with one optimized for massive IoT applications
-and the other optimized for high-bandwidth AR/VR applications.
+schedulers shown in :numref:`Figure %s <fig-multi-sched>` and
+:numref:`Figure %s <fig-slicing-control>`), then there would also need
+to be two Mobile Core service meshes: One set of AMF, SMF, UPF,…
+microservices running on behalf of the first slice and a second set of
+AMF, SMF, UPF,… microservices running on behalf of the second
+slice. These two meshes would scale independently (i.e., include a
+different number of container instances), depending on their
+respective workloads and QoS guarantees.  The two slices would also be
+free to make different implementation choices, for example, with one
+optimized for massive IoT applications and the other optimized for
+high-bandwidth AR/VR applications.
 
 The one remaining mechanism we need is a demultiplexing function that
 maps a given packet flow (e.g., between UE and some Internet
