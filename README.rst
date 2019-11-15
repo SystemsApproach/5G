@@ -1,9 +1,10 @@
 About This Book
 ===============
 
-This repository contains source for *5G Mobile Networks: A Systems
-Approach*, available under terms of the `Creative Commons (CC BY
-4.0) <https://creativecommons.org/licenses/by/4.0>`__ license. The
+This `repository <https://github.com/SystemsApproach/5G>`__ contains
+source for *5G Mobile Networks: A Systems Approach*, available under
+terms of the `Creative Commons (CC BY 4.0)
+<https://creativecommons.org/licenses/by/4.0>`__ license. The
 community is invited to contribute corrections, improvements, updates,
 and new material under the same terms.
 

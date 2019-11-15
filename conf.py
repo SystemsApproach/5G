@@ -59,13 +59,14 @@ warning_is_error = True
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
+# ones. ***Replace "mathjax" with "imgmath" for epub output.***
 extensions = [
     'recommonmark',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
+    'sphinx.ext.autosectionlabel',
     'sphinxcontrib.actdiag',
     'sphinxcontrib.blockdiag',
     'sphinxcontrib.nwdiag',
@@ -96,13 +97,17 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'doc_venv', 'requirements.txt', 'Thumbs.db', '.DS_Store', 'repos', '*/vendor']
+exclude_patterns = [u'_build', 'doc_venv', 'requirements.txt', 'Thumbs.db', '.DS_Store', 'repos', '*/vendor', 'sidebars', 'private', 'status.rst', '*/README.rst', 'CONTRIBUTING.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
 # Enable numbered figures
-# numfig = True
+numfig = True
+numfig_format = {
+    'figure': 'Figure %s.',
+    'table':  'Table %s.'
+    }
 
 # Ignore link check for the following websites
 # linkcheck_ignore = [
@@ -195,7 +200,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, '5G Mobile Networks', u'5G Mobile Networks',
-     author, 'Peterson and Sunay', 'One line description of project.',
+     author, 'Peterson and Sunay', 'A Systems Approach',
      'Miscellaneous'),
 ]
 
