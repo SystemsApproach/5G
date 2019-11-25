@@ -13,7 +13,7 @@ The important thing to understand about 5G is that it implies much more
 than a generational upgrade in bandwidth. It involves transformative 
 changes that blur the line between the access network and the cloud. And 
 it will encompass enough value that it has the potential to turn the 
-“Access-as-frontent-to-Internet” perspective on its head. We will just as 
+“Access-as-frontend-to-Internet” perspective on its head. We will just as 
 likely be talking about “Internet-as-backend-to-Access” ten years from 
 now. 
 
