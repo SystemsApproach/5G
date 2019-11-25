@@ -410,7 +410,90 @@ in NFV-oriented documents. 3GPP is silent on the specific terminology
 since it is considered an implementation choice rather than part of the
 specification.
 
-3.4 Deployment Options
+3.4 Security Architecture
+-------------------------
+
+It worth being more specific about the security architecture of the
+cellular network, which also serves to fill in some details about how
+each individual UE connects to the network.
+
+Each Base Station trusts that it is connected to the Mobile Core by a
+secure private network, and establishes the tunnels introduced in
+:numref:`Figure %s <fig-tunnels>` over that network: a GTP/UDP/IP
+tunnel to the Core's User Plane (Core-UP) and a SCTP/IP tunnel to the
+Core's Control Plane (Core-CP). Each UE has an operator-provided SIM
+card, which uniquely identifies the subscriber (by phone number) and
+establishes the radio parameters need to communicate with that
+operator's Base Stations. The SIM card also includes a secret key used
+to authenticate the UE.
+
+.. _fig-secure:
+.. figure:: figures/Slide34.png 
+    :width: 600px
+    :align: center
+	    
+    Sequence of steps to establish secure Control and User Plane
+    channels. 
+
+Given this starting point, :numref:`Figure %s <fig-secure>` shows the
+per-UE connection sequence. When a UE first comes becomes active, it
+communicates with a nearby Base Station over a temporary
+(unauthenticated) radio link (Step 1).  The Base Station forwards the
+request to the Core-CP over the existing tunnel, and the Core-CP
+(specifically, the MME in 4G and the AMF in 5G) initiates an
+authentication protocol with the UE (Step 2). The 3GPP spec identifies
+a set of options, including the *Advanced Encryption Standard* (AES),
+but the exact protocol used is an implementation choice. Note that
+this authentication exchange is effectively "in the clear" since the
+Base Station / UE link is not yet secure.
+
+Once the UE and Core-CP are satisfied with each other's identity, the
+Core-CP retrieves the subscriber information from its database and
+informs the other components of the parameters they will need to
+service the UE (Step 3). This includes (a) instructing the Core-UP to
+initialize the user plane (e.g., assign an IP address to the UE and
+set the appropriate QCI parameter); (b) instructing the Base Station
+to establish an encrypted channel to the UE; and (c) giving the UE the
+symmetric key it will need to use the encrypted channel with the Base
+Station.  Once complete, the UE can use the end-to-end user plane
+channel through the Core-UP (Step 4).
+
+There are three additional details of note about this process. First,
+the secure control channel between the UE and the Core-CP set up
+during Step 2 remains available, and is used by the Core-CP to send
+additional control instructions to the UE during the course of the
+session.
+
+Second, the user plane channel established during Step 4 is referred
+to as the *Default Bearer Service*, but additional channels can be
+established between the UE and Core-UP, each with a potentially
+different QCI value. This might be done on an
+application-by-application basis, for example, under the control of
+the Mobile Core doing *Deep Packet Inspection* (DPI) on the traffic,
+looking for flows that that require special treatment.
+
+.. _fig-per-hop:
+.. figure:: figures/Slide35.png 
+    :width: 600px
+    :align: center
+	    
+    Sequence of per-hop tunnels involved in an end-to-end User Plane
+    channel.
+
+Third, while the resulting user plane channels are logically
+end-to-end, each is actually implemented as a sequence of per-hop
+tunnels, as illustrated in :numref:`Figure %s <fig-per-hop>`.  (The
+Figure shows the SGW and PGW from the 4G Mobile Core to make the
+example more concrete.) This means each component on the end-to-end
+path terminates a downstream tunnel using one local identifier for
+each UE, and initiates an upstream tunnel using a second local
+identifier for each UE. In practice, these per-flow tunnels are
+usually bundled into an single inter-component tunnel, making it
+impossible to differentiate the level of service given to any
+particular end-to-end UE channel. This is a limitation of 4G that 5G
+has ambitions to correct.
+
+3.5 Deployment Options
 ----------------------
 
 With an already deployed 4G RAN/EPC in the field and a new 5G
