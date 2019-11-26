@@ -415,17 +415,19 @@ specification.
 
 It worth being more specific about the security architecture of the
 cellular network, which also serves to fill in some details about how
-each individual UE connects to the network.
+each individual UE connects to the network. The architecture is
+grounded by two trust assumptions.
 
-Each Base Station trusts that it is connected to the Mobile Core by a
-secure private network, and establishes the tunnels introduced in
-:numref:`Figure %s <fig-tunnels>` over that network: a GTP/UDP/IP
-tunnel to the Core's User Plane (Core-UP) and a SCTP/IP tunnel to the
-Core's Control Plane (Core-CP). Each UE has an operator-provided SIM
-card, which uniquely identifies the subscriber (by phone number) and
-establishes the radio parameters need to communicate with that
-operator's Base Stations. The SIM card also includes a secret key used
-to authenticate the UE.
+First, each Base Station trusts that it is connected to the Mobile
+Core by a secure private network, and establishes the tunnels
+introduced in :numref:`Figure %s <fig-tunnels>` over that network: a
+GTP/UDP/IP tunnel to the Core's User Plane (Core-UP) and a SCTP/IP
+tunnel to the Core's Control Plane (Core-CP). Second, each UE has an
+operator-provided SIM card, which uniquely identifies the subscriber
+(by phone number) and establishes the radio parameters (e.g.,
+frequency band) need to communicate with that operator's Base
+Stations. The SIM card also includes a secret key used to authenticate
+the UE.
 
 .. _fig-secure:
 .. figure:: figures/Slide34.png 
@@ -435,8 +437,8 @@ to authenticate the UE.
     Sequence of steps to establish secure Control and User Plane
     channels. 
 
-Given this starting point, :numref:`Figure %s <fig-secure>` shows the
-per-UE connection sequence. When a UE first comes becomes active, it
+With this starting point, :numref:`Figure %s <fig-secure>` shows the
+per-UE connection sequence. When a UE first becomes active, it
 communicates with a nearby Base Station over a temporary
 (unauthenticated) radio link (Step 1).  The Base Station forwards the
 request to the Core-CP over the existing tunnel, and the Core-CP
