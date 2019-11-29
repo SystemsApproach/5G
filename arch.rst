@@ -413,19 +413,19 @@ specification.
 3.4 Security Architecture
 -------------------------
 
-It worth being more specific about the security architecture of the
-cellular network, which also serves to fill in some details about how
-each individual UE connects to the network. The architecture is
-grounded by two trust assumptions.
+We now take a closer look at the security architecture of the cellular
+network, which also serves to fill in some details about how each
+individual UE connects to the network. The architecture is grounded in
+two trust assumptions.
 
 First, each Base Station trusts that it is connected to the Mobile
-Core by a secure private network, and establishes the tunnels
-introduced in :numref:`Figure %s <fig-tunnels>` over that network: a
-GTP/UDP/IP tunnel to the Core's User Plane (Core-UP) and a SCTP/IP
-tunnel to the Core's Control Plane (Core-CP). Second, each UE has an
-operator-provided SIM card, which uniquely identifies the subscriber
-(by phone number) and establishes the radio parameters (e.g.,
-frequency band) need to communicate with that operator's Base
+Core by a secure private network, over which it establishes the
+tunnels introduced in :numref:`Figure %s <fig-tunnels>` over that
+network: a GTP/UDP/IP tunnel to the Core's User Plane (Core-UP) and a
+SCTP/IP tunnel to the Core's Control Plane (Core-CP). Second, each UE
+has an operator-provided SIM card, which uniquely identifies the
+subscriber (i.e., phone number) and establishes the radio parameters
+(e.g., frequency band) need to communicate with that operator's Base
 Stations. The SIM card also includes a secret key used to authenticate
 the UE.
 
@@ -443,17 +443,16 @@ communicates with a nearby Base Station over a temporary
 (unauthenticated) radio link (Step 1).  The Base Station forwards the
 request to the Core-CP over the existing tunnel, and the Core-CP
 (specifically, the MME in 4G and the AMF in 5G) initiates an
-authentication protocol with the UE (Step 2). The 3GPP spec identifies
-a set of options, including the *Advanced Encryption Standard* (AES),
-but the exact protocol used is an implementation choice. Note that
-this authentication exchange is effectively "in the clear" since the
-Base Station / UE link is not yet secure.
+authentication protocol with the UE (Step 2). 3GPP identifies a set of
+options, including the *Advanced Encryption Standard* (AES), where the
+actual protocol used is an implementation choice. Note that this
+authentication exchange is in the clear since the Base Station to UE
+link is not yet secure.
 
 Once the UE and Core-CP are satisfied with each other's identity, the
-Core-CP retrieves the subscriber information from its database and
-informs the other components of the parameters they will need to
-service the UE (Step 3). This includes (a) instructing the Core-UP to
-initialize the user plane (e.g., assign an IP address to the UE and
+Core-CP informs the other components of the parameters they will need
+to service the UE (Step 3). This includes (a) instructing the Core-UP
+to initialize the user plane (e.g., assign an IP address to the UE and
 set the appropriate QCI parameter); (b) instructing the Base Station
 to establish an encrypted channel to the UE; and (c) giving the UE the
 symmetric key it will need to use the encrypted channel with the Base
@@ -487,10 +486,10 @@ end-to-end, each is actually implemented as a sequence of per-hop
 tunnels, as illustrated in :numref:`Figure %s <fig-per-hop>`.  (The
 Figure shows the SGW and PGW from the 4G Mobile Core to make the
 example more concrete.) This means each component on the end-to-end
-path terminates a downstream tunnel using one local identifier for
-each UE, and initiates an upstream tunnel using a second local
-identifier for each UE. In practice, these per-flow tunnels are
-usually bundled into an single inter-component tunnel, making it
+path terminates a downstream tunnel using one local identifier for a
+given UE, and initiates an upstream tunnel using a second local
+identifier for that UE. In practice, these per-flow tunnels are often
+bundled into an single inter-component tunnel, which makes it
 impossible to differentiate the level of service given to any
 particular end-to-end UE channel. This is a limitation of 4G that 5G
 has ambitions to correct.
