@@ -410,8 +410,8 @@ in NFV-oriented documents. 3GPP is silent on the specific terminology
 since it is considered an implementation choice rather than part of the
 specification.
 
-3.4 Security Architecture
--------------------------
+3.4 Security
+------------
 
 We now take a closer look at the security architecture of the cellular
 network, which also serves to fill in some details about how each
@@ -420,14 +420,14 @@ two trust assumptions.
 
 First, each Base Station trusts that it is connected to the Mobile
 Core by a secure private network, over which it establishes the
-tunnels introduced in :numref:`Figure %s <fig-tunnels>` over that
-network: a GTP/UDP/IP tunnel to the Core's User Plane (Core-UP) and a
-SCTP/IP tunnel to the Core's Control Plane (Core-CP). Second, each UE
-has an operator-provided SIM card, which uniquely identifies the
-subscriber (i.e., phone number) and establishes the radio parameters
-(e.g., frequency band) need to communicate with that operator's Base
-Stations. The SIM card also includes a secret key used to authenticate
-the UE.
+tunnels introduced in :numref:`Figure %s <fig-tunnels>`: a GTP/UDP/IP
+tunnel to the Core's User Plane (Core-UP) and a SCTP/IP tunnel to the
+Core's Control Plane (Core-CP). Second, each UE has an
+operator-provided SIM card, which uniquely identifies the subscriber
+(i.e., phone number) and establishes the radio parameters (e.g.,
+frequency band) need to communicate with that operator's Base
+Stations. The SIM card also includes a secret key that the UE uses to
+authenticate itself.
 
 .. _fig-secure:
 .. figure:: figures/Slide34.png 
