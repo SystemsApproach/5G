@@ -114,7 +114,7 @@ managed, multi-site deployment.
 
 .. note::
 
-    For more information about Aether, including the opportunity to join,
+    For more information about Aether, 
     visit the `Aether Web Site <https://www.opennetworking.org/aether/>`__.
 
 
