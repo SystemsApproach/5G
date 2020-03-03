@@ -4,6 +4,7 @@ _book/
 */.DS_Store
 *.sh
 private/
+MC-Sample/
 scripts/
 node_modules/
 cover.pdf

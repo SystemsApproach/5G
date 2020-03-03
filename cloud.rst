@@ -59,15 +59,73 @@ for anyone (not just today’s network operators or cloud providers) to
 deploy applications across multiple sites by acquiring the storage,
 compute, networking, and connectivity resources they need.
 
-7.2 Research Opportunities
+7.2 EdgeCloud-as-a-Service
 --------------------------
 
-In order for the scenario depicted in :numref:`Figure %s <fig-cloud>`
-to become a reality, a wealth of research problems need to be
-addressed, many of which are a consequence of the blurring line
-between access networks and the edge cloud. We refer to this as the
-*access-edge*, and we conclude by identifying some example
-challenges/opportunities.
+Of all the potential outcomes discussed in the previous section, one
+that is rapidly gaining traction is to run a 5G-enabled edge cloud as
+a centrally managed service. As illustrated in :numref:`Figure %s
+<fig-edgecloud>`, the idea is to deploy an edge cloud in enterprises,
+configured with the user plane components of the RAN and Mobile Core
+(along with any edge services the enterprise wants to run locally),
+and then manage that edge deployment from the central cloud. The
+central cloud would run a management portal for the edge cloud, along
+with the control plane of the Mobile Core. This is similar to the
+multi-cloud configuration discussed in Section 5.2, except with the
+added feature of being able to manage multiple edge deployments from
+one central location.
+
+.. _fig-edgecloud:
+.. figure:: figures/Slide36.png 
+    :width: 700px
+    :align: center
+
+    EdgeCloud-as-a-Service, with RAN and Mobile Core user plane
+    components running in the enterprise, and the control plane of the
+    Mobile Core (along with a management portal) running centrally
+    in the cloud.
+
+The value of such a deployment is to bring 5G wireless advantages into
+the enterprise, including support for predictable, low-latency
+communication required for realtime controlling of large numbers of
+mobile devices. Factory automation is one compelling use case for such
+an edge cloud, but interest in supporting IoT in general is giving
+ECaaS significant momentum.
+
+This momentum has, not surprisingly, led to recent commercial
+activity. But there is also an open source variant, called Aether, now
+available for early adopters to evaluate and experiment with. Aether
+is an ONF-operated ECaaS with 4G/5G support, built from the open
+source components described throughout this book. Aether works with
+both licensed and unlicensed frequency bands (i.e., CBRS), but it is
+the latter that makes it an easy system to opt into. :numref:`Figure
+%s <fig-aether>` depicts the early stages of Aether's centrally
+managed, multi-site deployment.
+
+.. _fig-aether:
+.. figure:: figures/Slide37.png 
+    :width: 700px
+    :align: center
+
+    Aether is an ONF-operated EdgeCloud-as-a-Service built from the
+    SD-RAN and disaggregted Mobile Core components described
+    throughout this book. Aether includes a centralized operations
+    portal running in the Google Cloud.
+
+.. note::
+
+    For more information about Aether, including the opportunity to join,
+    visit the `Aether Web Site <https://www.opennetworking.org/aether/>`__.
+
+
+7.3 Research Opportunities
+--------------------------
+
+In order for the scenarios described in this Chapter to become a
+reality, a wealth of research problems need to be addressed, many of
+which are a consequence of the blurring line between access networks
+and the edge cloud. We refer to this as the *access-edge*, and we
+conclude by identifying some example challenges/opportunities.
 
 - **Multi-Access:** The access-edge will need to support multiple
   access technologies (e.g., WiFi, 5G, fiber), and allow users to
