@@ -80,10 +80,10 @@ one central location.
     :width: 700px
     :align: center
 
-    EdgeCloud-as-a-Service, with RAN and Mobile Core user plane
-    components running in the enterprise, and the control plane of the
-    Mobile Core (along with a management portal) running centrally
-    in the cloud.
+    EdgeCloud-as-a-Service, a managed service, with RAN and Mobile
+    Core user plane components running in the enterprise, and the
+    control plane of the Mobile Core (along with a management portal)
+    running centrally in the public cloud.
 
 The value of such a deployment is to bring 5G wireless advantages into
 the enterprise, including support for predictable, low-latency
@@ -110,7 +110,7 @@ managed, multi-site deployment.
     Aether is an ONF-operated EdgeCloud-as-a-Service built from the
     SD-RAN and disaggregted Mobile Core components described
     throughout this book. Aether includes a centralized operations
-    portal running in the Google Cloud.
+    portal running in the Public Cloud.
 
 .. note::
 
