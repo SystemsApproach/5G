@@ -81,7 +81,7 @@ the SGW and PGW merged into a single S/PGW. One other detail that
 deserves closer attention is the RAN Control component included in the
 CU Control Plane.  This is the near real-time controller introduced in
 Section 4.3, which means a CORD POD includes two SDN Controllers: this
-one control the RAN and ONOS shown in :numref:`Figure %s <fig-cord>`
+one controls the RAN and ONOS shown in :numref:`Figure %s <fig-cord>`
 controls the fabric.  (We actually use a second instantiation of ONOS
 for the former, but that's an implementation detail.)
 

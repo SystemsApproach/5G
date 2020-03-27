@@ -137,15 +137,15 @@ Finally, we describe how the RAN is implemented according to SDN
 principles, resulting in an SD-RAN. The key architectural insight is
 shown in :numref:`Figure %s <fig-rrc-split>`, where the RRC from
 :numref:`Figure %s <fig-pipeline>` is partitioned into two
-sub-components: the one on
-the left provides a 3GPP-compliant way for the RAN to interface to the
-Mobile Core’s control plane, while the latter opens a new programmatic
-API for exerting software-based control over the pipeline that
-implements the RAN user plane. To be more specific, the left
-sub-component simply forwards control packets between the Mobile Core
-and the PDCP, providing a path over which the Mobile Core can
-communicate with the UE for control purposes, whereas the right
-sub-component implements the core of the RCC’s control functionality.
+sub-components: the one on the left provides a 3GPP-compliant way for
+the RAN to interface to the Mobile Core’s control plane, while the one
+on the right opens a new programmatic API for exerting software-based
+control over the pipeline that implements the RAN user plane. To be
+more specific, the left sub-component simply forwards control packets
+between the Mobile Core and the PDCP, providing a path over which the
+Mobile Core can communicate with the UE for control purposes, whereas
+the right sub-component implements the core of the RCC’s control
+functionality.
 
 .. _fig-rrc-split:
 .. figure:: figures/Slide18.png 

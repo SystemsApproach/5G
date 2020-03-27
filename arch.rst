@@ -90,17 +90,17 @@ the RAN and the Mobile Core. The following two sections describe each,
 in turn.
 
 Before getting to those details, :numref:`Figure %s <fig-cups>`
-redraws components from :numref:`Figure %s <fig-cellular>`
-to highlight two important
-distinctions. The first is that the eNB (which we will refer to as the
-Base Station from here on) has an analog component (depicted by an
-antenna) and a digital component (depicted by a processor). The second
-is that the Mobile Core is partitioned into a *Control Plane* and *User
-Plane*, which is similar to the control/data plane split that someone
-familiar with the Internet would recognize. (3GPP also recently
-introduced a corresponding acronym—\ *CUPS, Control and User Plane
-Separation*—to denote this idea). The importance of these two
-distinctions will become clear in the following discussion.
+redraws components from :numref:`Figure %s <fig-cellular>` to
+highlight two important distinctions. The first is that the eNB (which
+we will refer to as the Base Station from here on) has an analog
+component (depicted by an antenna) and a digital component (depicted
+by a processor pair). The second is that the Mobile Core is
+partitioned into a *Control Plane* and *User Plane*, which is similar
+to the control/data plane split that someone familiar with the
+Internet would recognize. (3GPP also recently introduced a
+corresponding acronym—\ *CUPS, Control and User Plane Separation*—to
+denote this idea.) The importance of these two distinctions will
+become clear in the following discussion.
 
 .. _fig-cups:
 .. figure:: figures/Slide02.png 
