@@ -161,8 +161,9 @@ the RRC, plus the PDCP, form the CU.
 
 Completing the picture, :numref:`Figure %s <fig-ran-controller>` shows
 the Near-RT RAN Controller implemented as a traditional SDN Controller
-hosting a set of SDN control apps. The Near Real-Time Controller
-maintains a RAN Network Information Base (R-NIB) that includes
+hosting a set of SDN control apps. The Near Real-Time Controller,
+which is sometimes referred to as a *RAN Intelligent Controller (RIC)*,
+maintains a *RAN Network Information Base (R-NIB)* that includes
 time-averaged CQI values and other per-session state (e.g., GTP tunnel
 IDs, QCI values for the type of traffic), while the MAC (as part of the
 DU) maintains the instantaneous CQI values required by the real-time

@@ -151,7 +151,7 @@ right, but for our purposes, it is enough to understand the role they
 play in supporting a 5G-based profile of CORD.
 
 -  **Stratum:** A thin operating system that runs locally on each
-   white-box switch. It’s purpose is to provide a hardware-independent
+   white-box switch. Its purpose is to provide a hardware-independent
    interface for managing and programming the switches in CORD. This
    includes using *P4* to define the forwarding behavior of the switch’s
    forwarding pipeline (think of this program as a contract between the
@@ -221,3 +221,20 @@ premises (denoted “On Site” in the figure).
 
     Trellis control application managing a (possibly
     distributed) leaf-spine fabric.
+
+The software stack we've just described is substantial, and has the
+potential to disrupt and transform the Internet in ways that can only
+be matched by 5G. For more information about SDN, we recommend a
+companion book:
+
+.. _reading_sdn:
+.. admonition:: Further Reading
+
+   `Software-Defined Networks: A Systems Approach
+   <https://sdn.systemsapproach.org/>`__. March 2020.
+
+Of particular note, the RAN Controller shown in :numref:`Figure %s
+<fig-cord>`, which is sometimes referred to as a *RAN Intellegent
+Controller (RIC)*, is implemented as a set of extensions to ONOS.
+This puts the ONOS-based RIC at the very center of the design, where
+the SDN and 5G worlds intersect.
