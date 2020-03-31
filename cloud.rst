@@ -112,10 +112,11 @@ managed, multi-site deployment.
     throughout this book. Aether includes a centralized operations
     portal running in the Public Cloud.
 
-.. note::
+.. _reading_aether:
+.. admonition:: Further Reading
 
-    For more information about Aether, 
-    visit the `Aether Web Site <https://www.opennetworking.org/aether/>`__.
+    For more information about Aether, visit the `Aether Web Site
+    <https://www.opennetworking.org/aether/>`__. ONF, March 2020.
 
 
 7.3 Research Opportunities
@@ -198,8 +199,10 @@ conclude by identifying some example challenges/opportunities.
   than managing a single datacenter. Research is need to scale both
   the edge platform and widely deployed edge services.
   
-.. note::
+.. _reading_democratizing:
+.. admonition:: Further Reading
 
     To better understand the research opportunity at the access-edge,
-    see `Democratizing the Network Edge, ACM SIGCOMM CCR, April 2019
+    see `Democratizing the Network Edge
     <https://ccronline.sigcomm.org/wp-content/uploads/2019/05/acmdl19-289.pdf>`__.
+    ACM SIGCOMM CCR, April 2019.

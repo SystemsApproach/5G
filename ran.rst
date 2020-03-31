@@ -240,9 +240,12 @@ for execution. Realizing this value in the RAN is still a
 work-in-progress, but evidence using the same approach to optimize
 wide-are networks is compelling.
 
-.. note::
+  
+.. _reading_b4:
+.. admonition:: Further Reading
 
    For an example of how SDN principles have been successfully applied
    to a production network, we recommend `B4: Experience with a
-   Globally-Deployed Software Defined WAN, SICOMM 2013
-   <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.
+   Globally-Deployed Software Defined WAN
+   <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.  ACM
+   SICOMM, August 2013.

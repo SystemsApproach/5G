@@ -24,12 +24,12 @@ operating CORD. Also keep in mind that even though CORD includes
 “Central Office” in its name, a CORD POD is a general design, and not
 strictly limited to being deployed in a conventional Central Office.
 
-.. note::
+.. _reading_guide:
+.. admonition:: Further Reading
    
    To learn how to install, operate, and contribute to the CORD open
    source software platform, see the `CORD Guide
-   <https://guide.opencord.org>`__, where you will find information
-   about both the fiber (SEBA) and cellular (COMAC) profiles.
+   <https://guide.opencord.org>`__. ONF, March 2020.
 
 Before getting into the specifics, it is important to understand that
 CORD is a work-in-progress, with a sizable open source community
@@ -230,7 +230,8 @@ companion book:
 .. _reading_sdn:
 .. admonition:: Further Reading
 
-   `Software-Defined Networks: A Systems Approach
+   For more information about SDN, we recommend a companion
+   book: `Software-Defined Networks: A Systems Approach
    <https://sdn.systemsapproach.org/>`__. March 2020.
 
 Of particular note, the RAN Controller shown in :numref:`Figure %s

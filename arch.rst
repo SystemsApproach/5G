@@ -18,11 +18,15 @@ in 5G). We address situations like this by using generic terminology
 (e.g., base station), and referencing the 3GPP-specific counterpart only
 when the distinction is helpful.
 
-.. note::
+.. _reading_terminology:
+.. admonition:: Further Reading
+		
    This example is only the tip of the terminology iceberg. For a
-   slightly broader perspective on the complexity of terminology in 5G,
-   see Marcin Dryjanski’s `blog
-   post <https://www.grandmetric.com/blog/2018/07/14/lte-and-5g-differences-system-complexity/>`__.
+   slightly broader perspective on the complexity of terminology in
+   5G, see Marcin Dryjanski’s blog post: `LTE and 5G Differences:
+   System Complexity
+   <https://www.grandmetric.com/blog/2018/07/14/lte-and-5g-differences-system-complexity/>`__.
+   July 2018.
 
 3.1 Main Components
 -------------------

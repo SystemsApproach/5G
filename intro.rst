@@ -43,6 +43,14 @@ These targets will certainly not be met overnight, but that's in keeping
 with each generation of the mobile network being a decade-long
 endeavor.
 
+.. _reading_vision:
+.. admonition:: Further Reading
+
+   For an example of the grand vision for 5G from one of the industry
+   stakeholders, see `Making 5G NR a Reality
+   <https://www.qualcomm.com/media/documents/files/whitepaper-making-5g-nr-a-reality.pdf>`__.
+   Qualcomm Whitepaper, December 2016.
+
 The 5G mobile network, because it is on an
 evolutionary path and not a point solution, includes standardized
 specifications, a range of implementation choices, and a long list of
@@ -197,7 +205,8 @@ Central Offices). So while we shouldn’t limit ourselves to the Central
 Office as the only answer to the question of where the edge cloud is
 located, it is becoming a viable option.
 
-.. note::
+.. _reading_cord:
+.. admonition:: Further Reading
 
     To learn about the technical origins of CORD, which was first 
     applied to fiber-based access networks (PON), see `Central Office 
@@ -236,10 +245,15 @@ appreciation for how cloud software is developed, tested, deployed and
 operated, including practices like *DevOps* and *Continuous Integration
 / Continuous Deployment (CI/CD)*.
 
-.. note::
+.. _reading_devops:
+.. admonition:: Further Reading
+
+   If you are unfamiliar with SDN, we recommend a companion book:
+   `Software-Defined Networks: A Systems Approach
+   <https://sdn.systemsapproach.org/>`__. March 2020.
 
    If you are unfamiliar with DevOps—or more generally, with the
-   operational issues cloud providers face—we recommend you read `Site
+   operational issues cloud providers face—we recommend `Site
    Reliability Engineering: How Google Runs Production Systems
    <https://landing.google.com/sre/books/>`__.
 
