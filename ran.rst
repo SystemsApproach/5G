@@ -130,6 +130,15 @@ backhaul, and the fronthaul is constrained by the
 predictable/low-latency requirements of the MAC stage’s real-time
 scheduler.
 
+.. _reading_backhaul:
+.. admonition:: Further Reading
+
+    For more insight into design considerations for
+    interconnecting the distributed components of a Split RAN, see
+    `RAN Evolution Project: Backhaul and Fronthaul Evolution
+    <https://www.ngmn.org/wp-content/uploads/NGMN_RANEV_D4_BH_FH_Evolution_V1.01.pdf>`__.
+    NGMN Alliance Report, March 2015.
+
 4.3 Software-Defined RAN
 ------------------------
 
@@ -239,7 +248,6 @@ then push the respective control parametes back to the base stations
 for execution. Realizing this value in the RAN is still a
 work-in-progress, but evidence using the same approach to optimize
 wide-are networks is compelling.
-
   
 .. _reading_b4:
 .. admonition:: Further Reading
