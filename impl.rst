@@ -230,8 +230,8 @@ companion book:
 .. _reading_sdn:
 .. admonition:: Further Reading
 
-   For more information about SDN, we recommend a companion
-   book: `Software-Defined Networks: A Systems Approach
+   For more information about the SDN software stack, we recommend a
+   companion book: `Software-Defined Networks: A Systems Approach
    <https://sdn.systemsapproach.org/>`__. March 2020.
 
 Of particular note, the RAN Controller shown in :numref:`Figure %s
