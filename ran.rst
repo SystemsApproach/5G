@@ -149,12 +149,18 @@ shown in :numref:`Figure %s <fig-rrc-split>`, where the RRC from
 sub-components: the one on the left provides a 3GPP-compliant way for
 the RAN to interface to the Mobile Core’s control plane, while the one
 on the right opens a new programmatic API for exerting software-based
-control over the pipeline that implements the RAN user plane. To be
-more specific, the left sub-component simply forwards control packets
-between the Mobile Core and the PDCP, providing a path over which the
-Mobile Core can communicate with the UE for control purposes, whereas
-the right sub-component implements the core of the RCC’s control
-functionality.
+control over the pipeline that implements the RAN user plane.
+
+To be more specific, the left sub-component simply forwards control
+packets between the Mobile Core and the PDCP, providing a path over
+which the Mobile Core can communicate with the UE for control
+purposes, whereas the right sub-component implements the core of the
+RCC’s control functionality. This component is commonly referred to as
+as the *RAN Intelligent Controller (RIC)* in O-RAN architecture
+documents, so we adopt this terminology.  The "Near-Real Time"
+qualifier indicates the RIC is part of ~10ms control loop implemented
+in the CU, as opposed to the ~1ms control loop required by the MAC
+scheduler running in the DU.
 
 .. _fig-rrc-split:
 .. figure:: figures/Slide18.png 
@@ -169,13 +175,12 @@ Although not shown in :numref:`Figure %s <fig-rrc-split>`, keep in mind
 the RRC, plus the PDCP, form the CU.
 
 Completing the picture, :numref:`Figure %s <fig-ran-controller>` shows
-the Near-RT RAN Controller implemented as a traditional SDN Controller
-hosting a set of SDN control apps. The Near Real-Time Controller,
-which is sometimes referred to as a *RAN Intelligent Controller (RIC)*,
-maintains a *RAN Network Information Base (R-NIB)* that includes
-time-averaged CQI values and other per-session state (e.g., GTP tunnel
-IDs, QCI values for the type of traffic), while the MAC (as part of the
-DU) maintains the instantaneous CQI values required by the real-time
+the Near-RT RIC implemented as a traditional SDN Controller hosting a
+set of SDN control apps. The RIC maintains a *RAN Network Information
+Base (R-NIB)* that includes time-averaged CQI values and other
+per-session state (e.g., GTP tunnel IDs, QCI values for the type of
+traffic), while the MAC (as part of the DU) maintains the
+instantaneous CQI values required by the real-time
 scheduler. Specifically, the R-NIB includes the following state:
 
 -  NODES: Base Stations and Mobile Devices
