@@ -158,7 +158,7 @@ purposes, whereas the right sub-component implements the core of the
 RCC’s control functionality. This component is commonly referred to as
 as the *RAN Intelligent Controller (RIC)* in O-RAN architecture
 documents, so we adopt this terminology.  The "Near-Real Time"
-qualifier indicates the RIC is part of ~10ms control loop implemented
+qualifier indicates the RIC is part of 10-100ms control loop implemented
 in the CU, as opposed to the ~1ms control loop required by the MAC
 scheduler running in the DU.
 
@@ -262,3 +262,57 @@ wide-are networks is compelling.
    Globally-Deployed Software Defined WAN
    <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.  ACM
    SICOMM, August 2013.
+
+We conclude this introduction to SD-RAN with a reminder that all the
+disaggregation and softwarization discussed in this chapter is being
+pursued in the context of the 3GPP standard. SD-RAN is an
+implementation choice, and the result is intended to be
+3GPP-compliant. This means that 3GPP-defined interfaces still apply to
+inter-module communication, and while we do not focus on the details
+of those interfaces in this book, it is good to be aware that those
+interfaces exist. :numref:`Figure %s <fig-3gpp>` shows those
+interfaces overlayed on the disaggregated components introduced
+throughout this chapter.
+
+.. _fig-3gpp:
+.. figure:: figures/Slide38.png 
+    :width: 450px
+    :align: center
+	    
+    Split-RAN plus SD-RAN annotated with 3GPP-defined interfaces.
+
+The interface names are cryptic, but easily summarized. The mobile
+operator's management plane—typically called the *OSS (Operations
+Support System)* in the Telco world—uses the **A1** interface to
+configure the RAN; the Near-RT RIC uses the **E2** interface to
+control the underlying RAN elements (both legacy eNodeBs and the set
+of Split-RAN elements); the CU's Control Plane (CU-C) uses the **E1**
+interface to control the CU's User Plane (CU-U); the CU-C/CU-U
+combination uses the **F1-C/F1-U** interface-pair to communicate with
+the DU; and the **Fronthaul** described in Section 4.2 connects the DU
+to the RU.
+
+Note that we have not discussed the Telco OSS up to this point, but it
+always assumed to be at the top of any Telco software stack. Also note
+that there is no prescribed interface between the SDN Control
+Applications and the RIC. This is because separating the RIC platform
+from the RIC control apps is an implementation choice; O-RAN
+architecture documents treat the applications as part of the
+RIC. Calling them out separately foreshadows the implementation
+described in Chapter 6.
+
+Knowing these interface names adds nothing to our conceptual
+understanding of the RAN, except perhaps to re-enforce how challenging
+it is to introduce a transformative technology like Software-Defined
+Networking into an operational environment that is striving to acheive
+full backward compatibility and universal interoperability. It is
+instructive to contrast this approach with the Internet's philosophy
+of trying to minimize the universally agreed upon definitions.
+
+Finally, we recommend that you match-up the elements in
+:numref:`Figure %s <fig-3gpp>` with those described earlier in this
+chapter. But as you do so, you won't find an explicit Central Unit
+Control Plane (CU-C) and Central Unit User Plane (CU-U) in the earlier
+diagrams. They are there, but by different names (e.g., the PDCP
+module corresponds to the CU-U). There is more to say on this topic,
+which we take up in the next chapter.
