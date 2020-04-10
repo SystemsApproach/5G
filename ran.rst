@@ -269,10 +269,9 @@ pursued in the context of the 3GPP standard. SD-RAN is an
 implementation choice, and the result is intended to be
 3GPP-compliant. This means that 3GPP-defined interfaces still apply to
 inter-module communication, and while we do not focus on the details
-of those interfaces in this book, it is good to be aware that those
-interfaces exist. :numref:`Figure %s <fig-3gpp>` shows those
-interfaces overlayed on the disaggregated components introduced
-throughout this chapter.
+of those interfaces in this book, it is good to be aware that they
+exist. :numref:`Figure %s <fig-3gpp>` shows those interfaces overlayed
+on the disaggregated components introduced throughout this chapter.
 
 .. _fig-3gpp:
 .. figure:: figures/Slide38.png 

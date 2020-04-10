@@ -39,7 +39,7 @@ def get_version():
 # -- Project information -----------------------------------------------------
 
 project = u'5G Mobile Networks: A Systems Approach'
-copyright = u'2019'
+copyright = u'2019, 2020'
 author = u'Larry Peterson and Oguz Sunay'
 
 # The short X.Y version
