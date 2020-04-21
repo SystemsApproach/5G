@@ -74,11 +74,14 @@ scheduling interval can range from a few bytes to an entire IP packet.
 
 The next step is understanding how the functionality outlined above is
 partitioned between physical elements, and hence, “split” across
-centralized and distributed locations. Although the 3GPP standard allows
-for multiple split-points, the partition shown in :numref:`Figure %s <fig-split-ran>`
-is the one being actively pursued by the
-operator-led O-RAN (Open RAN) Alliance. It is the split we adopt
-throughout the rest of this book.
+centralized and distributed locations. The dominant option has
+historically been "no split," with the entire pipeline shown in
+:numref:`Figure %s <fig-pipeline>` running in the base station.  Going
+forward, the 3GPP standard has been extended to allow for multiple
+split-points, with the partition shown in :numref:`Figure %s
+<fig-split-ran>` being actively pursued by the operator-led O-RAN
+(Open RAN) Alliance. It is the split we adopt throughout the rest of
+this book.
 
 .. _fig-split-ran:
 .. figure:: figures/Slide15.png 
