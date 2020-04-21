@@ -311,10 +311,10 @@ full backward compatibility and universal interoperability. It is
 instructive to contrast this approach with the Internet's philosophy
 of trying to minimize the universally agreed upon definitions.
 
-Finally, we recommend that you match-up the elements in
-:numref:`Figure %s <fig-3gpp>` with those described earlier in this
-chapter. But as you do so, you won't find an explicit Central Unit
-Control Plane (CU-C) and Central Unit User Plane (CU-U) in the earlier
-diagrams. They are there, but by different names (e.g., the PDCP
-module corresponds to the CU-U). There is more to say on this topic,
-which we take up in the next chapter.
+Finally, to help solidify your understanding, we recommend that you
+match-up the elements in :numref:`Figure %s <fig-3gpp>` with those
+described earlier in this chapter. As you do so, keep in mind that you
+won't find an explicit Central Unit Control Plane (CU-C) and Central
+Unit User Plane (CU-U) in the earlier diagrams. They are there, but by
+different names (e.g., the PDCP module corresponds to the CU-U). There
+is more to say on this topic, which we take up in the next chapter.

@@ -39,14 +39,15 @@ the first two co-located in a Central Office and the latter two
 co-located in a cell tower. As discussed earlier, other configurations
 are also possible.
 
-Second, the figure shows the Mobile Core’s two user plane elements (PGW,
-SGW) and the Central Unit’s single user plane element (PDCP) further
-disaggregated into control/user plane pairs, denoted PGW-C / PGW-U,
-SGW-C / SGW-U, and PDCP-C / PDCP-U, respectively. Exactly how this
-decoupling is realized is a design choice (i.e., not specified by 3GPP),
-but the idea is to reduce User Plane component to the minimal
-Receive-Packet / Process-Packet / Send-Packet processing core, and
-elevate all control-related aspects into the Control Plane component.
+Second, the figure shows the Mobile Core’s two user plane elements
+(PGW, SGW) and the Central Unit’s single user plane element (PDCP)
+further disaggregated into control/user plane pairs, denoted PGW-C /
+PGW-U, SGW-C / SGW-U, and PDCP-C / PDCP-U, respectively. Exactly how
+this decoupling is realized is an implementation choice (i.e., not
+specified by 3GPP), but the idea is to reduce the User Plane component
+to the minimal Receive-Packet / Process-Packet / Send-Packet
+processing core, and elevate all control-related aspects into the
+Control Plane component.
 
 Third, the PHY (Physical) element of the RAN pipeline is split between
 the DU and RU partition. Although beyond the scope of this book, the
@@ -84,6 +85,14 @@ pipelines (e.g., P4), and a protocol-independent switching
 architecture (e.g., Tofino). For now, the important takeaway is that
 the RAN and Mobile Core user plane can be mapped directly onto an
 SDN-enabled data plane.
+
+.. _reading_p4:
+.. admonition:: Further Reading
+
+   For more information about P4 and programmable switching chips, we
+   recommend `White-Box Switches
+   <https://sdn.systemsapproach.org/switch.html>`__, a chapter in
+   *Software-Defined Networking: A Systems Approach*, March 2020.
 
 Pushing RAN and Mobile Core forwarding functionality into the switching
 hardware results in overlapping terminology that can be confusing.
@@ -170,24 +179,33 @@ locations, which is harder to do if that information is distributed over
 multiple sites. (Analytics performed on this data also benefits from
 having abundant compute resources available.)
 
-But there’s another reason worth calling out: It lowers the barrier for
+Another reason worth calling out is that it lowers the barrier for
 anyone (not just the companies that own and operate the RAN
 infrastructure) to offer mobile services to customers. These entities
-are called *MVNOs (Mobile Virtual Network Operators)* and one clean way
-to engineer an MVNO is to run your own Mobile Core on a cloud of your
-choosing.
+are called *MVNOs (Mobile Virtual Network Operators)* and one clean
+way to engineer an MVNO is to run your own Mobile Core on a cloud of
+your choosing.
+
+But the biggest motivation for the configuration shown in
+:numref:`Figure %s <fig-multicloud>` is that keeping the user plane
+elements of the mobile core at the edge makes it possible to "break
+out" local traffic without having to traverse a "turnpin" route that
+goes through a central site. This has the potential to dramatically
+reduce latency for any edge-hosted services. We return to this topic
+in Chapter 7.
 
 5.3 Network Slicing
 -------------------
 
 One of the most compelling value propositions of 5G is the ability to
-differentiate the level of service offered to different applications and
-customers. Differentiation, of course, is key to being able to charge
-some customers more than others, but the monetization case aside, it is
-also necessary if you are going to support such widely varying
-applications as streaming video (which requires high bandwidth but can
-tolerate larger latencies) and Internet-of-Things (which has minimal
-bandwidth needs but requires extremely low and predictable latencies).
+differentiate the level of service offered to different applications
+and customers. Differentiation, of course, is key to being able to
+charge some customers more than others, but the monetization case
+aside, it is also necessary if you are going to support such widely
+varying applications as streaming video (which requires high bandwidth
+but can tolerate larger latencies) and Internet-of-Things (which has
+minimal bandwidth needs but requires extremely low and predictable
+latencies, connecting a *massively scalable* number of IoT devices).
 
 The mechanism that supports this sort of differentiation is called
 network slicing, and it fundamentally comes down to scheduling, both in
@@ -323,4 +341,18 @@ The one remaining mechanism we need is a demultiplexing function that
 maps a given packet flow (e.g., between UE and some Internet
 application) onto the appropriate instance of the service mesh. This is
 the job of the NSSF described in an Chapter 3: it is responsible
-for selecting the mesh instance a given slice’s traffic is to traverse.
+for selecting the mesh instance a given slice’s traffic is to
+traverse.
+
+We conclude this discussion of slicing with an observation. While
+differentiating slices based on the resources allocated to each is a
+familiar network feature, reminiscent of QoS, slices can also
+implement different functionality, specialized for different use
+cases. For example, the AMF/SMF (5G) or MME (4G) functionality of the
+Mobile Core can be customized for different usage patterns, where
+supporting a massively scalable number of IoT devices that
+intermittently transmit small amounts of data is a great example. Not
+only does this break the cellular network out of a one-size-fits-all
+situation, it opens the door for innovation. There won't be just one
+Mobile Core. There will potentially be many (and they will be
+implemented in the cloud).
