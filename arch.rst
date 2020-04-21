@@ -534,7 +534,7 @@ the process of incrementally evolving its 4G code base into its
 .. _reading_migration:
 .. admonition:: Further Reading
 
-    For more insight into 4G to 5G migration stratgies, see
+    For more insight into 4G to 5G migration strategies, see
     `Road to 5G: Introduction and Migration
     <https://www.gsma.com/futurenetworks/wp-content/uploads/2018/04/Road-to-5G-Introduction-and-Migration_FINAL.pdf>`__.
     GSMA Report, April 2018.

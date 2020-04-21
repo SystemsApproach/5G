@@ -263,8 +263,9 @@ about *Network Function Virtualization (NFV)*, which involves moving
 functionality that was once embedded in hardware appliances into VMs
 running on commodity servers. In our experience, NFV is a stepping
 stone towards the fully disaggregated and cloud native solution we
-describe, and so we do not dwell on it. In effect, you can think of
-the NFV initiative as largely consistent with the approach taken in
-this book, but making some different engineering choices when we get
-down into the specifics of the implementation.
+describe in this book, and so we do not dwell on it. In effect, you
+can think of the NFV initiative as largely consistent with the
+approach taken in this book, but making some different engineering
+choices when we get down into the specifics of the implementation
+(e.g., NFV is generally VM-based rather than microservice-based).
 
