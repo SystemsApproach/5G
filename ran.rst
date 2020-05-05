@@ -159,7 +159,7 @@ packets between the Mobile Core and the PDCP, providing a path over
 which the Mobile Core can communicate with the UE for control
 purposes, whereas the right sub-component implements the core of the
 RCC’s control functionality. This component is commonly referred to as
-as the *RAN Intelligent Controller (RIC)* in O-RAN architecture
+the *RAN Intelligent Controller (RIC)* in O-RAN architecture
 documents, so we adopt this terminology.  The "Near-Real Time"
 qualifier indicates the RIC is part of 10-100ms control loop implemented
 in the CU, as opposed to the ~1ms control loop required by the MAC
@@ -255,7 +255,7 @@ available input data centrally, make a globally optimal decision, and
 then push the respective control parametes back to the base stations
 for execution. Realizing this value in the RAN is still a
 work-in-progress, but evidence using the same approach to optimize
-wide-are networks is compelling.
+wide-area networks is compelling.
   
 .. _reading_b4:
 .. admonition:: Further Reading

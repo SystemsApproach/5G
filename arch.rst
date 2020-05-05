@@ -475,7 +475,7 @@ established between the UE and Core-UP, each with a potentially
 different QCI value. This might be done on an
 application-by-application basis, for example, under the control of
 the Mobile Core doing *Deep Packet Inspection* (DPI) on the traffic,
-looking for flows that that require special treatment.
+looking for flows that require special treatment.
 
 .. _fig-per-hop:
 .. figure:: figures/Slide35.png 
