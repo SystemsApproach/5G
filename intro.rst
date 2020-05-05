@@ -67,6 +67,23 @@ its elemental components is also the best way to explain how 5G works.
 It also helps to illustrate how 5G might evolve in the future to provide
 even more value.
 
+.. sidebar:: Evolutionary Path
+
+	That 5G is on an evolutionary path is the central theme of
+	this book.  We call attention to its importance here, and
+	revisit the topic with sidebars like this one throughout the
+	book.
+
+	At the same time, we are writing this book with *system
+	generalists* in mind. Our goal is to help bring a community
+	that understands a broad range of distributed systems (but
+	knows little or nothing about the cellular network) up to
+	speed so they can play a role in its evolution. This is a
+	community that instinctively understands both feature velocity
+	and best practices in complex system design, and so has an
+	important role to play in bringing all of 5G's potential to
+	fruition.
+
 What this all means is that there is no single, comprehensive definition
 of 5G, any more than there is for the Internet. It is a complex and
 evolving system, constrained by a set of standards that purposely give
