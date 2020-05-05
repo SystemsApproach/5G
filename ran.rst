@@ -255,7 +255,7 @@ available input data centrally, make a globally optimal decision, and
 then push the respective control parametes back to the base stations
 for execution. Realizing this value in the RAN is still a
 work-in-progress, but evidence using the same approach to optimize
-wide-are networks is compelling.
+wide-area networks is compelling.
   
 .. _reading_b4:
 .. admonition:: Further Reading
