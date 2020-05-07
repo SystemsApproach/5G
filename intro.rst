@@ -74,15 +74,14 @@ even more value.
 	revisit the topic with sidebars like this one throughout the
 	book.
 
-	At the same time, we are writing this book with *system
-	generalists* in mind. Our goal is to help bring a community
-	that understands a broad range of distributed systems (but
-	knows little or nothing about the cellular network) up to
-	speed so they can play a role in its evolution. This is a
-	community that instinctively understands both feature velocity
-	and best practices in complex system design, and so has an
-	important role to play in bringing all of 5G's potential to
-	fruition.
+	We are writing this book with *system generalists* in mind,
+	with the goal of helping bring a community that understands
+	a broad range of systems issues (but knows little or nothing
+	about the cellular network) up to speed so they can play a
+	role in its evolution. This is a community that understands
+	both feature velocity and best practices in complex system
+	design, and so has an important role to play in bringing all
+	of 5G's potential to fruition.
 
 What this all means is that there is no single, comprehensive definition
 of 5G, any more than there is for the Internet. It is a complex and
