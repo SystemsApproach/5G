@@ -79,11 +79,11 @@ earlier chapters. They include the Control and User planes of the CU
 and Mobile Core, respectively, where to simplify the diagram, we show
 the SGW and PGW merged into a single S/PGW. One other detail that
 deserves closer attention is the RAN Control component included in the
-CU Control Plane.  This is the near real-time controller introduced in
-Section 4.3, which means a CORD POD includes two SDN Controllers: this
-one controls the RAN and ONOS shown in :numref:`Figure %s <fig-cord>`
-controls the fabric.  (We actually use a second instantiation of ONOS
-for the former, but that's an implementation detail.)
+CU Control Plane.  This is the Near-RT RIC introduced in Section 4.3,
+which means a CORD POD includes two SDN Controllers: the RIC controls
+the RAN and ONOS shown in :numref:`Figure %s <fig-cord>` controls the
+fabric.  (The RIC running in CORD actually corresponds to a second,
+customized version of ONOS, but that's an implementation detail.)
 
 One aspect of :numref:`Figure %s <fig-cord>` that requires further
 elaboration is how each of the RAN and Mobile Core components are

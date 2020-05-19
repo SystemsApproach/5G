@@ -507,9 +507,9 @@ transitioning from 4G to 5G (an issue the IP-world has been grappling
 with for 20 years). 3GPP officially spells out multiple deployment
 options, which can be summarized as follows:
 
--  Stand-Alone 4G / Stand-Alone 5G
--  Non-Stand-Alone (4G+5G RAN) over 4G’s EPC
--  Non-Stand-Alone (4G+5G RAN) over 5G’s NG-Core
+-  Standalone 4G / Stand-Alone 5G
+-  Non-Standalone (4G+5G RAN) over 4G’s EPC
+-  Non-Standalone (4G+5G RAN) over 5G’s NG-Core
 
 Focusing on the second pair, which imply incremental phasing, we see two
 general strategies. The first is to connect new 5G base stations to
@@ -519,6 +519,26 @@ The second is to implement a backward-compatible NG-Core that can
 support both 4G and 5G base stations, where the new NG-Core could be
 implemented from scratch, but would likely start with the existing EPC
 code base.
+
+Of these options, the second is the most common. Generally referred to
+by its NSA acroynm, it involves 5G base stations being deployed
+alongside the existing 4G base stations in a given geography to
+provide a data-rate and capacity boost. In NSA, control plane traffic
+between the user equipment and the 4G Mobile Core utilizes (i.e., is
+forwarded through) 4G base stations, and the 5G base stations
+are used only to carry user traffic. Eventually, it is expected that
+operators complete their migration to 5G by deploying NG Core and
+connecting their 5G base stations to it for Standalone (SA)
+operation. NSA and SA operations are illustrated in :numref:`Figure %s
+<fig-nsa>`.
+
+.. _fig-nsa:
+.. figure:: figures/Slide39.png 
+    :width: 600px
+    :align: center
+	    
+    NSA and SA options for 5G deployment.
+
 
 One reason we call attention to the phasing issue is that we face a
 similar challenge in the chapters that follow. The closer the following
