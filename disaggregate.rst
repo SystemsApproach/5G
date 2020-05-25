@@ -183,7 +183,7 @@ Another reason worth calling out is that it lowers the barrier for
 anyone (not just the companies that own and operate the RAN
 infrastructure) to offer mobile services to customers. These entities
 are called *MVNOs (Mobile Virtual Network Operators)* and one clean
-way to engineer an MVNO is to run your own Mobile Core on a cloud of
+way to engineer an MVNO is to run your own Mobile Core in a cloud of
 your choosing.
 
 But the biggest motivation for the configuration shown in
@@ -223,6 +223,10 @@ corresponds to Massive IoT, and so on. It is also possible to extend
 this standard set with additional slice behaviors, as well as define
 multiple slices for each SST (e.g., to further differentiate subscribers
 based on priority).
+
+Of course, defining a desired set of slices and implementing a slicing
+mechanism are two entirely different things. The following sketches
+how slices can be implemented.
 
 RAN Slicing
 ~~~~~~~~~~~

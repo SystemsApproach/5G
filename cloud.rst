@@ -100,7 +100,7 @@ source components described throughout this book. Aether works with
 both licensed and unlicensed frequency bands (i.e., CBRS), but it is
 the latter that makes it an easy system to opt into. :numref:`Figure
 %s <fig-aether>` depicts the early stages of Aether's centrally
-managed, multi-site deployment.
+managed, multi-site deployment. 
 
 .. _fig-aether:
 .. figure:: figures/Slide37.png 
@@ -111,6 +111,11 @@ managed, multi-site deployment.
     SD-RAN and disaggregted Mobile Core components described
     throughout this book. Aether includes a centralized operations
     portal running in the Public Cloud.
+
+Note that each edge site in :numref:`Figure %s <fig-aether>`
+corresponds to a CORD POD described in Chapter 6, re-configure to
+off-load the O&M Interface and the Control elements of the Mobile Core
+to the central cloud.
 
 .. _reading_aether:
 .. admonition:: Further Reading

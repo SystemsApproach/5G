@@ -47,7 +47,7 @@ endeavor.
 .. admonition:: Further Reading
 
    For an example of the grand vision for 5G from one of the industry
-   stakeholders, see `Making 5G NR a Reality
+   leaders, see `Making 5G NR a Reality
    <https://www.qualcomm.com/media/documents/files/whitepaper-making-5g-nr-a-reality.pdf>`__.
    Qualcomm Whitepaper, December 2016.
 
@@ -71,17 +71,16 @@ even more value.
 
 	That 5G is on an evolutionary path is the central theme of
 	this book.  We call attention to its importance here, and
-	revisit the topic with sidebars like this one throughout the
-	book.
+	revisit the topic throughout the book.
 
 	We are writing this book with *system generalists* in mind,
-	with the goal of helping bring a community that understands
-	a broad range of systems issues (but knows little or nothing
+	with the goal of helping bring a community that understands a
+	broad range of systems issues (but knows little or nothing
 	about the cellular network) up to speed so they can play a
 	role in its evolution. This is a community that understands
-	both feature velocity and best practices in complex system
-	design, and so has an important role to play in bringing all
-	of 5G's potential to fruition.
+	both feature velocity and best practices in building robust
+	scalable systems, and so has an important role to play in
+	bringing all of 5G's potential to fruition.
 
 What this all means is that there is no single, comprehensive definition
 of 5G, any more than there is for the Internet. It is a complex and
@@ -98,11 +97,11 @@ helps the reader navigate this rich and rapidly evolving system.
 -----------------------------
 
 As of 3G, the generational designation corresponds to a standard defined
-by the 3GPP (3rd Generation Partnership Project). Even though its name
+by the *3rd Generation Partnership Project (3GPP)*. Even though its name
 has “3G” in it, the 3GPP continues to define the standards for 4G and 5G,
 each of which corresponds to a sequence of releases of the standard.
 Release 15 is considered the demarcation point between 4G and 5G, with
-Release 16 expected by the end of 2019. Complicating the terminology, 4G
+Release 17 scheduled for 2021. Complicating the terminology, 4G
 was on a multi-release evolutionary path referred to as *Long Term
 Evolution (LTE)*. 5G is on a similar evolutionary path, with several
 expected releases over its lifetime.
@@ -279,9 +278,23 @@ about *Network Function Virtualization (NFV)*, which involves moving
 functionality that was once embedded in hardware appliances into VMs
 running on commodity servers. In our experience, NFV is a stepping
 stone towards the fully disaggregated and cloud native solution we
-describe in this book, and so we do not dwell on it. In effect, you
-can think of the NFV initiative as largely consistent with the
-approach taken in this book, but making some different engineering
-choices when we get down into the specifics of the implementation
-(e.g., NFV is generally VM-based rather than microservice-based).
+describe in this book, and so we do not dwell on it. You can think of
+the NFV initiative as mostly consistent with the approach taken in
+this book, but making some different engineering choices when we get
+down into the specifics of the implementation (e.g., NFV is generally
+VM-based rather than microservice-based).
+
+Although equating NFV with a different implementation choice is
+perfectly valid, there is another interpretation of events that better
+captures the essence of the transformation currently underway. When
+Telcos began the NFV initiative, they imagined incorporating cloud
+technologies into their networks, creating a so-called *Telco Cloud*.
+What is actually happening instead, is that the Telco's access
+technology is being subsumed into the cloud, running as yet another
+cloud-hosted workload. It would be more accurate to refer to the
+resulting system now emerging as the *Cloud-based Telco*. One reading
+of this book is as a roadmap to such an outcome.
+
+
+
 

@@ -68,7 +68,12 @@ serves several purposes:
 
 Even though the word “Core” is in its name, from an Internet
 perspective, the Mobile Core is still part of the access network,
-effectively providing a bridge between the RAN and the IP-world.
+effectively providing a bridge between the RAN in some geographic area
+and the greater IP-based Internet. 3GPP provides significant
+flexibility in how the Mobile Core is geographically deployed, for our
+purposes, assuming each instantiation of the Mobile Core serves a
+metropolitan area is a good working model. The corresponding RAN would
+then span several dozens (or even hundreds) of cell towers.
 
 Taking a closer look at :numref:`Figure %s <fig-cellular>`, we see that a
 *Backhaul Network* interconnects the eNBs that implement the RAN with
@@ -141,11 +146,11 @@ provide a bearer service.
 
     Base Station detects (and connects to) active UEs.
 
-Second, each base station establishes "3GPP Control Plane” connectivity
-between the UE and the corresponding Mobile Core Control Plane
-component, and forwards signaling traffic between the two. This
-signaling traffic enables UE authentication, registration, mobility
-tracking.
+Second, each base station establishes "3GPP Control Plane”
+connectivity between the UE and the corresponding Mobile Core Control
+Plane component, and forwards signaling traffic between the two. This
+signaling traffic enables UE authentication, registration, and
+mobility tracking.
 
 .. _fig-control-plane:
 .. figure:: figures/Slide04.png 
@@ -229,12 +234,12 @@ multiple paths to reach the UE. The third case has the option of either
 spreading the physical payloads across multiple base stations or across
 multiple carrier frequencies of a single base station (including Wi-Fi).
 
-Note that as outlined in the previous chapter, scheduling is complex and
-multi-faceted, even when viewed as a localized decision at a single base
-station. What we now see is that there is also a global element, whereby
-it’s possible to forward traffic to a different base station (or to
-multiple base stations) in an effort to make efficient use of the radio
-spectrum over a larger geographic area.
+Note that as outlined in Chapter 2, scheduling is complex and
+multi-faceted, even when viewed as a localized decision at a single
+base station. What we now see is that there is also a global element,
+whereby it’s possible to forward traffic to a different base station
+(or to multiple base stations) in an effort to make efficient use of
+the radio spectrum over a larger geographic area.
 
 In other words, the RAN as a whole (i.e., not just a single base
 station) not only supports handovers (an obvious requirement for
@@ -263,7 +268,7 @@ first appear, in part because it opens the door to customization and
 specialization. Instead of supporting just voice and broadband
 connectivity, the 5G Mobile Core can evolve to also support, for
 example, massive IoT, which has a fundamentally different latency
-requirement and usage pattern (e.g., many more devices connecting
+requirement and usage pattern (i.e., many more devices connecting
 intermittently). This stresses—if not breaks—a one-size-fits-all
 approach to session management.
 
@@ -412,7 +417,7 @@ widely used in cloud native systems. Other terms you will sometimes hear
 are *Service Graph* and *Service Chain*, the latter being more prevalent
 in NFV-oriented documents. 3GPP is silent on the specific terminology
 since it is considered an implementation choice rather than part of the
-specification.
+specification. We describe our implementation choices in later chapters.
 
 3.4 Security
 ------------
@@ -511,26 +516,16 @@ options, which can be summarized as follows:
 -  Non-Standalone (4G+5G RAN) over 4G’s EPC
 -  Non-Standalone (4G+5G RAN) over 5G’s NG-Core
 
-Focusing on the second pair, which imply incremental phasing, we see two
-general strategies. The first is to connect new 5G base stations to
-existing 4G-based EPCs, and then incrementally evolve the Mobile Core by
-refactoring the components and adding NG-Core capabilities over time.
-The second is to implement a backward-compatible NG-Core that can
-support both 4G and 5G base stations, where the new NG-Core could be
-implemented from scratch, but would likely start with the existing EPC
-code base.
-
-Of these options, the second is the most common. Generally referred to
-by its NSA acroynm, it involves 5G base stations being deployed
-alongside the existing 4G base stations in a given geography to
-provide a data-rate and capacity boost. In NSA, control plane traffic
-between the user equipment and the 4G Mobile Core utilizes (i.e., is
-forwarded through) 4G base stations, and the 5G base stations
-are used only to carry user traffic. Eventually, it is expected that
-operators complete their migration to 5G by deploying NG Core and
-connecting their 5G base stations to it for Standalone (SA)
-operation. NSA and SA operations are illustrated in :numref:`Figure %s
-<fig-nsa>`.
+The second of the three options, which is generally referred to by its
+NSA acronym, involves 5G base stations being deployed alongside the
+existing 4G base stations in a given geography to provide a data-rate
+and capacity boost. In NSA, control plane traffic between the user
+equipment and the 4G Mobile Core utilizes (i.e., is forwarded through)
+4G base stations, and the 5G base stations are used only to carry user
+traffic. Eventually, it is expected that operators complete their
+migration to 5G by deploying NG Core and connecting their 5G base
+stations to it for Standalone (SA) operation. NSA and SA operations
+are illustrated in :numref:`Figure %s <fig-nsa>`.
 
 .. _fig-nsa:
 .. figure:: figures/Slide39.png 
@@ -538,7 +533,6 @@ operation. NSA and SA operations are illustrated in :numref:`Figure %s
     :align: center
 	    
     NSA and SA options for 5G deployment.
-
 
 One reason we call attention to the phasing issue is that we face a
 similar challenge in the chapters that follow. The closer the following

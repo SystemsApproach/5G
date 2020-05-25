@@ -122,27 +122,47 @@ it allocates the available radio spectrum to the subscribers it is
 serving, as well as which coding and modulation scheme to employ.
 All of these decisions are made by  the scheduler.
 
-How the scheduler does its job is one of the most important properties
-of each generation of the cellular network, which in turn depends on the
-multiplexing mechanism. For example, 2G used *Time Division Multiple
-Access (TDMA)* and 3G used *Code Division Multiple Access (CDMA)*. It is
-also a major differentiator for 4G and 5G, completing the transition
-from the cellular network being fundamentally circuit-switched to
-fundamentally packet-switched. The following two sections describe each,
-in turn.
-
-2.2 Scheduling: 4G
+2.2 Scheduler
 ------------------
 
-The state-of-the-art in multiplexing 4G cellular networks is called
-*Orthogonal Frequency-Division Multiple Access (OFDMA)*. The idea is to
-multiplex data over a set of 12 orthogonal subcarrier frequencies, each
-of which is modulated independently. The “Multiple Access” in OFDMA
-implies that data can simultaneously be sent on behalf of multiple
-users, each on a different subcarrier frequency and for a different
-duration of time. The subbands are narrow (e.g., 15kHz), but the coding
-of user data into OFDMA symbols is designed to minimize the risk of data
-loss due to interference between adjacent bands.
+How the scheduler does its job is one of the most important properties
+of each generation of the cellular network, which in turn depends on
+the multiplexing mechanism. For example, 2G used *Time Division
+Multiple Access (TDMA)* and 3G used *Code Division Multiple Access
+(CDMA)*. It is also a major differentiator for 4G and 5G, completing
+the transition from the cellular network being fundamentally
+circuit-switched to fundamentally packet-switched.
+
+Both 4G and 5G are based on *Orthogonal Frequency-Division
+Multiplexing (OFDM)*, an approach that multiplexes data over multiple
+orthogonal subcarrier frequencies, each of which is modulated
+independently. The value and efficiency of OFDM is in how it selects
+subcarrier frequencies so as to avoid interference, that is, how it
+achieves orthogonality. That topic is beyond the scope of this book.
+We instead take a decidedly abstract perspective of multiplexing,
+focusing on "discrete scheduleable units of the radio spectrum" rather
+the the signalling and modulation underpinnings that yield those
+scheduleable units. We return to the broader issue of the *air
+interface* that makes efficient use of the spectrum in the concluding
+section.
+
+2.2.1 Multiplexing in 4G
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The 4G approach to multiplexing downstream transmissions is called
+*Orthogonal Frequency-Division Multiple Access (OFDMA)*, a specific
+application of OFDM that multiplexes data over a set of 12 orthogonal
+subcarrier frequencies, each of which is modulated independently.\ [#]_ The
+“Multiple Access” in OFDMA implies that data can simultaneously be
+sent on behalf of multiple users, each on a different subcarrier
+frequency and for a different duration of time. The subbands are
+narrow (e.g., 15kHz), but the coding of user data into OFDMA symbols
+is designed to minimize the risk of data loss due to interference
+between adjacent bands.
+
+.. [#] 4G uses a different multiplexing strategy for upstream
+       transmissions (from user devices to base stations), but we do
+       not describe it because the approach is not applicable to 5G.
 
 The use of OFDMA naturally leads to conceptualizing the radio spectrum
 as a two-dimensional resource, as shown in :numref:`Figure %s <fig-sched-grid>`.
@@ -151,7 +171,7 @@ corresponds to a 15kHz-wide band around one subcarrier frequency and the
 time it takes to transmit one OFDMA symbol. The number of bits that can
 be encoded in each symbol depends on the modulation rate, so for example
 using *Quadrature Amplitude Modulation (QAM)*, 16-QAM yields 4 bits per
-symbol and 64-QAM yields 6 bits per symbol
+symbol and 64-QAM yields 6 bits per symbol.
 
 .. _fig-sched-grid:
 .. figure:: figures/Slide12.png 
@@ -213,8 +233,8 @@ architecture open to innovations like this is one of our goals, and as
 we will see in the next section, becomes even more important in 5G where
 the scheduler operates with even more degrees of freedom.
 
-2.3 Scheduling: 5G
-------------------
+2.2.2 Multiplexing in 5G
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The transition from 4G to 5G introduces additional flexibility in
 how the radio spectrum is scheduled, making it possible to adapt the
@@ -295,6 +315,60 @@ depth in a later chapter.
     :width: 600px
     :align: center
 
-    Scheduler allocates Resource Blocks to user data
-    streams based on CQI feedback from receivers and the QCI
-    parameters associated with each class of service.
+    Scheduler allocates Resource Blocks to user data streams based on
+    CQI feedback from receivers and the QCI parameters associated with
+    each class of service.
+
+2.3 New Radio (NR)
+------------------
+
+We conclude by noting that while the previous section describes 5G as
+introducing additional degrees of freedom into how data is scheduled
+for transmission in 4G, the end result is a qualitatively more
+powerful radio. This new 5G air interface specification, which is
+commonly referred to as *New Radio (NR)*, enables three new use cases
+that go well beyond simply delivering increased bandwidth:
+
+* Extreme Mobile Broadband (eMBB)
+* Ultra-Reliable Low-Latency Communications (URLLC)
+* Massive Machine-Type Communications (mMTC)
+
+All three correspond to the requirements introduced in Chapter 1, and
+can be attributed to three fundamental improvements in how 5G
+multiplexes data onto the radio spectrum.
+
+The first is the one identified in the previous section: being able to
+change the waveform. This effectively introduces the ability to
+dynamically change the size and number of scheduleable resource units,
+which opens the door to making fine-grain scheduling decisions that
+are critical to predictable, low-latency communication.
+
+The second is related to the "Multiple Access" aspect of how distinct
+traffic sources are multiplexed onto the available spectrum. In 4G,
+multiplexing happens in both the frequency and time domains for
+downstream traffic (as described in Section 2.2.1), but multiplexing
+happens in only the frequency domain for upstream traffic. 5G NR
+multiplexes both upstream and downstream traffic in both the time and
+frequency domains. Doing so provides finer-grain scheduling control
+needed by latency-sensitive applications.
+
+The third is related to the plethora of spectrum available to 5G NR,
+with the new mmWave allocations opening above 24-GHz being especially
+important. This is not only because of the abundance of capacity—which
+makes it possible to set aside dedicated capacity for mission-critical
+applications that require low-latency communication—but also because
+the higher-frequency enables even finer-grain resource blocks (e.g.,
+scheduling intervals as short as 0.125ms). Again, this improves
+scheduling granularity to the benefit of applications that cannot
+tolerate unpredictable latency.
+
+As a consequence of all three improvements, 5G NR is able to partition
+the available bandwidth, with different partitions reserved for
+different classes of traffic (e.g., high-bandwidth versus
+low-latency). This is the essence of *slicing*, an idea we will
+revisit throughout this book. And then to support mission-critical
+applications, 5G NR is able to make fine-grain scheduling decisions
+that avoid unpredictable queuing delays for small packets.
+
+
+

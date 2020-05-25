@@ -72,7 +72,7 @@ scheduling interval can range from a few bytes to an entire IP packet.
 4.2 Split RAN
 -------------
 
-The next step is understanding how the functionality outlined above is
+The next step is to understand how the functionality outlined above is
 partitioned between physical elements, and hence, “split” across
 centralized and distributed locations. The dominant option has
 historically been "no split," with the entire pipeline shown in
@@ -283,6 +283,34 @@ on the disaggregated components introduced throughout this chapter.
 	    
     Split-RAN plus SD-RAN annotated with 3GPP-defined interfaces.
 
+.. sidebar:: 3GPP versus O-RAN
+
+	As explained in Chapter 1, 3GPP is the standardization body
+	responsible for interoperability across the global cellular
+	network. This includes identifying the potential “break
+	points” for splitting the RAN into CU, DU, and RU, as depicted
+	in :numref:`Figure %s <fig-split-ran>`. One might wonder,
+	then, what role the O-RAN plays in all of this. There is both
+	a technical answer and a business answer to this question.
+	     
+	The technical answer is that O-RAN is responsible for defining
+	the interfaces needed to apply SDN as an implementation option
+	into the 3GPP-defined Split-RAN standard. These SDN-related
+	elements include the NEAR-RT RIC (plus associated Control
+	Apps) and the E2 interface shown in :numref:`Figure %s
+	<fig-3gpp>`. Everything else shown in the figure is
+	3GPP-specified.
+
+	The business answer is that over time 3GPP has become a
+	vendor-dominated organization, whereas O-RAN was created more
+	recently by network operators. (AT&T and China Mobile were the
+	founding members.) O-RAN’s goal is to catalyze a
+	software-based implementation that breaks the vendor lock-in
+	that dominates today’s marketplace. The E2 interface, which is
+	architected around the idea of supporting different Service
+	Models, is central to this strategy. Whether the operators
+	will be successful in their ultimate goal is yet to be seen.
+
 The interface names are cryptic, but easily summarized. The mobile
 operator's management plane—typically called the *OSS (Operations
 Support System)* in the Telco world—uses the **A1** interface to
@@ -303,16 +331,37 @@ architecture documents treat the applications as part of the
 RIC. Calling them out separately foreshadows the implementation
 described in Chapter 6.
 
+The E2 interface shown in :numref:`Figure %s <fig-3gpp>` is the
+interesting one, and worth a bit more discussion. The goal is to
+disaggregate the vendor-specific RRM, moving control to the Near-RT
+RIC. You will notice in the figure that the E2 interface connects the
+Near-RT RIC to different types of RAN elements, ranging from legacy
+eNodeBs to the full CU/DU/RU split-RAN. This range is reflected in the
+API, which revolves around a *Service Model* abstraction. The idea is
+that each RAN element advertises a Service Model, which effectively
+defines the set of RAN Functions the element is able to support. The
+RIC then issues a combination of the following four operations against
+this Service Model:
+
+* **Report:** RIC asks the element to report a function-specific value setting.
+* **Insert:** RIC instructs the element to activate a user plane function.
+* **Control:** RIC instructs the element to activate a control plane function.
+* **Policy:** RIC sets a policy parameter on one of the activated functions.
+
+Of course, it is the RAN element, through its published Service Model,
+that defines the relevant set of functions that can be activated, the
+variables that can be reported, and policies that can be set.
+
 Knowing these interface names adds nothing to our conceptual
 understanding of the RAN, except perhaps to re-enforce how challenging
 it is to introduce a transformative technology like Software-Defined
-Networking into an operational environment that is striving to acheive
+Networking into an operational environment that is striving to achieve
 full backward compatibility and universal interoperability. It is
 instructive to contrast this approach with the Internet's philosophy
 of trying to minimize the universally agreed upon definitions.
 
 Finally, to help solidify your understanding, we recommend that you
-match-up the elements in :numref:`Figure %s <fig-3gpp>` with those
+match the elements in :numref:`Figure %s <fig-3gpp>` with those
 described earlier in this chapter. As you do so, keep in mind that you
 won't find an explicit Central Unit Control Plane (CU-C) and Central
 Unit User Plane (CU-U) in the earlier diagrams. They are there, but by
