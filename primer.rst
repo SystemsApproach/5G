@@ -129,9 +129,9 @@ How the scheduler does its job is one of the most important properties
 of each generation of the cellular network, which in turn depends on
 the multiplexing mechanism. For example, 2G used *Time Division
 Multiple Access (TDMA)* and 3G used *Code Division Multiple Access
-(CDMA)*. It is also a major differentiator for 4G and 5G, completing
-the transition from the cellular network being fundamentally
-circuit-switched to fundamentally packet-switched.
+(CDMA)*. How data is multiplexed is also a major differentiator for 4G
+and 5G, completing the transition from the cellular network being
+fundamentally circuit-switched to fundamentally packet-switched.
 
 Both 4G and 5G are based on *Orthogonal Frequency-Division
 Multiplexing (OFDM)*, an approach that multiplexes data over multiple
@@ -142,9 +142,11 @@ achieves orthogonality. That topic is beyond the scope of this book.
 We instead take a decidedly abstract perspective of multiplexing,
 focusing on "discrete scheduleable units of the radio spectrum" rather
 the the signalling and modulation underpinnings that yield those
-scheduleable units. We return to the broader issue of the *air
-interface* that makes efficient use of the spectrum in the concluding
-section.
+scheduleable units.
+
+To start, we drill down on these schedulable units. We return to the
+broader issue of the *air interface* that makes efficient use of the
+spectrum in the concluding section.
 
 2.2.1 Multiplexing in 4G
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -243,7 +245,7 @@ domains.
 
 Fundamentally, 5G defines a family of waveforms—unlike LTE, which
 specified only one waveform—each optimized for a different band in the
-radio spectrum.  The bands with carrier frequencies below 1GHz are
+radio spectrum.\ [#]_  The bands with carrier frequencies below 1GHz are
 designed to deliver mobile broadband and massive IoT services with a
 primary focus on range. Carrier frequencies between 1GHz-6GHz are
 designed to offer wider bandwidths, focusing on mobile broadband and
@@ -251,10 +253,9 @@ mission-critical applications. Carrier frequencies above 24GHz
 (mmWaves) are designed to provide super wide bandwidths over short,
 line-of-sight coverage.
 
-.. note::
-   
-   A waveform is the frequency, amplitude, and phase-shift independent
-   property (shape) of a signal. A sine wave is an example waveform.
+.. [#] A waveform is the frequency, amplitude, and phase-shift
+   independent property (shape) of a signal. A sine wave is an example
+   waveform.
 
 These different waveforms affect the scheduling and subcarrier intervals
 (i.e., the “size” of the resource elements described in the previous
@@ -277,15 +278,19 @@ section).
    waveforms, with subcarrier spacings of 60kHz and 120kHz. Both have
    scheduling intervals of 0.125ms.
 
-This range of options is important because it adds another degree of
-freedom to the scheduler. In addition to allocating radio resources to
-users, it has the ability to dynamically adjust the size of the resource
-by changing the wave form being used. With this additional freedom,
-fixed-sized REs are no longer the primary unit of resource allocation.
-We instead use more abstract terminology, and talk about allocating
-*Resource Blocks* to subscribers, where the 5G scheduler determines both
-the size and number of Resource Blocks allocated during each time
-interval.
+These various configurations of subcarrier spacing and scheduling
+intervals are sometimes called the *numerology* of the radio's air
+interface.
+
+This range of numerology is important because it adds another degree
+of freedom to the scheduler. In addition to allocating radio resources
+to users, it has the ability to dynamically adjust the size of the
+resource by changing the wave form being used. With this additional
+freedom, fixed-sized REs are no longer the primary unit of resource
+allocation.  We instead use more abstract terminology, and talk about
+allocating *Resource Blocks* to subscribers, where the 5G scheduler
+determines both the size and number of Resource Blocks allocated
+during each time interval.
 
 :numref:`Figure %s <fig-scheduler>` depicts the role of the scheduler
 from this more abstract perspective, where just as with 4G, CQI
@@ -324,17 +329,17 @@ depth in a later chapter.
 
 We conclude by noting that while the previous section describes 5G as
 introducing additional degrees of freedom into how data is scheduled
-for transmission in 4G, the end result is a qualitatively more
-powerful radio. This new 5G air interface specification, which is
-commonly referred to as *New Radio (NR)*, enables three new use cases
-that go well beyond simply delivering increased bandwidth:
+for transmission, the end result is a qualitatively more powerful
+radio. This new 5G air interface specification, which is commonly
+referred to as *New Radio (NR)*, enables three new use cases that go
+well beyond simply delivering increased bandwidth:
 
 * Extreme Mobile Broadband (eMBB)
 * Ultra-Reliable Low-Latency Communications (URLLC)
 * Massive Machine-Type Communications (mMTC)
 
 All three correspond to the requirements introduced in Chapter 1, and
-can be attributed to three fundamental improvements in how 5G
+can be attributed to four fundamental improvements in how 5G
 multiplexes data onto the radio spectrum.
 
 The first is the one identified in the previous section: being able to
@@ -362,13 +367,40 @@ scheduling intervals as short as 0.125ms). Again, this improves
 scheduling granularity to the benefit of applications that cannot
 tolerate unpredictable latency.
 
-As a consequence of all three improvements, 5G NR is able to partition
-the available bandwidth, with different partitions reserved for
-different classes of traffic (e.g., high-bandwidth versus
-low-latency). This is the essence of *slicing*, an idea we will
-revisit throughout this book. And then to support mission-critical
-applications, 5G NR is able to make fine-grain scheduling decisions
-that avoid unpredictable queuing delays for small packets.
+The fourth is related to delivering mobile connectivity to a massive
+number of IoT devices, ranging from devices that require mobility
+support and modest data rates (e.g. wearables, asset trackers) to
+devices that support intermittent transmission of a few bytes of data
+(e.g., sensors, meters). None of these devices are particularly
+latency-sensitive or bandwidth-greedy, but the latter are especially
+challenging because they require long battery lifetimes, and hence,
+reduced hardware complexity that draws less power.
+
+Support for IoT device connectivity revolves around allocating some of
+the available radio spectrum to a light-weight (simplified) air
+interface.  This approach started with Release 13 of LTE via two
+complementary technologies: mMTC and NB-IoT (NarrowBand-IoT).  Both
+technologies build on a significantly simplified version of LTE—i.e.,
+limiting the numerology and flexibility needed achieve high spectrum
+utilization—so as to allow for simpler IoT hardware design. mMTC
+delivers up to 1Mbps over a 1.4MHz of bandwidth and NB-IoT delivers a
+few tens of kbps over 200kHz of bandwidth; hence the term
+*NarrowBand*.  Both technologies have been designed to support over 1
+million devices per square kilometer. With Release 16, both
+technologies can be operated in-band with 5G, but still based on LTE
+numerology. Starting with Release 17, a simpler version of 5G NR,
+called *NR-Light*, will be introduced as the evolution of mMTC.
+NR-Light is expected to scale the device density even further.
+
+As a consequence of all four improvements, 5G NR is designed to
+support partitioning the available bandwidth, with different
+partitions dynamically allocated to different classes of traffic
+(e.g., high-bandwidth, low-latency, and low-complexity). This is the
+essence of *slicing*, an idea we will revisit throughout this book.
+Moreover, once traffic with different requirements can be served by
+different slices, 5G NR's approach to multiplexing is general enough
+to support varied scheduling decisions for those slices, each tailored
+for the target traffic.
 
 
 

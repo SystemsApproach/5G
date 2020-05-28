@@ -45,26 +45,23 @@ robots, home appliances, medical devices, and so on.
     Cellular networks consists of a Radio Access Network
     (RAN) and a Mobile Core.
 
-As shown in :numref:`Figure %s <fig-cellular>`,
-the cellular network consists of
-two main subsystems: the *Radio Access Network (RAN)* and the *Mobile
-Core*. The RAN manages the radio spectrum, making sure it is both used
-efficiently and meets the quality-of-service requirements of every user.
-The main component in the RAN is the crypticly named *eNodeB* (or
-*eNB*), which is short for the equally cryptic *evolved Node B*. The
-Mobile Core is a bundle of functionality (as opposed to a device) that
-serves several purposes:
+As shown in :numref:`Figure %s <fig-cellular>`, the cellular network
+consists of two main subsystems: the *Radio Access Network (RAN)* and
+the *Mobile Core*. The RAN manages the radio spectrum, making sure it
+is both used efficiently and meets the quality-of-service requirements
+of every user.  The main component in the RAN is the crypticly named
+*eNodeB* (or *eNB*), which is short for the equally cryptic *evolved
+Node B*. The Mobile Core is a bundle of functionality (as opposed to a
+device) that serves several purposes:
 
 -  Provides Internet (IP) connectivity for both data and voice services.
 -  Ensures this connectivity fulfills the promised QoS requirements.
 -  Tracks user mobility to ensure uninterrupted service.
 -  Tracks subscriber usage for billing and charging.
 
-.. note::
-
-   Mobile Core is another example of a generic term. In 4G this is
-   called the Evolved Packet Core (EPC) and in 5G it is called the Next
-   Generation Core (NG-Core).
+Note that Mobile Core is another example of a generic term. In 4G
+this is called the *Evolved Packet Core (EPC)* and in 5G it is called
+the *Next Generation Core (NG-Core)*.
 
 Even though the word “Core” is in its name, from an Internet
 perspective, the Mobile Core is still part of the access network,
@@ -132,12 +129,12 @@ First, each base station establishes the wireless channel for a
 subscriber’s UE upon power-up or upon handover when the UE is active.
 This channel is released when the UE remains idle for a predetermined
 period of time. Using 3GPP terminology, this wireless channel is said to
-provide a bearer service.
+provide a bearer service.\ [#]_  
 
-.. note::
-   The term “bearer” has historically been used in telecommunications
-   (including early wireline technologies like ISDN) to denote “data,”
-   as opposed to a channel that carries “signalling” information.
+.. [#] The term “bearer” has historically been used in
+   telecommunications (including early wireline technologies like
+   ISDN) to denote a data channel, as opposed to a channel that
+   carries signalling information.
 
 .. _fig-active-ue:
 .. figure:: figures/Slide03.png 
