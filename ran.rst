@@ -414,16 +414,15 @@ on centralizing CU-C-side RRM functions in the Near-RT RIC. In
 addition to RRM control, this includes all the SON applications.
 
 Turning to the outer two control loops, the Near RT-RIC opens the
-possibility of policy-based RAN control, whereby interrupts
-(exceptions) to these policies would signal the need for the outer
-loop to become involved. These policies would then be delivered to the
-Near RT-RIC from the Management Plane over the A1 interface. For
-example, one can imagine developing learning-based controls, where the
-inference engines for these controls would run as part applications on
-the Near RT-RIC, and their non-realtime learning counterparts would
-run elsewhere. The Non-RT RIC would then interact with the Near-RT RIC
-to deliver relevant operator policies from the Management Plane to the
-Near RT-RIC.
+possibility of introducing policy-based RAN control, whereby
+interrupts (exceptions) to operator-defined policies would signal the
+need for the outer loop to become involved. For example, one can
+imagine developing learning-based controls, where the inference
+engines for these controls would run as applications on the Near
+RT-RIC, and their non-realtime learning counterparts would run
+elsewhere. The Non-RT RIC would then interact with the Near-RT RIC to
+deliver relevant operator policies from the Management Plane to the
+Near RT-RIC over the A1 interface.
 
 Finally, you may be wondering why there is an O-RAN Alliance in the
 first place, given that 3GPP is already the standardization body
