@@ -3,10 +3,15 @@ Chapter 4:  RAN Internals
 
 The description of the RAN in the previous chapter focused on
 functionality, but was mostly silent about the RAN’s internals
-structure. We now focus in on some of the internal details, and in doing
-so, explain how the RAN is being transformed in 5G. This involves first
-describing the stages in the packet processing pipeline, and then
-showing how these stages can be distributed and implemented.
+structure. We now focus in on some of the internal details, and in
+doing so, explain how the RAN is being transformed in 5G. This
+involves first describing the stages in the packet processing
+pipeline, and then showing how these stages can be disaggregated,
+distributed and implemented.
+
+Our approach in this chapter is to incrementally build the RAN from
+the bottom up in the first three sections, and then summaize the
+overall result from an end-to-end perspective in Section 4.4.
 
 4.1 Packet Processing Pipeline
 ------------------------------
@@ -290,18 +295,25 @@ Applications" and "SON Applications" in the context of SD-RAN.
    <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.  ACM
    SICOMM, August 2013.
 
-We conclude this introduction to SD-RAN by re-iterating the process of
-disaggregation, which is being pursued in three tiers. In the first
-tier, 3GPP standards provide multiple options of how horizontal RAN
-disaggregation can take place. Horizontal disaggregation basically
-splits the RAN protocol stack (shown as a pipeline in :numref:`Figure
-%s <fig-pipeline>`) into independently operating components.
-:numref:`Figure %s (a) <fig-disagg>` illustrates horizontal
-disaggregation of the RAN into 3 distinct components: CU, DU and
-RU. The O-RAN Alliance has selected specific disaggregation options
-from 3GPP and is developing open interfaces between these components.
-3GPP defines the **N2** and **N3** interfaces between the RAN and the
-Mobile Core.
+4.4 Multi-Tiered Disaggregation
+----------------------------------------
+
+We conclude this description of RAN internals by re-visiting the
+step-by-step process of disaggregation, which as the previous three
+sections revealed, is being pursued in multiple tiers. In doing so, we
+tie up several loose ends and introduce a few more insights into the
+rich opportunities for the RAN to evolve in 5G.
+
+In the first tier of disaggregation, 3GPP standards provide multiple
+options of how horizontal RAN splits can take place. Horizontal
+disaggregation basically splits the RAN protocol stack (shown as a
+pipeline in :numref:`Figure %s <fig-pipeline>`) into independently
+operating components.  :numref:`Figure %s (a) <fig-disagg>`
+illustrates horizontal disaggregation of the RAN into 3 distinct
+components: CU, DU and RU. The O-RAN Alliance has selected specific
+disaggregation options from 3GPP and is developing open interfaces
+between these components.  3GPP defines the **N2** and **N3**
+interfaces between the RAN and the Mobile Core.
 
 The second tier of disaggregation is vertical, focusing on
 control/user plane separation (CUPS) of the CU, and resulting in CU-U
