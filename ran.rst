@@ -298,14 +298,15 @@ respectively, in O-RAN documents for SD-RAN.
    <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.  ACM
    SICOMM, August 2013.
 
-4.4 Design for Evolution
-------------------------
+4.4 Architect to Evolve
+-----------------------
 
 We conclude this description of RAN internals by re-visiting the
-step-by-step process of disaggregation, which as the previous three
-sections revealed, is being pursued in multiple tiers. In doing so, we
-tie up several loose ends, including the new interfaces disaggregation
-exposes, around which the 5G RAN is architected to evolve.
+sequence of steps involved in disaggregation, which as the previous
+three sections reveal, is being pursued in multiple tiers. In doing
+so, we tie up several loose ends, including the new interfaces
+disaggregation exposes. These interfaces define the pivot points
+around which 5G RAN is architected to evolve.
 
 In the first tier of disaggregation, 3GPP standards provide multiple
 options of how horizontal RAN splits can take place. Horizontal
@@ -351,8 +352,8 @@ also shows the additional O-RAN prescribed interfaces.
     :width: 500px 
     :align: center
        
-    Three tiers of RAN disaggregation: (a) horizontal disaggregation, (b)
-    vertical CUPS disaggregation, (c) vertical SDN disaggregation.
+    Three tiers of RAN disaggregation: (a) horizontal, (b) vertical
+    CUPS, and (c) vertical SDN.
 
 The interface names are cryptic, and knowing their details adds little
 to our conceptual understanding of the RAN, except perhaps to

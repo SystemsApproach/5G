@@ -73,14 +73,14 @@ even more value.
 	this book.  We call attention to its importance here, and
 	revisit the topic throughout the book.
 
-	We are writing this book with *system generalists* in mind,
-	with the goal of helping bring a community that understands a
-	broad range of systems issues (but knows little or nothing
-	about the cellular network) up to speed so they can play a
-	role in its evolution. This is a community that understands
-	both feature velocity and best practices in building robust
-	scalable systems, and so has an important role to play in
-	bringing all of 5G's potential to fruition.
+	We are writing this book for *system generalists*, with the
+	goal of helping bring a community that understands a broad
+	range of systems issues (but knows little or nothing about the
+	cellular network) up to speed so they can play a role in its
+	evolution. This is a community that understands both feature
+	velocity and best practices in building robust scalable
+	systems, and so has an important role to play in bringing all
+	of 5G's potential to fruition.
 
 What this all means is that there is no single, comprehensive definition
 of 5G, any more than there is for the Internet. It is a complex and
