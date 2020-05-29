@@ -525,7 +525,7 @@ stations to it for Standalone (SA) operation. NSA and SA operations
 are illustrated in :numref:`Figure %s <fig-nsa>`.
 
 .. _fig-nsa:
-.. figure:: figures/Slide39.png 
+.. figure:: figures/Slide38.png 
     :width: 600px
     :align: center
 	    

@@ -148,8 +148,8 @@ To start, we drill down on these schedulable units. We return to the
 broader issue of the *air interface* that makes efficient use of the
 spectrum in the concluding section.
 
-2.2.1 Multiplexing in 4G
-~~~~~~~~~~~~~~~~~~~~~~~~
+Multiplexing in 4G
+~~~~~~~~~~~~~~~~~~
 
 The 4G approach to multiplexing downstream transmissions is called
 *Orthogonal Frequency-Division Multiple Access (OFDMA)*, a specific
@@ -235,8 +235,8 @@ architecture open to innovations like this is one of our goals, and as
 we will see in the next section, becomes even more important in 5G where
 the scheduler operates with even more degrees of freedom.
 
-2.2.2 Multiplexing in 5G
-~~~~~~~~~~~~~~~~~~~~~~~~
+Multiplexing in 5G
+~~~~~~~~~~~~~~~~~~
 
 The transition from 4G to 5G introduces additional flexibility in
 how the radio spectrum is scheduled, making it possible to adapt the
