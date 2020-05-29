@@ -10,8 +10,9 @@ pipeline, and then showing how these stages can be disaggregated,
 distributed and implemented.
 
 Our approach in this chapter is to incrementally build the RAN from
-the bottom up in the first three sections, and then summaize the
-overall result from an end-to-end perspective in Section 4.4.
+the bottom up in the first three sections. Section 4.4 then summarizes
+the overall design, with a focus on how the resulting end-to-end
+system is architected to evolve.
 
 4.1 Packet Processing Pipeline
 ------------------------------
@@ -271,20 +272,22 @@ for execution. Realizing this value in the RAN is still a
 work-in-progress, but evidence using the same approach to optimize
 wide-area networks is compelling.
 
-Another common way to characterize this suite of Control Applications
-for SD-RAN is based on the current practice of controling the mobile
-link at two different levels. At the first level, per-node and
-per-link control is conducted using Radio Resource Management (RRM)
-functions that are distributed across the individual base stations.
-RRM functions include scheduling, handover control, link and carrier
-aggregation control, bearer control, and access control.  At the
-second level, regional mobile network optimization and configuration
-is conducted using *Self-Organizing Network (SON)* functions. These
-functions oversee neighbor lists, manage load balancing, optimize
-coverage and capacity, aim for network-wide interference mitigation,
-centrally configure parameters, and so on. As a consequence of these
-two levels of control, it is not uncommon to see reference to "RRM
-Applications" and "SON Applications" in the context of SD-RAN.
+While the above loosely categorizes the space of potential control
+apps as either config-oriented or control-oriented, another possible
+characterization is based on the current practice of controlling the
+mobile link at two different levels. At a fine-grain level, per-node
+and per-link control is conducted using Radio Resource Management
+(RRM) functions that are distributed across the individual base
+stations.  RRM functions include scheduling, handover control, link
+and carrier aggregation control, bearer control, and access control.
+At a coarse-grain level, regional mobile network optimization and
+configuration is conducted using *Self-Organizing Network (SON)*
+functions. These functions oversee neighbor lists, manage load
+balancing, optimize coverage and capacity, aim for network-wide
+interference mitigation, centrally configure parameters, and so on. As
+a consequence of these two levels of control, it is not uncommon to
+see reference to *RRM Applications* and *SON Applications*,
+respectively, in O-RAN documents for SD-RAN.
   
 .. _reading_b4:
 .. admonition:: Further Reading
@@ -295,35 +298,35 @@ Applications" and "SON Applications" in the context of SD-RAN.
    <https://cseweb.ucsd.edu/~vahdat/papers/b4-sigcomm13.pdf>`__.  ACM
    SICOMM, August 2013.
 
-4.4 Multi-Tiered Disaggregation
-----------------------------------------
+4.4 Design for Evolution
+------------------------
 
 We conclude this description of RAN internals by re-visiting the
 step-by-step process of disaggregation, which as the previous three
 sections revealed, is being pursued in multiple tiers. In doing so, we
-tie up several loose ends and introduce a few more insights into the
-rich opportunities for the RAN to evolve in 5G.
+tie up several loose ends, including the new interfaces disaggregation
+exposes, around which the 5G RAN is architected to evolve.
 
 In the first tier of disaggregation, 3GPP standards provide multiple
 options of how horizontal RAN splits can take place. Horizontal
-disaggregation basically splits the RAN protocol stack (shown as a
-pipeline in :numref:`Figure %s <fig-pipeline>`) into independently
-operating components.  :numref:`Figure %s (a) <fig-disagg>`
-illustrates horizontal disaggregation of the RAN into 3 distinct
-components: CU, DU and RU. The O-RAN Alliance has selected specific
-disaggregation options from 3GPP and is developing open interfaces
-between these components.  3GPP defines the **N2** and **N3**
-interfaces between the RAN and the Mobile Core.
+disaggregation basically splits the RAN pipeline shown in
+:numref:`Figure %s <fig-pipeline>` into independently operating
+components.  :numref:`Figure %s (a) <fig-disagg>` illustrates
+horizontal disaggregation of the RAN from a single base station into
+three distinct components: CU, DU and RU. The O-RAN Alliance has
+selected specific disaggregation options from 3GPP and is developing
+open interfaces between these components.  3GPP defines the **N2** and
+**N3** interfaces between the RAN and the Mobile Core.
 
 The second tier of disaggregation is vertical, focusing on
 control/user plane separation (CUPS) of the CU, and resulting in CU-U
-and CU-C shown in :numref:`Figure %s (b) <fig-disagg>`. Here, the
-control plane in question is the 3GPP control plane, where the CU-U
-realizes a pipeline for user traffic and the CU-C focuses on control
-message signaling between mobile core and the disaggregated RAN
-components (as well as to the UE). The O-RAN specified interfaces
-between all disaggregated components are also shown in
-:numref:`Figure %s (b) <fig-disagg>`.
+and CU-C shown in :numref:`Figure %s (b) <fig-disagg>`. The control
+plane in question is the 3GPP control plane, where the CU-U realizes a
+pipeline for user traffic and the CU-C focuses on control message
+signaling between Mobile Core and the disaggregated RAN components (as
+well as to the UE). The O-RAN specified interfaces between these
+disaggregated components are also shown in :numref:`Figure %s (b)
+<fig-disagg>`.
 
 The third tier follows the SDN paradigm by carrying vertical
 disaggregation one step further. It does this by separating most of
@@ -335,74 +338,51 @@ Controller, which corresponds to the Near-RT RIC shown previously in
 repeated here in :numref:`Figure %s (c) <fig-disagg>`.  The figure
 also shows the additional O-RAN prescribed interfaces.
 
-The control of the mobile link has tight round-trip delay
-requirements, and as such, not all RRM functions can be
-centralized. After horizontal and vertical CUPS disaggregation, the
-RRM functions are split between CU-C and DU. For this reason, the
-SDN-based vertical disaggregation focuses on centralizing CU-C-side
-RRM functions in the Near-RT RIC. In addition to RRM control, the RIC
-enables a central platform for SON applications as well. It should be
-noted that both RRM and SON-based control are effectively closed-loop
-control, with the aim of maintaining acceptable network operation
-despite stochastic variations on the mobile link.
-
-The presence of Near RT-RIC also brings in the possibility of
-developing policy-based RAN control, whereby interrupts to these
-closed-loop RAN control based on operator policy become
-possible. These policies need to be delivered to the Near RT-RIC from
-the operator’s management plane. One can imagine developing
-learning-based RRM, SON and Policy applications, in which case the
-inference engines of these applications would run as Near RT-RIC
-applications, and their non-real-time learning-counterparts would run
-elsewhere. A Non-Real-Time RIC (Non-RT-RIC) may be developed to
-interact with the Near-RT-RIC to enable proper operation of such
-applications as well as ensuring delivery of relevant operator
-policies from the Management Plane to the Near RT-RIC.
-
 .. _fig-disagg:
-.. figure:: figures/Slide40.png 
+.. figure:: figures/Slide39.png 
     :width: 500px 
     :align: center
 	    
+.. figure:: figures/Slide40.png 
+    :width: 500px 
+    :align: center
+
 .. figure:: figures/Slide41.png 
     :width: 500px 
     :align: center
-
-.. figure:: figures/Slide42.png 
-    :width: 500px 
-    :align: center
        
-    RAN disaggregation tiers: (a) horizontal disaggregation, (b)
+    Three tiers of RAN disaggregation: (a) horizontal disaggregation, (b)
     vertical CUPS disaggregation, (c) vertical SDN disaggregation.
 
-The interface names are cryptic, and knowing them adds nothing to our
-conceptual understanding of the RAN, except perhaps to re-enforce how
-challenging it is to introduce a transformative technology like
-Software-Defined Networking into an operational environment that is
-striving to achieve full backward compatibility and universal
-interoperability. It is instructive to contrast this approach with the
-Internet's philosophy of trying to minimize the universally agreed
-upon definitions.
+The interface names are cryptic, and knowing their details adds little
+to our conceptual understanding of the RAN, except perhaps to
+re-enforce how challenging it is to introduce a transformative
+technology like Software-Defined Networking into an operational
+environment that is striving to achieve full backward compatibility
+and universal interoperability. That said, we call out two notable
+examples.
 
-That said, we do call out two notable examples. The first is the
-**A1** interface that the mobile operator's management plane—typically
-called the *OSS/BSS (Operations Support System / Business Support
-System)* in the Telco world—uses the to configure the RAN.  We have
-not discussed the Telco OSS/BSS up to this point, but it always
-assumed to be at the top of any Telco software stack, as the source of
-all configuration settings and business logic needed to operate a
-network.
+The first is the **A1** interface that the mobile operator's
+management plane—typically called the *OSS/BSS (Operations Support
+System / Business Support System)* in the Telco world—uses the to
+configure the RAN.  We have not discussed the Telco OSS/BSS up to this
+point, but it safe to assume such a component sits at the top of any
+Telco software stack. It is the source of all configuration settings
+and business logic needed to operate a network. Notice that the
+Management Plane shown in :numref:`Figure %s (c) <fig-disagg>`
+includes a *Non-Real TIme RIC* functional block, complementing the
+Near-RT RIC that sits below the A1 interface. We return to the
+relevance of these two RICs in a moment.
 
 The second is the **E2** interface that the Near-RT RIC uses to
-control the underlying RAN elements. The goal of the E2 interface is
-to disaggregate the vendor-specific RRM, moving control to the Near-RT
-RIC. The goal is for the E2 interface to connect the Near-RT RIC to
-different types of RAN elements. This range is reflected in the API,
-which revolves around a *Service Model* abstraction. The idea is that
-each RAN element advertises a Service Model, which effectively defines
-the set of RAN Functions the element is able to support. The RIC then
-issues a combination of the following four operations against this
-Service Model:
+control the underlying RAN elements. A requirement of the E2 interface
+is that it be able to connect the Near-RT RIC to different types of
+RAN elements. This range is reflected in the API, which revolves
+around a *Service Model* abstraction. The idea is that each RAN
+element advertises a Service Model, which effectively defines the set
+of RAN Functions the element is able to support. The RIC then issues a
+combination of the following four operations against this Service
+Model:
 
 * **Report:** RIC asks the element to report a function-specific value setting.
 * **Insert:** RIC instructs the element to activate a user plane function.
@@ -413,6 +393,37 @@ Of course, it is the RAN element, through its published Service Model,
 that defines the relevant set of functions that can be activated, the
 variables that can be reported, and policies that can be set.
 
+Taken together, the A1 and E2 interfaces complete two of the three
+major control loops of the RAN: the outer (non-realtime) loop has the
+Non-RT RIC as it control point and the middle (near-realtime) loop has
+the Near-RT RIC as its control point. The third (inner) control loop,
+which is not shown in :numref:`Figure %s <fig-disagg>`, runs inside
+the DU: It includes the realtime Scheduler embedded in the MAC stage
+of the RAN pipeline. The two outer control loops have rough time
+bounds of >>1sec and >10ms, respectively, and as we saw in Chapter 2,
+the realtime control loop is assumed by be <1ms.
+
+This raises the question of how specific functionality is distributed
+between the Non-RT RIC, Near-RT RIC, and DU. Starting with the second
+pair (i.e., the two inner loops), it is important to recognize that
+not all RRM functions can be centralized. After horizontal and
+vertical CUPS disaggregation, the RRM functions are split between CU-C
+and DU. For this reason, the SDN-based vertical disaggregation focuses
+on centralizing CU-C-side RRM functions in the Near-RT RIC. In
+addition to RRM control, this includes all the SON applications.
+
+Turning to the outer two control loops, the Near RT-RIC opens the
+possibility of policy-based RAN control, whereby interrupts
+(exceptions) to these policies would signal the need for the outer
+loop to become involved. These policies would then be delivered to the
+Near RT-RIC from the Management Plane over the A1 interface. For
+example, one can imagine developing learning-based controls, where the
+inference engines for these controls would run as part applications on
+the Near RT-RIC, and their non-realtime learning counterparts would
+run elsewhere. The Non-RT RIC would then interact with the Near-RT RIC
+to deliver relevant operator policies from the Management Plane to the
+Near RT-RIC.
+
 Finally, you may be wondering why there is an O-RAN Alliance in the
 first place, given that 3GPP is already the standardization body
 responsible for interoperability across the global cellular network.
@@ -420,7 +431,7 @@ The answer is that over time 3GPP has become a vendor-dominated
 organization, whereas O-RAN was created more recently by network
 operators. (AT&T and China Mobile were the founding members.) O-RAN’s
 goal is to catalyze a software-based implementation that breaks the
-vendor lock-in that dominates today’s marketplace. The E2 interface,
-which is architected around the idea of supporting different Service
-Models, is central to this strategy. Whether the operators will be
-successful in their ultimate goal is yet to be seen.
+vendor lock-in that dominates today’s marketplace. The E2 interface
+in particular, which is architected around the idea of supporting
+different Service Models, is central to this strategy. Whether the
+operators will be successful in their ultimate goal is yet to be seen.
