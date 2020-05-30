@@ -215,7 +215,7 @@ available servers). The following introduces the basic idea, starting
 with the RAN.
 
 But before getting into the details, we note that a network slice is a
-generalization of the QoS Class Index (QCI) discussed earlier. 3GPP
+realization of the QoS Class Index (QCI) discussed earlier. 3GPP
 specifies a standard set of network slices, called *Standardized Slice
 Type (SST)* values. For example, SST 1 corresponds to mobile broadband,
 SST 2 corresponds to Ultra-Reliable Low Latency Communications, SST 3
@@ -306,6 +306,27 @@ the underlying system, as they have historically been in 4G’s eNodeBs.
 
     Centralized near-realtime control applications
     cooperating with distribute real-time RAN schedulers.
+
+In summary, the goal of RAN slicing is to programmatically create
+virtual RAN nodes (base stations) that operate on the same hardware
+and share the spectrum resources according to a given policy for
+different applications, services, users, and so on. Tying RAN slicing
+back to RAN disaggregation, one can imagine several possible
+configurations, depending on the desired level of isolation between
+the slices. :numref:`Figure %s <fig-ran-slicing>` shows four examples,
+all of which assume slices share the antennas and RF components, which
+is effectively the RU: (a) RAN slices share RU, DU, CU-U and CU-C; (b)
+RAN slices share RU and DU, but have their own CU-U and CU-C; (c) RAN
+slices share RU, CU-U and CU-C, but have their own DU; and (d) RAN
+slices share RU, but have their own DU, CU-U and CU-C.
+
+.. _fig-ran-slicing:
+.. figure:: figures/Slide40.png 
+    :width: 700px
+    :align: center
+
+    Four possible configurations of a disaggregated RAN in support of
+    RAN slicing.
 
 Core Slicing
 ~~~~~~~~~~~~

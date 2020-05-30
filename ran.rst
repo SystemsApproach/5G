@@ -341,15 +341,7 @@ also shows the additional O-RAN prescribed interfaces.
 
 .. _fig-disagg:
 .. figure:: figures/Slide39.png 
-    :width: 500px 
-    :align: center
-	    
-.. figure:: figures/Slide40.png 
-    :width: 500px 
-    :align: center
-
-.. figure:: figures/Slide41.png 
-    :width: 500px 
+    :width: 450px 
     :align: center
        
     Three tiers of RAN disaggregation: (a) horizontal, (b) vertical
