@@ -160,7 +160,7 @@ respectively.
 4.3 Software-Defined RAN
 ------------------------
 
-Finally, we describe how the RAN is implemented according to SDN
+We now describe how the RAN is implemented according to SDN
 principles, resulting in an SD-RAN. The key architectural insight is
 shown in :numref:`Figure %s <fig-rrc-split>`, where the RRC from
 :numref:`Figure %s <fig-pipeline>` is partitioned into two
