@@ -103,6 +103,7 @@ exclude_patterns = [u'_build', 'doc_venv', 'requirements.txt', 'Thumbs.db', '.DS
 pygments_style = None
 
 # Enable numbered figures
+# Remove "." for LaTeX
 numfig = True
 numfig_format = {
     'figure': 'Figure %s.',
