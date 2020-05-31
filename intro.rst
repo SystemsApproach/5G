@@ -2,12 +2,13 @@ Chapter 1:  Introduction
 ===========================
 
 Mobile networks, which have a 40-year history that parallels the
-Internet’s, have undergone significant change. The first two generations
-supported voice and then text, with 3G defining the transition to
-broadband access, supporting data rates measured in hundreds of
-kilobits-per-second. Today, the industry is at 4G (supporting data rates
-typically measured in the few megabits-per-second) and starting the
-transition to 5G, with the promise of a tenfold increase in data rates.
+Internet’s, have undergone significant change. The first two
+generations supported voice and then text, with 3G defining the
+transition to broadband access, supporting data rates measured in
+hundreds of kilobits-per-second. Today, the industry is at 4G
+(supporting data rates typically measured in the few
+megabits-per-second) and transitioning to 5G, with the promise of a
+tenfold increase in data rates.
 
 But 5G is about much more than increased bandwidth. In the same way 3G
 defined the transition from voice to broadband, 5G’s promise is primarily
@@ -284,16 +285,16 @@ this book, but making some different engineering choices when we get
 down into the specifics of the implementation (e.g., NFV is generally
 VM-based rather than microservice-based).
 
-Although equating NFV with a different implementation choice is
-perfectly valid, there is another interpretation of events that better
-captures the essence of the transformation currently underway. When
-Telcos began the NFV initiative, they imagined incorporating cloud
-technologies into their networks, creating a so-called *Telco Cloud*.
-What is actually happening instead, is that the Telco's access
-technology is being subsumed into the cloud, running as yet another
-cloud-hosted workload. It would be more accurate to refer to the
-resulting system now emerging as the *Cloud-based Telco*. One reading
-of this book is as a roadmap to such an outcome.
+While equating NFV with an implementation choice is perfectly valid,
+there is another interpretation of events that better captures the
+essence of the transformation currently underway. When Telcos began
+the NFV initiative, they imagined incorporating cloud technologies
+into their networks, creating a so-called *Telco Cloud*.  What is
+actually happening instead, is that the Telco's access technology is
+being subsumed into the cloud, running as yet another cloud-hosted
+workload. It would be more accurate to refer to the resulting system
+now emerging as the *Cloud-based Telco*. One reading of this book is
+as a roadmap to such an outcome.
 
 
 

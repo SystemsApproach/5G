@@ -351,14 +351,14 @@ are critical to predictable, low-latency communication.
 The second is related to the "Multiple Access" aspect of how distinct
 traffic sources are multiplexed onto the available spectrum. In 4G,
 multiplexing happens in both the frequency and time domains for
-downstream traffic (as described in Section 2.2.1), but multiplexing
+downstream traffic (as described in Section 2.2), but multiplexing
 happens in only the frequency domain for upstream traffic. 5G NR
 multiplexes both upstream and downstream traffic in both the time and
 frequency domains. Doing so provides finer-grain scheduling control
 needed by latency-sensitive applications.
 
-The third is related to the plethora of spectrum available to 5G NR,
-with the new mmWave allocations opening above 24-GHz being especially
+The third is related to the new spectrum available to 5G NR, with the
+mmWave allocations opening above 24-GHz being especially
 important. This is not only because of the abundance of capacity—which
 makes it possible to set aside dedicated capacity for mission-critical
 applications that require low-latency communication—but also because
@@ -372,7 +372,7 @@ number of IoT devices, ranging from devices that require mobility
 support and modest data rates (e.g. wearables, asset trackers) to
 devices that support intermittent transmission of a few bytes of data
 (e.g., sensors, meters). None of these devices are particularly
-latency-sensitive or bandwidth-greedy, but the latter are especially
+latency-sensitive or bandwidth-hungry, but the latter are especially
 challenging because they require long battery lifetimes, and hence,
 reduced hardware complexity that draws less power.
 

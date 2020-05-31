@@ -67,8 +67,8 @@ Even though the word “Core” is in its name, from an Internet
 perspective, the Mobile Core is still part of the access network,
 effectively providing a bridge between the RAN in some geographic area
 and the greater IP-based Internet. 3GPP provides significant
-flexibility in how the Mobile Core is geographically deployed, for our
-purposes, assuming each instantiation of the Mobile Core serves a
+flexibility in how the Mobile Core is geographically deployed, but for
+our purposes, assuming each instantiation of the Mobile Core serves a
 metropolitan area is a good working model. The corresponding RAN would
 then span several dozens (or even hundreds) of cell towers.
 
@@ -192,7 +192,7 @@ network.
     Station) control plane tunneled over SCTP/IP and user plane
     tunneled over GTP/UDP/IP.
 
-Fifth, the base station coordinates UE handovers between neighboring
+Fifth, each base station coordinates UE handovers with neighboring
 base stations, using direct station-to-station links. Exactly like the
 station-to-core connectivity shown in the previous figure, these links
 are used to transfer both control plane (SCTP over IP) and user plane
@@ -205,7 +205,7 @@ are used to transfer both control plane (SCTP over IP) and user plane
 	    
     Base Stations cooperate to implement UE hand over.
     
-Sixth, the base station coordinates wireless multi-point transmission to
+Sixth, the base stations coordinate wireless multi-point transmission to
 a UE from multiple base stations, which may or may not be part of a UE
 handover from one base station to another.
 
@@ -217,19 +217,20 @@ handover from one base station to another.
     Base Stations cooperate to implement multipath
     transmission (link aggregation) to UEs.
 
-For our purposes, the main takeaway is that the base station can be
-viewed as a specialized forwarder. In the Internet-to-UE direction, it
-fragments outgoing IP packets into physical layer segments and schedules
-them for transmission over the available radio spectrum, and in the
+The main takeaway is that the base station can be viewed as a
+specialized forwarder. In the Internet-to-UE direction, it fragments
+outgoing IP packets into physical layer segments and schedules them
+for transmission over the available radio spectrum, and in the
 UE-to-Internet direction it assembles physical layer segments into IP
 packets and forwards them (over a GTP/UDP/IP tunnel) to the upstream
 user plane of the Mobile Core. Also, based on observations of the
-wireless channel quality and per-subscriber policies, it decides whether
-to (a) forward outgoing packets directly to the UE, (b) indirectly
-forward packets to the UE via a neighboring base station, or (c) utilize
-multiple paths to reach the UE. The third case has the option of either
-spreading the physical payloads across multiple base stations or across
-multiple carrier frequencies of a single base station (including Wi-Fi).
+wireless channel quality and per-subscriber policies, it decides
+whether to (a) forward outgoing packets directly to the UE, (b)
+indirectly forward packets to the UE via a neighboring base station,
+or (c) utilize multiple paths to reach the UE. The third case has the
+option of either spreading the physical payloads across multiple base
+stations or across multiple carrier frequencies of a single base
+station (including Wi-Fi).
 
 Note that as outlined in Chapter 2, scheduling is complex and
 multi-faceted, even when viewed as a localized decision at a single
