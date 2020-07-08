@@ -88,7 +88,7 @@ customized version of ONOS, but that's an implementation detail.)
 One aspect of :numref:`Figure %s <fig-cord>` that requires further
 elaboration is how each of the RAN and Mobile Core components are
 actually realized. Specifically, there are three different
-manifestations of the functional components implied by the Figure: (1)
+manifestations of the functional components implied by the figure: (1)
 the data plane layer of the CU-U and S/PGW-U are realized as P4
 programs loaded into the programmable switches; (2) the control plane
 layer of the CU-U and S/PGW-U (as well as the Trellis platform module)
@@ -114,7 +114,7 @@ microservices and ONOS-based control applications.
     microservices.
 
 When abstracted in this way, we can view a POD as including three major
-subsystems:
+subsystems.
 
 -  **Platform:** The base layer common to all configurations includes
    Kubernetes as the container management system and ONOS as the SDN
@@ -145,7 +145,7 @@ complete to operate a CORD POD in a production environment.
 -----------------------
 
 We now return to the three platform-related components shown in
-:numref:`Figure %s <fig-cord>` and :numref:`Figure %s
+:numref:`Figures %s <fig-cord>` and :numref:`%s
 <fig-ci-cd>`. Each is a substantial open source component in its own
 right, but for our purposes, it is enough to understand the role they
 play in supporting a 5G-based profile of CORD.
@@ -177,7 +177,7 @@ play in supporting a 5G-based profile of CORD.
 
 Stratum (running on each switch) and ONOS (running off-switch and
 managing a network of switches) communicate using the following
-interfaces:
+interfaces.
 
 -  **P4:** Defines the forwarding behavior for programmable switching
    chips as well as model fixed-function ASIC pipelines. A P4 program

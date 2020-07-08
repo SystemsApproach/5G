@@ -123,7 +123,7 @@ applications running on top of ONOS.
     Control Plane elements of the User Plane implemented
     as Control Applications running on an SDN Controller (e.g., ONOS).
 
-:numref:`Figure %s <fig-onos>` shows one possible configuration, in
+:numref:`Figure %s <fig-onos>` shows one possible configuration in
 which the underlying switches are interconnected to form a leaf-spine
 fabric. Keep in mind that the linear sequence of switches implied by
 :numref:`Figure %s <fig-e2e-p4>` is logical, but that in no way
@@ -156,7 +156,7 @@ scale. :numref:`Figure %s <fig-multicloud>` shows the resulting
 multi-cloud realization of the Mobile Core. We leave the user plane at
 the edge of the network (e.g., in the Central Office) and move control
 plane to a centralized cloud. It could even be a public cloud like
-Google or Amazon. This includes not only the MME, PCRF and HSS, but
+Google or Amazon. This includes not only the MME, PCRF, and HSS, but
 also the PGW-C and SGW-C we decoupled in the previous section. (Note
 that :numref:`Figure %s <fig-multicloud>` renames the PDCP-U from
 earlier diagrams as the CU-U; either label is valid.)
@@ -203,7 +203,7 @@ and customers. Differentiation, of course, is key to being able to
 charge some customers more than others, but the monetization case
 aside, it is also necessary if you are going to support such widely
 varying applications as streaming video (which requires high bandwidth
-but can tolerate larger latencies) and Internet-of-Things (which has
+but can tolerate larger latencies) and IoT (which has
 minimal bandwidth needs but requires extremely low and predictable
 latencies, connecting a *massively scalable* number of IoT devices).
 
@@ -233,7 +233,7 @@ RAN Slicing
 
 We start by reviewing the basic scheduling challenge previewed in
 Chapter 2. As depicted in :numref:`Figure %s <fig-slice-sched>`,
-the radio spectrum can be conceptualized as a two-dimensional grid of
+the radio spectrum can be conceptualized as a 2-D grid of
 *Resource Blocks (RB)*, where the scheduler’s job is to decide how to fill the
 grid with the available segments from each user’s transmission queue
 based on CQI feedback from the UEs. To restate, the power of OFDMA is
@@ -350,8 +350,8 @@ schedulers to allocate sufficient compute cycles to the slice’s
 containers.
 
 For example, if there are two network slices (analogous to the two RAN
-schedulers shown in :numref:`Figure %s <fig-multi-sched>` and
-:numref:`Figure %s <fig-slicing-control>`), then there would also need
+schedulers shown in :numref:`Figures %s <fig-multi-sched>` and
+:numref:`%s <fig-slicing-control>`), then there would also need
 to be two Mobile Core service meshes: One set of AMF, SMF, UPF,…
 microservices running on behalf of the first slice and a second set of
 AMF, SMF, UPF,… microservices running on behalf of the second

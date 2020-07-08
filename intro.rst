@@ -24,7 +24,7 @@ together on their behalf. All of this requires a fundamentally
 different architecture.
 
 The requirements for this architecture are ambitious, and can be
-summarized as having three main objectives:
+summarized as having three main objectives.
 
 - To support *Massive Internet-of-Things*, potentially including
   devices with ultra-low energy (10+ years of battery life), ultra-low
@@ -56,7 +56,7 @@ The 5G mobile network, because it is on an
 evolutionary path and not a point solution, includes standardized
 specifications, a range of implementation choices, and a long list of
 aspirational goals. Because this leaves so much room for interpretation,
-our approach to describing 5G is grounded in two mutually-supportive
+our approach to describing 5G is grounded in two mutually supportive
 principles. The first is to apply a *systems lens*, which is to say, we
 explain the sequence of design decisions that lead to a solution rather
 than fall back on enumerating the overwhelming number of acronyms as a
@@ -121,10 +121,10 @@ auctioned off and licensed exclusive use of various frequency bands to
 service providers, who in turn sell mobile access service to their
 subscribers.
 
-There is also a shared-license band at 3.5-GHz, called *Citizens
+There is also a shared-license band at 3.5 GHz, called *Citizens
 Broadband Radio Service (CBRS)*, set aside in North America for cellular
 use. Similar spectrum is being set aside in other countries. The CBRS band
-allows three tiers of users to share the spectrum: first right of use
+allows 3 tiers of users to share the spectrum: first right of use
 goes to the original owners of this spectrum, naval radars and satellite
 ground stations; followed by priority users who receive this right over
 10MHz bands for three years via regional auctions; and finally the rest
@@ -139,9 +139,9 @@ vary around the world, and are complicated by the fact that network
 operators often simultaneously support both old/legacy technologies and
 new/next-generation technologies, each of which occupies a different
 frequency band. The high-level summary is that traditional cellular
-technologies range from 700-MHz to 2400-MHz, with new mid-spectrum
-allocations now happening at 6-GHz, and millimeter-wave (mmWave)
-allocations opening above 24-GHz.
+technologies range from 700-2400 MHz, with new mid-spectrum
+allocations now happening at 6 GHz, and millimeter-wave (mmWave)
+allocations opening above 24 GHz.
 
 While the specific frequency band is not directly relevant to
 understanding 5G from an architectural perspective, it does impact the
@@ -165,7 +165,7 @@ to the rest of the Internet through some large operator’s backbone.
 
 In either case, access networks are physically anchored at thousands of
 aggregation points-of-presence within close proximity to end users,
-each of which serves anywhere from 1,000 to 100,000 subscribers,
+each of which serves anywhere from 1,000-100,000 subscribers,
 depending on population density. In practice, the physical deployment
 of these “edge” locations vary from operator to operator, but one
 possible scenario is to anchor both the cellular and wireline access
@@ -196,7 +196,7 @@ infrastructure lowered the barrier to deploying scalable Internet
 services, but today, there is increasing pressure to offer
 low-latency/high-bandwidth cloud applications that cannot be effectively
 implemented in centralized datacenters. Augmented Reality (AR), Virtual
-Reality (VR), Internet-of-Things (IoT), Autonomous Vehicles are all
+Reality (VR), Internet-of-Things (IoT), and Autonomous Vehicles are all
 examples of this kind of application. This has resulted in a trend to
 move some functionality out of the datacenter and towards the edge of
 the network, closer to end users.
@@ -213,7 +213,7 @@ that the cloud’s migration to the edge coincides with a second trend,
 which is that network operators are re-architecting the access network
 to use the same commodity hardware and best practices in building
 scalable software as the cloud providers. Such a design, which is
-sometimes referred to as *CORD (Central Office Re-architected as a
+sometimes referred to as CORD *(Central Office Re-architected as a
 Datacenter)*, supports both the access network and edge services
 co-located on a shared cloud platform. This platform is then replicated
 across hundreds or thousands of sites (including, but not limited to,
@@ -257,7 +257,7 @@ how clouds are built. This includes the use of *commodity hardware*
 (both servers and white-box switches), horizontally scalable
 *microservices* (also referred to as *cloud native*), and
 *Software-Defined Networks (SDN)*. It is also helpful to have an
-appreciation for how cloud software is developed, tested, deployed and
+appreciation for how cloud software is developed, tested, deployed, and
 operated, including practices like *DevOps* and *Continuous Integration
 / Continuous Deployment (CI/CD)*.
 

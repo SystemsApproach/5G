@@ -71,8 +71,8 @@ As a consequence of these multiple paths, the original signal arrives at
 the receiver spread over time, as illustrated in
 :numref:`Figure %s <fig-coherence>`. Empirical evidence shows that the
 Multipath Spread—the time between the first and last signals of one
-transmission arriving at the receiver—is 1 to 10μs in urban
-environments and 10 to 30μs in suburban environments. Theoretical
+transmission arriving at the receiver—is 1-10μs in urban
+environments and 10-30μs in suburban environments. Theoretical
 bounds for the time duration for which the channel may be assumed to
 be time invariant, known as the *Coherence Time* and denoted
 :math:`T_c`, is given by
@@ -158,7 +158,7 @@ subcarrier frequencies, each of which is modulated independently.\ [#]_ The
 “Multiple Access” in OFDMA implies that data can simultaneously be
 sent on behalf of multiple users, each on a different subcarrier
 frequency and for a different duration of time. The subbands are
-narrow (e.g., 15kHz), but the coding of user data into OFDMA symbols
+narrow (e.g., 15 kHz), but the coding of user data into OFDMA symbols
 is designed to minimize the risk of data loss due to interference
 between adjacent bands.
 
@@ -167,9 +167,9 @@ between adjacent bands.
        not describe it because the approach is not applicable to 5G.
 
 The use of OFDMA naturally leads to conceptualizing the radio spectrum
-as a two-dimensional resource, as shown in :numref:`Figure %s <fig-sched-grid>`.
+as a 2-D resource, as shown in :numref:`Figure %s <fig-sched-grid>`.
 The minimal schedulable unit, called a *Resource Element (RE)*,
-corresponds to a 15kHz-wide band around one subcarrier frequency and the
+corresponds to a 15-kHz band around one subcarrier frequency and the
 time it takes to transmit one OFDMA symbol. The number of bits that can
 be encoded in each symbol depends on the modulation rate, so for example
 using *Quadrature Amplitude Modulation (QAM)*, 16-QAM yields 4 bits per
@@ -184,14 +184,14 @@ symbol and 64-QAM yields 6 bits per symbol.
     schedulable Resource Elements.
 
 A scheduler allocates some number of REs to each user that has data to
-transmit during each 1ms *Transmission Time Interval (TTI)*, where users
+transmit during each 1 ms *Transmission Time Interval (TTI)*, where users
 are depicted by different colored blocks in :numref:`Figure %s <fig-sched-grid>`.
 The only constraint on the scheduler is that it must make its allocation
 decisions on blocks of 7x12=84 resource elements, called a *Physical
 Resource Block (PRB)*. :numref:`Figure %s <fig-sched-grid>` shows two
 back-to-back PRBs. Of course time continues to flow along one axis, and
 depending on the size of the available frequency band (e.g., it might be
-100MHz wide), there may be many more subcarrier slots (and hence PRBs)
+100 MHz wide), there may be many more subcarrier slots (and hence PRBs)
 available along the other axis, so the scheduler is essentially
 preparing and transmitting a sequence of PRBs.
 
@@ -203,7 +203,7 @@ PRB, based on the CQI feedback it has received. The scheduler also
 selects the coding on a per-PRB basis, for example, by how it sets the
 parameters to the turbo code algorithm.
 
-The 1ms TTI corresponds to the time frame in which the scheduler
+The 1-ms TTI corresponds to the time frame in which the scheduler
 receives feedback from users about the quality of the signal they are
 experiencing. This is the CQI mentioned earlier, where once every
 millisecond, each user sends a set of metrics, which the scheduler uses
@@ -245,11 +245,11 @@ domains.
 
 Fundamentally, 5G defines a family of waveforms—unlike LTE, which
 specified only one waveform—each optimized for a different band in the
-radio spectrum.\ [#]_  The bands with carrier frequencies below 1GHz are
+radio spectrum.\ [#]_  The bands with carrier frequencies below 1 GHz are
 designed to deliver mobile broadband and massive IoT services with a
-primary focus on range. Carrier frequencies between 1GHz-6GHz are
+primary focus on range. Carrier frequencies between 1-6 GHz are
 designed to offer wider bandwidths, focusing on mobile broadband and
-mission-critical applications. Carrier frequencies above 24GHz
+mission-critical applications. Carrier frequencies above 24 GHz
 (mmWaves) are designed to provide super wide bandwidths over short,
 line-of-sight coverage.
 
@@ -261,22 +261,22 @@ These different waveforms affect the scheduling and subcarrier intervals
 (i.e., the “size” of the resource elements described in the previous
 section).
 
--  For sub-1GHz bands, 5G allows maximum 50MHz bandwidths. In this case,
-   there are two waveforms: one with subcarrier spacing of 15kHz and
-   another of 30kHz. (We used 15kHz in the example shown in
+-  For sub-1 GHz bands, 5G allows maximum 50 MHz bandwidths. In this case,
+   there are two waveforms: one with subcarrier spacing of 15 kHz and
+   another of 30 kHz. (We used 15 kHz in the example shown in
    :numref:`Figure %s <fig-sched-grid>`.)
    The corresponding scheduling intervals are
-   0.5ms and 0.25ms, respectively. (We used 0.5ms in the example shown
+   0.5 and 0.25 ms, respectively. (We used 0.5 ms in the example shown
    in :numref:`Figure %s <fig-sched-grid>`.)
 
--  For 1GHz-6GHz bands, maximum bandwidths go up to 100MHz.
+-  For 1-6 GHz bands, maximum bandwidths go up to 100 MHz.
    Correspondingly, there are three waveforms with subcarrier spacings
-   of 15kHz, 30kHz and 60kHz, corresponding to scheduling intervals of
-   0.5ms, 0.25ms and 0.125ms, respectively.
+   of 15, 30 and 60 kHz, corresponding to scheduling intervals of
+   0.5, 0.25, and 0.125 ms, respectively.
 
--  For millimeter bands, bandwidths may go up to 400MHz. There are two
-   waveforms, with subcarrier spacings of 60kHz and 120kHz. Both have
-   scheduling intervals of 0.125ms.
+-  For millimeter bands, bandwidths may go up to 400 MHz. There are two
+   waveforms, with subcarrier spacings of 60 kHz and 120 kHz. Both have
+   scheduling intervals of 0.125 ms.
 
 These various configurations of subcarrier spacing and scheduling
 intervals are sometimes called the *numerology* of the radio's air
@@ -334,9 +334,9 @@ radio. This new 5G air interface specification, which is commonly
 referred to as *New Radio (NR)*, enables three new use cases that go
 well beyond simply delivering increased bandwidth:
 
-* Extreme Mobile Broadband (eMBB)
-* Ultra-Reliable Low-Latency Communications (URLLC)
-* Massive Machine-Type Communications (mMTC)
+* Extreme Mobile Broadband
+* Ultra-Reliable Low-Latency Communications
+* Massive Machine-Type Communications
 
 All three correspond to the requirements introduced in Chapter 1, and
 can be attributed to four fundamental improvements in how 5G
@@ -358,12 +358,12 @@ frequency domains. Doing so provides finer-grain scheduling control
 needed by latency-sensitive applications.
 
 The third is related to the new spectrum available to 5G NR, with the
-mmWave allocations opening above 24-GHz being especially
+mmWave allocations opening above 24 GHz being especially
 important. This is not only because of the abundance of capacity—which
 makes it possible to set aside dedicated capacity for mission-critical
 applications that require low-latency communication—but also because
 the higher-frequency enables even finer-grain resource blocks (e.g.,
-scheduling intervals as short as 0.125ms). Again, this improves
+scheduling intervals as short as 0.125 ms). Again, this improves
 scheduling granularity to the benefit of applications that cannot
 tolerate unpredictable latency.
 
@@ -383,8 +383,8 @@ complementary technologies: mMTC and NB-IoT (NarrowBand-IoT).  Both
 technologies build on a significantly simplified version of LTE—i.e.,
 limiting the numerology and flexibility needed achieve high spectrum
 utilization—so as to allow for simpler IoT hardware design. mMTC
-delivers up to 1Mbps over a 1.4MHz of bandwidth and NB-IoT delivers a
-few tens of kbps over 200kHz of bandwidth; hence the term
+delivers up to 1 Mbps over a 1.4 MHz of bandwidth and NB-IoT delivers a
+few tens of kbps over 200 kHz of bandwidth; hence the term
 *NarrowBand*.  Both technologies have been designed to support over 1
 million devices per square kilometer. With Release 16, both
 technologies can be operated in-band with 5G, but still based on LTE

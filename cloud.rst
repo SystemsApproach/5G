@@ -16,7 +16,7 @@ To understand the impact of cloud technologies and practices being
 applied to the access network, it is helpful to first understand what’s
 important about the cloud. The cloud has fundamentally changed the way
 we compute, and more importantly, the pace of innovation. It has done
-this through a combination of:
+this through a combination of the following.
 
 -  **Disaggregation:** Breaking vertically integrated systems into
    independent components with open interfaces.
@@ -87,7 +87,7 @@ one central location.
 
 The value of such a deployment is to bring 5G wireless advantages into
 the enterprise, including support for predictable, low-latency
-communication required for realtime controlling of large numbers of
+communication required for real-time controlling of large numbers of
 mobile devices. Factory automation is one compelling use case for such
 an edge cloud, but interest in supporting IoT in general is giving
 ECaaS significant momentum.
@@ -201,7 +201,7 @@ conclude by identifying some example challenges/opportunities.
   even tens of thousands of edge sites. Scaling up the ability to
   remotely orchestrate that many edge sites (even at just the
   infrastructure level) will be a qualitatively different challenge
-  than managing a single datacenter. Research is need to scale both
+  than managing a single datacenter. Research is needed to scale both
   the edge platform and widely deployed edge services.
   
 .. _reading_democratizing:

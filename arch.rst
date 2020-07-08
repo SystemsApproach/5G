@@ -3,7 +3,7 @@ Chapter 3:  Basic Architecture
 
 This chapter identifies the main architectural components of cellular
 access networks. It focuses on the components that are common to both 4G
-and 5G, and as such, establishes a foundation for understanding the
+and 5G and, as such, establishes a foundation for understanding the
 advanced features of 5G presented in later chapters.
 
 This overview is partly an exercise in introducing 3GPP terminology. For
@@ -52,7 +52,7 @@ is both used efficiently and meets the quality-of-service requirements
 of every user.  The main component in the RAN is the crypticly named
 *eNodeB* (or *eNB*), which is short for the equally cryptic *evolved
 Node B*. The Mobile Core is a bundle of functionality (as opposed to a
-device) that serves several purposes:
+device) that serves several purposes.
 
 -  Provides Internet (IP) connectivity for both data and voice services.
 -  Ensures this connectivity fulfills the promised QoS requirements.
@@ -77,7 +77,7 @@ Taking a closer look at :numref:`Figure %s <fig-cellular>`, we see that a
 the Mobile Core. This network is typically wired, may or may not have
 the ring topology shown in the Figure, and is often constructed from
 commodity components found elsewhere in the Internet. For example, the
-Passive Optical Network (PON) that implements Fiber-to-the-Home is a
+*Passive Optical Network (PON)* that implements Fiber-to-the-Home is a
 prime candidate for implementing the RAN backhaul. The backhaul network
 is obviously a necessary part of the RAN, but it is an implementation
 choice and not prescribed by the 3GPP standard.
@@ -134,7 +134,7 @@ provide a bearer service.\ [#]_
 .. [#] The term “bearer” has historically been used in
    telecommunications (including early wireline technologies like
    ISDN) to denote a data channel, as opposed to a channel that
-   carries signalling information.
+   carries signaling information.
 
 .. _fig-active-ue:
 .. figure:: figures/Slide03.png 
@@ -172,7 +172,7 @@ Fourth, the base station forwards both control and user plane packets
 between the Mobile Core and the UE. These packets are tunnelled over
 SCTP/IP and GTP/UDP/IP, respectively. SCTP (Stream Control Transport
 Protocol) is 3GPP-defined alternative to TCP, tailored to carry
-signalling (control) information for telephony services. GTP (a nested
+signaling (control) information for telephony services. GTP (a nested
 acronym corresponding to (General Packet Radio Service) Tunneling
 Protocol) is a 3GPP-specific tunneling protocol designed to run over
 UDP.
@@ -260,7 +260,7 @@ serving base station.
 While the aggregate functionality remains largely the same as we migrate
 from 4G to 5G, how that functionality is virtualized and factored into
 individual components changes, with the 5G Mobile Core heavily
-influenced by the cloud’s march towards a microservice-based (cloud
+influenced by the cloud’s march toward a microservice-based (cloud
 native) architecture. This shift to cloud native is deeper than it might
 first appear, in part because it opens the door to customization and
 specialization. Instead of supporting just voice and broadband
@@ -276,7 +276,7 @@ approach to session management.
 The 4G Mobile Core, which 3GPP officially refers to as the *Evolved
 Packet Core (EPC)*, consists of five main components, the first three of
 which run in the Control Plane (CP) and the second two of which run in
-the User Plane (UP):
+the User Plane (UP).
 
 -  MME (Mobility Management Entity): Tracks and manages the movement of
    UEs throughout the RAN. This includes recording when the UE is not
@@ -332,7 +332,7 @@ as a set of microservices is a good working model.
 
 The following organizes the set of functional blocks into three groups.
 The first group runs in the Control Plane (CP) and has a counterpart in
-the EPC:
+the EPC.
 
 -  AMF (Core Access and Mobility Management Function): Manages the
    mobility-related aspects of the EPC’s MME. Responsible for connection
@@ -458,7 +458,7 @@ link is not yet secure.
 
 Once the UE and Core-CP are satisfied with each other's identity, the
 Core-CP informs the other components of the parameters they will need
-to service the UE (Step 3). This includes (a) instructing the Core-UP
+to service the UE (Step 3). This includes: (a) instructing the Core-UP
 to initialize the user plane (e.g., assign an IP address to the UE and
 set the appropriate QCI parameter); (b) instructing the Base Station
 to establish an encrypted channel to the UE; and (c) giving the UE the
@@ -491,7 +491,7 @@ looking for flows that require special treatment.
 Third, while the resulting user plane channels are logically
 end-to-end, each is actually implemented as a sequence of per-hop
 tunnels, as illustrated in :numref:`Figure %s <fig-per-hop>`.  (The
-Figure shows the SGW and PGW from the 4G Mobile Core to make the
+figure shows the SGW and PGW from the 4G Mobile Core to make the
 example more concrete.) This means each component on the end-to-end
 path terminates a downstream tunnel using one local identifier for a
 given UE, and initiates an upstream tunnel using a second local
@@ -508,7 +508,7 @@ With an already deployed 4G RAN/EPC in the field and a new 5G
 RAN/NG-Core deployment underway, we can’t ignore the issue of
 transitioning from 4G to 5G (an issue the IP-world has been grappling
 with for 20 years). 3GPP officially spells out multiple deployment
-options, which can be summarized as follows:
+options, which can be summarized as follows.
 
 -  Standalone 4G / Stand-Alone 5G
 -  Non-Standalone (4G+5G RAN) over 4G’s EPC

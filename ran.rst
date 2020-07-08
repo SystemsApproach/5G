@@ -35,7 +35,7 @@ helpful).
     RAN processing pipeline, including both user and
     control plane components.
 
-The key stages are as follows:
+The key stages are as follows.
 
 -  RRC (Radio Resource Control) → Responsible for configuring the
    coarse-grain and policy-related aspects of the pipeline. The RRC runs
@@ -125,7 +125,7 @@ make this later configuration all the more common.
 Also note that the split-RAN changes the nature of the Backhaul Network,
 which in 4G connected the base stations (eNBs) back to the Mobile Core.
 With the split-RAN there are multiple connections, which are officially
-labelled as follows:
+labeled as follows.
 
 -  RU-DU connectivity is called the Fronthaul
 -  DU-CU connectivity is called the Midhaul
@@ -199,7 +199,7 @@ Base (R-NIB)* that includes time-averaged CQI values and other
 per-session state (e.g., GTP tunnel IDs, QCI values for the type of
 traffic), while the MAC (as part of the DU) maintains the
 instantaneous CQI values required by the real-time
-scheduler. Specifically, the R-NIB includes the following state:
+scheduler. Specifically, the R-NIB includes the following state.
 
 -  NODES: Base Stations and Mobile Devices
 
@@ -225,7 +225,7 @@ scheduler. Specifically, the R-NIB includes the following state:
 
       -  Identifiers
       -  Link Type
-      -  Config / Bearer Parameters
+      -  Config/Bearer Parameters
       -  QCI Value
 
 -  SLICES: Virtualized RAN Construct
@@ -233,7 +233,7 @@ scheduler. Specifically, the R-NIB includes the following state:
    -  Slice Attributes:
 
       -  Links
-      -  Bearers / Flows
+      -  Bearers/Flows
       -  Validity Period
       -  Desired KPIs
       -  MAC RRM Configuration
@@ -334,7 +334,7 @@ disaggregation one step further. It does this by separating most of
 RAN control (RRM functions) from the disaggregated RAN components, and
 logically centralizing them as applications running on an SDN
 Controller, which corresponds to the Near-RT RIC shown previously in
-:numref:`Figures %s <fig-rrc-split>` and :numref:`Figures %s
+:numref:`Figures %s <fig-rrc-split>` and :numref:`%s
 <fig-ran-controller>`. This SDN-based vertical disaggregation is
 repeated here in :numref:`Figure %s (c) <fig-disagg>`.  The figure
 also shows the additional O-RAN prescribed interfaces.
@@ -375,7 +375,7 @@ around a *Service Model* abstraction. The idea is that each RAN
 element advertises a Service Model, which effectively defines the set
 of RAN Functions the element is able to support. The RIC then issues a
 combination of the following four operations against this Service
-Model:
+Model.
 
 * **Report:** RIC asks the element to report a function-specific value setting.
 * **Insert:** RIC instructs the element to activate a user plane function.
