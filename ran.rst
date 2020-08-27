@@ -140,8 +140,8 @@ constrained by the predictable/low-latency requirements of the MAC
 stage’s real-time scheduler.
 
 A second observation about the CU shown in :numref:`Figure %s
-<fig-split-ran>` is that it encompasses two functional blocks—the RRM
-and the PDPC—which lie on the RAN's control plane and user plane,
+<fig-split-ran>` is that it encompasses two functional blocks—the RRC
+and the PDCP—which lie on the RAN's control plane and user plane,
 respectively. This separation is consistent with the idea of CUPS
 introduced in Chapter 3, and plays an increasingly important role as
 we dig deeper into how the RAN is implemented. For now, we note that
@@ -173,7 +173,7 @@ To be more specific, the left sub-component simply forwards control
 packets between the Mobile Core and the PDCP, providing a path over
 which the Mobile Core can communicate with the UE for control
 purposes, whereas the right sub-component implements the core of the
-RCC’s control functionality. This component is commonly referred to as
+RRC’s control functionality. This component is commonly referred to as
 the *RAN Intelligent Controller (RIC)* in O-RAN architecture
 documents, so we adopt this terminology.  The "Near-Real Time"
 qualifier indicates the RIC is part of 10-100ms control loop implemented
@@ -388,7 +388,7 @@ variables that can be reported, and policies that can be set.
 
 Taken together, the A1 and E2 interfaces complete two of the three
 major control loops of the RAN: the outer (non-realtime) loop has the
-Non-RT RIC as it control point and the middle (near-realtime) loop has
+Non-RT RIC as its control point and the middle (near-realtime) loop has
 the Near-RT RIC as its control point. The third (inner) control loop,
 which is not shown in :numref:`Figure %s <fig-disagg>`, runs inside
 the DU: It includes the realtime Scheduler embedded in the MAC stage
