@@ -1,10 +1,15 @@
-.. image:: bridge.png
-   :width: 250px
+.. image:: bridge.jpg
+   :width: 300px
    :align: center
    :target: https://systemsapproach.org
 
 5G Mobile Networks: A Systems Approach
 ======================================
+
+Larry Peterson and Oguz Sunay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
 
 .. toctree::
    :maxdepth: 2 
@@ -19,3 +24,4 @@
    impl.rst
    cloud.rst
    README.rst
+   authors.rst

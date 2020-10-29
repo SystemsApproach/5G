@@ -1,4 +1,4 @@
-About This Book
+About The Book
 ===============
 
 This `repository <https://github.com/SystemsApproach/5G>`__ contains
@@ -46,8 +46,6 @@ installed. The Makefile will create a virtualenv (``doc_venv``) which
 installs the documentation generation toolset. 
 
 To generate HTML in ``_build/html``,  run ``make html``.
-
-To get a live reload in your browser (refreshes on file save), run ``make reload``.
 
 To check the formatting of the book, run ``make lint``.
 
