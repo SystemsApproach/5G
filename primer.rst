@@ -86,7 +86,7 @@ the frequency of the carrier signal that is being modulated. This
 says the coherence time is inversely proportional to the frequency of
 the signal and the speed of movement, which makes intuitive sense: The
 higher the frequency (narrower the wave) the shorter the coherence time,
-and likewise, the faster the receiver is moving the longer the coherence
+and likewise, the faster the receiver is moving the shorter the coherence
 time. Based on the target parameters to this model (selected according
 to the target physical environment), it is possible to calculate
 :math:`T_c`, which in turn bounds the rate at which symbols can be
