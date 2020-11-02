@@ -32,13 +32,13 @@ summarized as having three main objectives.
   million nodes per square kilometer).
 
 - To support *Mission-Critical Control*, potentially including
-  ultra-high availability (greater than :math:`10^{-5}` per ms),
+  ultra-high availability (greater than 99.999% or "five nines"),
   ultra-low latency (as low as 1 ms), and extreme mobility (up to 100
   km/h).
   
-- To support *Enhanced Mobile Broadband*, potentially including extreme
-  capacity (10 Tbps per square kilometer) and extreme data rates
-  (multi-Gbps peak, 100+ Mbps sustained).
+- To support *Enhanced Mobile Broadband*, potentially including extreme data rates
+  (multi-Gbps peak, 100+ Mbps sustained) and extreme
+  capacity (10 Tbps of aggregate throughput per square kilometer).
   
 These targets will certainly not be met overnight, but that's in keeping
 with each generation of the mobile network being a decade-long
@@ -59,7 +59,8 @@ aspirational goals. Because this leaves so much room for interpretation,
 our approach to describing 5G is grounded in two mutually supportive
 principles. The first is to apply a *systems lens*, which is to say, we
 explain the sequence of design decisions that lead to a solution rather
-than fall back on enumerating the overwhelming number of acronyms as a
+than fall back on enumerating the overwhelming number of acronyms or
+individual point technologies as a
 *fait accompli*. The second is to aggressively disaggregate the system.
 Building a disaggregated, virtualized, and software-defined 5G access
 network is the direction the industry is already headed (for good
@@ -125,8 +126,8 @@ There is also a shared-license band at 3.5 GHz, called *Citizens
 Broadband Radio Service (CBRS)*, set aside in North America for cellular
 use. Similar spectrum is being set aside in other countries. The CBRS band
 allows 3 tiers of users to share the spectrum: first right of use
-goes to the original owners of this spectrum, naval radars and satellite
-ground stations; followed by priority users who receive this right over
+goes to the original owners of this spectrum (naval radars and satellite
+ground stations); followed by priority users who receive this right over
 10MHz bands for three years via regional auctions; and finally the rest
 of the population, who can access and utilize a portion of this band as
 long as they first check with a central database of registered users.
@@ -147,7 +148,8 @@ While the specific frequency band is not directly relevant to
 understanding 5G from an architectural perspective, it does impact the
 physical-layer components, which in turn has indirect ramifications on
 the overall 5G system. We identify and explain these ramifications
-in later chapters.
+in later chapters. Ensuring that the allocated spectrum is used
+*efficiently* is also a critical design goal.
 
 1.2 Access Networks
 -------------------
@@ -187,7 +189,7 @@ term “Central Office” as a synonym for both types of edge sites.
 
 Because of their wide distribution and close proximity to end users,
 Central Offices are also an ideal place to host the edge cloud. But this
-begs the question: What exactly is the edge cloud?
+raises the question: What exactly is the edge cloud?
 
 In a nutshell, the cloud began as a collection of warehouse-sized
 datacenters, each of which provided a cost-effective way to power, cool,
@@ -273,17 +275,17 @@ operated, including practices like *DevOps* and *Continuous Integration
    Reliability Engineering: How Google Runs Production Systems
    <https://landing.google.com/sre/books/>`__.
 
-One final note about terminology. Anyone that has been paying
+One final note about terminology. Anyone who has been paying
 attention to the discussion surrounding 5G will have undoubtedly heard
 about *Network Function Virtualization (NFV)*, which involves moving
 functionality that was once embedded in hardware appliances into VMs
+(or, more recently, containers)
 running on commodity servers. In our experience, NFV is a stepping
 stone towards the fully disaggregated and cloud native solution we
 describe in this book, and so we do not dwell on it. You can think of
 the NFV initiative as mostly consistent with the approach taken in
-this book, but making some different engineering choices when we get
-down into the specifics of the implementation (e.g., NFV is generally
-VM-based rather than microservice-based).
+this book, but making some specific engineering choices that may
+differ in detail from that described here.
 
 While equating NFV with an implementation choice is perfectly valid,
 there is another interpretation of events that better captures the
