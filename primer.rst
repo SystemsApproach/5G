@@ -72,9 +72,11 @@ the receiver spread over time, as illustrated in
 :numref:`Figure %s <fig-coherence>`. Empirical evidence shows that the
 Multipath Spread—the time between the first and last signals of one
 transmission arriving at the receiver—is 1-10μs in urban
-environments and 10-30μs in suburban environments. Theoretical
+environments and 10-30μs in suburban environments. These multipath
+signals can interfere with each other constructively or destrutively,
+and this will vary over time. Theoretical
 bounds for the time duration for which the channel may be assumed to
-be time invariant, known as the *Coherence Time* and denoted
+be invariant, known as the *Coherence Time* and denoted
 :math:`T_c`, is given by
 
 .. math::
@@ -224,7 +226,7 @@ described above means the scheduler also has to determine which antenna
 each receiver. But again, in the abstract, the scheduler is charged with
 allocating a sequence of Resource Elements.
 
-This all begs the question: How does the scheduler decide which set of
+This all raises the question: How does the scheduler decide which set of
 users to service during a given time interval, how many resource
 elements to allocate to each such user, how to select the coding and
 modulation levels, and which antenna to transmit their data on? This is
