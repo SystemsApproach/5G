@@ -72,9 +72,11 @@ the receiver spread over time, as illustrated in
 :numref:`Figure %s <fig-coherence>`. Empirical evidence shows that the
 Multipath Spread—the time between the first and last signals of one
 transmission arriving at the receiver—is 1-10μs in urban
-environments and 10-30μs in suburban environments. Theoretical
+environments and 10-30μs in suburban environments. These multipath
+signals can interfere with each other constructively or destructively,
+and this will vary over time. Theoretical
 bounds for the time duration for which the channel may be assumed to
-be time invariant, known as the *Coherence Time* and denoted
+be invariant, known as the *Coherence Time* and denoted
 :math:`T_c`, is given by
 
 .. math::
@@ -90,7 +92,9 @@ and likewise, the faster the receiver is moving the shorter the coherence
 time. Based on the target parameters to this model (selected according
 to the target physical environment), it is possible to calculate
 :math:`T_c`, which in turn bounds the rate at which symbols can be
-transmitted without undue risk of interference.
+transmitted without undue risk of interference. The dynamic nature of
+the wireless channel is a central challenge to address in the cellular
+network.  
 
 .. _fig-coherence:
 .. figure:: figures/Slide11.png 
@@ -140,9 +144,9 @@ independently. The value and efficiency of OFDM is in how it selects
 subcarrier frequencies so as to avoid interference, that is, how it
 achieves orthogonality. That topic is beyond the scope of this book.
 We instead take a decidedly abstract perspective of multiplexing,
-focusing on "discrete scheduleable units of the radio spectrum" rather
+focusing on "discrete schedulable units of the radio spectrum" rather
 the the signalling and modulation underpinnings that yield those
-scheduleable units.
+schedulable units.
 
 To start, we drill down on these schedulable units. We return to the
 broader issue of the *air interface* that makes efficient use of the
@@ -224,7 +228,7 @@ described above means the scheduler also has to determine which antenna
 each receiver. But again, in the abstract, the scheduler is charged with
 allocating a sequence of Resource Elements.
 
-This all begs the question: How does the scheduler decide which set of
+This all raises the question: How does the scheduler decide which set of
 users to service during a given time interval, how many resource
 elements to allocate to each such user, how to select the coding and
 modulation levels, and which antenna to transmit their data on? This is
