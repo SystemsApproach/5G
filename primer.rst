@@ -146,7 +146,7 @@ achieves orthogonality. That topic is beyond the scope of this book.
 We instead take a decidedly abstract perspective of multiplexing,
 focusing on "discrete schedulable units of the radio spectrum" rather
 the the signalling and modulation underpinnings that yield those
-scheduleable units.
+schedulable units.
 
 To start, we drill down on these schedulable units. We return to the
 broader issue of the *air interface* that makes efficient use of the
