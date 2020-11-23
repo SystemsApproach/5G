@@ -93,7 +93,7 @@ open source implementation contributes to the perceived “opaqueness” of
 the cellular network in general, and the RAN in particular. And while it
 is true that an eNodeB implementation does contain sophisticated
 algorithms for scheduling transmission on the radio spectrum—algorithms
-that are considered valuable Intellectual Property of the equipment
+that are considered valuable intellectual property of the equipment
 vendors—there is significant opportunity to open and disaggregate both
 the RAN and the Mobile Core. The following two sections describe each,
 in turn.
@@ -131,12 +131,10 @@ First, each base station establishes the wireless channel for a
 subscriber’s UE upon power-up or upon handover when the UE is active.
 This channel is released when the UE remains idle for a predetermined
 period of time. Using 3GPP terminology, this wireless channel is said to
-provide a bearer service.\ [#]_  
-
-.. [#] The term “bearer” has historically been used in
-   telecommunications (including early wireline technologies like
-   ISDN) to denote a data channel, as opposed to a channel that
-   carries signaling information.
+provide a *bearer service*. The term “bearer” has historically been used in
+telecommunications (including early wireline technologies like
+ISDN) to denote a data channel, as opposed to a channel that
+carries signaling information.
 
 .. _fig-active-ue:
 .. figure:: figures/Slide03.png 
@@ -145,7 +143,7 @@ provide a bearer service.\ [#]_
 
     Base Station detects (and connects to) active UEs.
 
-Second, each base station establishes "3GPP Control Plane”
+Second, each base station establishes “3GPP Control Plane”
 connectivity between the UE and the corresponding Mobile Core Control
 Plane component, and forwards signaling traffic between the two. This
 signaling traffic enables UE authentication, registration, and
@@ -173,7 +171,7 @@ tunnels between the corresponding Mobile Core User Plane component.
 Fourth, the base station forwards both control and user plane packets
 between the Mobile Core and the UE. These packets are tunnelled over
 SCTP/IP and GTP/UDP/IP, respectively. SCTP (Stream Control Transport
-Protocol) is 3GPP-defined alternative to TCP, tailored to carry
+Protocol) is an alternative reliable transport to TCP, tailored to carry
 signaling (control) information for telephony services. GTP (a nested
 acronym corresponding to (General Packet Radio Service) Tunneling
 Protocol) is a 3GPP-specific tunneling protocol designed to run over
@@ -244,7 +242,7 @@ the radio spectrum over a larger geographic area.
 In other words, the RAN as a whole (i.e., not just a single base
 station) not only supports handovers (an obvious requirement for
 mobility), but also *link aggregation* and *load balancing*, mechanisms
-that are familiar to anyone that understands the Internet. We will
+that are familiar to anyone who understands the Internet. We will
 revisit how such RAN-wide (global) decisions can be made using SDN
 techniques in a later chapter.
 
@@ -252,16 +250,19 @@ techniques in a later chapter.
 ---------------
 
 The main function of the Mobile Core is to provide external packet data
-network (e.g., Internet) connectivity to mobile subscribers, while
+network (i.e., Internet) connectivity to mobile subscribers, while
 ensuring that they are authenticated and their observed service
 qualities satisfy their subscription SLAs. An important aspect of the
 Mobile Core is that it needs to manage all subscribers’ mobility by
 keeping track of their last whereabouts at the granularity of the
-serving base station.
+serving base station. It's the fact that the Mobile Core is keeping
+track of individual subscribers—something that the Internet's core
+does not do—that creates a lot of the complexity in its architecture,
+especially given that those subscribers are moving around.
 
 While the aggregate functionality remains largely the same as we migrate
 from 4G to 5G, how that functionality is virtualized and factored into
-individual components changes, with the 5G Mobile Core heavily
+individual components changes. The 5G Mobile Core is heavily
 influenced by the cloud’s march toward a microservice-based (cloud
 native) architecture. This shift to cloud native is deeper than it might
 first appear, in part because it opens the door to customization and
@@ -326,9 +327,9 @@ The 5G Mobile Core, which 3GPP calls the *NG-Core*, adopts a
 microservice-like architecture, where we say “microservice-like” because
 while the 3GPP specification spells out this level of disaggregation, it
 is really just prescribing a set of functional blocks and not an
-implementation. Keeping in mind a set of functional blocks is very
+implementation. A set of functional blocks is very
 different from the collection of engineering decisions that go into
-designing a microservice-based system, viewing the collection of
+designing a microservice-based system. That said, viewing the collection of
 components shown in :numref:`Figure %s <fig-5g-core>` 
 as a set of microservices is a good working model.
 
@@ -336,10 +337,10 @@ The following organizes the set of functional blocks into three groups.
 The first group runs in the Control Plane (CP) and has a counterpart in
 the EPC.
 
--  AMF (Core Access and Mobility Management Function): Manages the
-   mobility-related aspects of the EPC’s MME. Responsible for connection
+-  AMF (Core Access and Mobility Management Function): Responsible for connection
    and reachability management, mobility management, access
-   authentication and authorization, and location services.
+   authentication and authorization, and location services. Manages the
+   mobility-related aspects of the EPC’s MME. 
 
 -  SMF (Session Management Function): Manages each UE session, including
    IP address allocation, selection of associated UP function, control
@@ -379,8 +380,9 @@ a direct counterpart in the EPC:
 
 -  NSSF (Network Slicing Selector Function): A means to select a Network
    Slice to serve a given UE. Network slices are essentially a way to
+   partition network resources in order to 
    differentiate service given to different users. It is a key feature
-   of 5G that we discuss in depth later in a later chapter.
+   of 5G that we discuss in depth in a later chapter.
 
 The third group includes the one component that runs in the User Plane
 (UP):
@@ -411,11 +413,11 @@ implementation strategy.
 
 Stepping back from these details, and with the caveat that we are
 presuming an implementation, the main takeaway is that we can
-conceptualize the Mobile Core as a *Service Mesh*. We adopt this
-terminology for “an interconnected set of microservices” since it is
-widely used in cloud native systems. Other terms you will sometimes hear
-are *Service Graph* and *Service Chain*, the latter being more prevalent
-in NFV-oriented documents. 3GPP is silent on the specific terminology
+conceptualize the Mobile Core as a graph of services. You will
+sometimes hear this called a *Service Graph* or *Service Chain*, the latter being more prevalent
+in NFV-oriented documents. Another term, *Service Mesh*, has taken on
+a rather specific meaning in cloud native terminology—we'll avoid
+overloading that term here. 3GPP is silent on the specific terminology
 since it is considered an implementation choice rather than part of the
 specification. We describe our implementation choices in later chapters.
 
@@ -455,7 +457,7 @@ request to the Core-CP over the existing tunnel, and the Core-CP
 authentication protocol with the UE (Step 2). 3GPP identifies a set of
 options, including the *Advanced Encryption Standard* (AES), where the
 actual protocol used is an implementation choice. Note that this
-authentication exchange is in the clear since the Base Station to UE
+authentication exchange is initially in the clear since the Base Station to UE
 link is not yet secure.
 
 Once the UE and Core-CP are satisfied with each other's identity, the
@@ -465,8 +467,9 @@ to initialize the user plane (e.g., assign an IP address to the UE and
 set the appropriate QCI parameter); (b) instructing the Base Station
 to establish an encrypted channel to the UE; and (c) giving the UE the
 symmetric key it will need to use the encrypted channel with the Base
-Station.  Once complete, the UE can use the end-to-end user plane
-channel through the Core-UP (Step 4).
+Station.  The symmetric key is encrypted using the public key of the
+UE (so only the UE can decrypt it, using its secret key). Once
+complete, the UE can use the end-to-end user plane channel through the Core-UP (Step 4). 
 
 There are three additional details of note about this process. First,
 the secure control channel between the UE and the Core-CP set up
@@ -516,8 +519,8 @@ options, which can be summarized as follows.
 -  Non-Standalone (4G+5G RAN) over 4G’s EPC
 -  Non-Standalone (4G+5G RAN) over 5G’s NG-Core
 
-The second of the three options, which is generally referred to by its
-NSA acronym, involves 5G base stations being deployed alongside the
+The second of the three options, which is generally referred to as
+“NSA“, involves 5G base stations being deployed alongside the
 existing 4G base stations in a given geography to provide a data-rate
 and capacity boost. In NSA, control plane traffic between the user
 equipment and the 4G Mobile Core utilizes (i.e., is forwarded through)
