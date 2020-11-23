@@ -33,7 +33,7 @@ when the distinction is helpful.
 
 The cellular network provides wireless connectivity to devices that are
 on the move. These devices, which are known as *User Equipment (UE)*,
-have until recently corresponded to smartphones and tablets, but will
+have traditionally corresponded to smartphones and tablets, but will
 increasingly include cars, drones, industrial and agricultural machines,
 robots, home appliances, medical devices, and so on.
 
@@ -48,10 +48,13 @@ robots, home appliances, medical devices, and so on.
 As shown in :numref:`Figure %s <fig-cellular>`, the cellular network
 consists of two main subsystems: the *Radio Access Network (RAN)* and
 the *Mobile Core*. The RAN manages the radio spectrum, making sure it
-is both used efficiently and meets the quality-of-service requirements
-of every user.  The main component in the RAN is the crypticly named
-*eNodeB* (or *eNB*), which is short for the equally cryptic *evolved
-Node B*. The Mobile Core is a bundle of functionality (as opposed to a
+is used efficiently and meets the quality-of-service requirements
+of every user.  The main component in the RAN is base station. As
+noted above, in 4G these are (somewhat cryptically) named
+*eNodeB* (or *eNB*), which is short for *evolved
+Node B*.  In 5G they are known as *gNB*. (The g stands for "next Generation".)
+
+The Mobile Core is a bundle of functionality (as opposed to a
 device) that serves several purposes.
 
 -  Provides Internet (IP) connectivity for both data and voice services.
@@ -73,7 +76,7 @@ metropolitan area is a good working model. The corresponding RAN would
 then span several dozens (or even hundreds) of cell towers.
 
 Taking a closer look at :numref:`Figure %s <fig-cellular>`, we see that a
-*Backhaul Network* interconnects the eNBs that implement the RAN with
+*Backhaul Network* interconnects the base stations that implement the RAN with
 the Mobile Core. This network is typically wired, may or may not have
 the ring topology shown in the Figure, and is often constructed from
 commodity components found elsewhere in the Internet. For example, the
@@ -97,8 +100,7 @@ in turn.
 
 Before getting to those details, :numref:`Figure %s <fig-cups>`
 redraws components from :numref:`Figure %s <fig-cellular>` to
-highlight two important distinctions. The first is that the eNB (which
-we will refer to as the Base Station from here on) has an analog
+highlight two important distinctions. The first is that the Base Station has an analog
 component (depicted by an antenna) and a digital component (depicted
 by a processor pair). The second is that the Mobile Core is
 partitioned into a *Control Plane* and *User Plane*, which is similar
