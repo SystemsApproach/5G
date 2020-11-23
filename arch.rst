@@ -48,11 +48,11 @@ robots, home appliances, medical devices, and so on.
 As shown in :numref:`Figure %s <fig-cellular>`, the cellular network
 consists of two main subsystems: the *Radio Access Network (RAN)* and
 the *Mobile Core*. The RAN manages the radio spectrum, making sure it
-is used efficiently and meets the quality-of-service requirements
-of every user.  The main component in the RAN is base station. As
-noted above, in 4G these are (somewhat cryptically) named
-*eNodeB* (or *eNB*), which is short for *evolved
-Node B*.  In 5G they are known as *gNB*. (The g stands for “next Generation“.)
+is used efficiently and meets the quality-of-service requirements of
+every user.  It corresponds to a distributed collection of base
+stations. As noted above, in 4G these are (somewhat cryptically) named
+*eNodeB* (or *eNB*), which is short for *evolved Node B*.  In 5G they
+are known as *gNB*. (The g stands for "next Generation".)
 
 The Mobile Core is a bundle of functionality (as opposed to a
 device) that serves several purposes.
@@ -100,7 +100,7 @@ in turn.
 
 Before getting to those details, :numref:`Figure %s <fig-cups>`
 redraws components from :numref:`Figure %s <fig-cellular>` to
-highlight two important distinctions. The first is that the Base Station has an analog
+highlight two important distinctions. The first is that a base station has an analog
 component (depicted by an antenna) and a digital component (depicted
 by a processor pair). The second is that the Mobile Core is
 partitioned into a *Control Plane* and *User Plane*, which is similar
