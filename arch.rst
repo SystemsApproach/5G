@@ -455,8 +455,10 @@ communicates with a nearby Base Station over a temporary
 request to the Core-CP over the existing tunnel, and the Core-CP
 (specifically, the MME in 4G and the AMF in 5G) initiates an
 authentication protocol with the UE (Step 2). 3GPP identifies a set of
-options, including the *Advanced Encryption Standard* (AES), where the
-actual protocol used is an implementation choice. Note that this
+options for authentication and encryption, where the
+actual protocols used are an implementation choice. For example,
+*Advanced Encryption Standard* (AES) is one of the options for
+encryption. Note that this
 authentication exchange is initially in the clear since the Base Station to UE
 link is not yet secure.
 
