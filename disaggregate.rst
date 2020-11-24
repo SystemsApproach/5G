@@ -341,7 +341,7 @@ sustain the packet forwarding rate of the corresponding slice).
 
 But packet scheduling and CPU scheduling are low-level mechanisms. What
 makes slicing work is to also virtualize and replicate the entire
-service mesh that implements the Mobile Core. If you think of a slice as
+service graph that implements the Mobile Core. If you think of a slice as
 a system abstraction, then that abstraction needs to keep track of the
 set of interconnected microservices that implement each slice,
 and then instruct the underlying packet schedulers to allocate
@@ -352,10 +352,10 @@ containers.
 For example, if there are two network slices (analogous to the two RAN
 schedulers shown in :numref:`Figures %s <fig-multi-sched>` and
 :numref:`%s <fig-slicing-control>`), then there would also need
-to be two Mobile Core service meshes: One set of AMF, SMF, UPF,…
+to be two Mobile Core service graphs: One set of AMF, SMF, UPF,…
 microservices running on behalf of the first slice and a second set of
 AMF, SMF, UPF,… microservices running on behalf of the second
-slice. These two meshes would scale independently (i.e., include a
+slice. These two graphs would scale independently (i.e., include a
 different number of container instances), depending on their
 respective workloads and QoS guarantees.  The two slices would also be
 free to make different implementation choices, for example, with one
@@ -364,10 +364,9 @@ high-bandwidth AR/VR applications.
 
 The one remaining mechanism we need is a demultiplexing function that
 maps a given packet flow (e.g., between UE and some Internet
-application) onto the appropriate instance of the service mesh. This is
+application) onto the appropriate instance of the service graph. This is
 the job of the NSSF described in an Chapter 3: it is responsible
-for selecting the mesh instance a given slice’s traffic is to
-traverse.
+for selecting the instance a given slice’s traffic is to traverse.
 
 We conclude this discussion of slicing with an observation. While
 differentiating slices based on the resources allocated to each is a
