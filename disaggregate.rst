@@ -382,3 +382,19 @@ only does this break the cellular network out of a one-size-fits-all
 situation, it opens the door for innovation. There won't be just one
 Mobile Core. There will potentially be many (and they will be
 implemented in the cloud).
+
+The similarity between slicing and the much-debated topic of network
+QoS might lead one to conclude that slicing won't take off, as QoS
+never seemed to provide quite enough benefit in large networks to
+justify its complexity. But the one place where QoS *is* effective is
+when bandwidth is scarce, e.g., in last-mile links. For this reason,
+slicing is likely to be valuable precisely because it allows efficient
+partitioning of the relatively scarce resource that is cellular
+spectrum.
+
+Finally, note that slicing can be viewed as a way to enable overlays on the cellular
+network. The Internet has a long history of supporting
+innovation through the use of overlays. Many innovations such as
+multicast and content delivery networks were developed in this way. So
+while we might not know exactly how slicing will be used, it is an
+important ingredient in fostering innovation.
