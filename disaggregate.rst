@@ -382,3 +382,11 @@ only does this break the cellular network out of a one-size-fits-all
 situation, it opens the door for innovation. There won't be just one
 Mobile Core. There will potentially be many (and they will be
 implemented in the cloud).
+
+This last point is critical to understanding the potential impact
+network slicing will have on the cellular network. While slicing is
+narrowly viewed is a form of QoS (a slice virtualizes and schedules
+the scarce radio spectrum), slices also provide a means to build
+distinct overlay networks on top of the mobile network. The latter is
+a time honoured method of fostering innovation (e.g., overlays like
+CDNs on the Internet).
