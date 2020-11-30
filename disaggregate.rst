@@ -13,15 +13,15 @@ be realized).
 ------------------------
 
 There are many reasons to disaggregate functionality, but one of the
-most compelling is that by decoupling control and data code paths, it is
-possible to optimize the data path. This can be done, for example, by
+most compelling is that decoupling control and data code paths allows
+them to be optimized independently. The data path, for example, can be
+optimized by
 programming it into specialized hardware. Modern white-box switches with
 programmable packet forwarding pipelines are a perfect example of
 specialized hardware we can exploit in the cellular network.
 :numref:`Figure %s <fig-e2e>` shows the first step in the process
 of doing this. The figure also pulls together all the elements we’ve
-been describing up to this point. There are several things to note
-about this diagram.
+been describing up to this point. 
 
 .. _fig-e2e:
 .. figure:: figures/Slide21.png 
@@ -31,7 +31,8 @@ about this diagram.
     End-to-end disaggregated system, including Mobile Core
     and Split-RAN.
 
-First, the figure combines both the Mobile Core and RAN elements,
+There are several things to note
+about this diagram. First, the figure combines both the Mobile Core and RAN elements,
 organized according to the major subsystems: Mobile Core, Central Unit
 (CU), Distributed Unit (DU), and Radio Unit (RU). The figure also shows
 one possible mapping of these subsystems onto physical locations, with
@@ -82,7 +83,7 @@ components: it allows us to realize the three user plane elements
 (PGW-U, SGW-U, PDCP-U) in switching hardware. This can be done using a
 combination of a language that is tailored for programming forwarding
 pipelines (e.g., P4), and a protocol-independent switching
-architecture (e.g., Tofino). For now, the important takeaway is that
+architecture (e.g., Intel's Tofino). For now, the important takeaway is that
 the RAN and Mobile Core user plane can be mapped directly onto an
 SDN-enabled data plane.
 
@@ -129,10 +130,10 @@ fabric. Keep in mind that the linear sequence of switches implied by
 :numref:`Figure %s <fig-e2e-p4>` is logical, but that in no way
 restricts the actual hardware to the same topology. The reason we use
 a leaf-spine topology is related to our ultimate goal of building an
-edge cloud, and leaf-spine is the proto-typical structure for such
+edge cloud, and leaf-spine is the prototypical structure for such
 cloud-based clusters.  This means the three control applications must
 work in concert to implement an end-to-end path through the fabric,
-which in practice happens with the aid of other, fabric aware, control
+which in practice happens with the aid of other, fabric-aware, control
 applications (as implied by the “…” in the Figure). We describe the
 complete picture in more detail in the next chapter, but for now, the
 big takeaway is that the control plane components of the 5G overlay
@@ -189,7 +190,7 @@ your choosing.
 But the biggest motivation for the configuration shown in
 :numref:`Figure %s <fig-multicloud>` is that keeping the user plane
 elements of the mobile core at the edge makes it possible to "break
-out" local traffic without having to traverse a "turnpin" route that
+out" local traffic without having to traverse a "hairpin" route that
 goes through a central site. This has the potential to dramatically
 reduce latency for any edge-hosted services. We return to this topic
 in Chapter 7.
@@ -201,11 +202,12 @@ One of the most compelling value propositions of 5G is the ability to
 differentiate the level of service offered to different applications
 and customers. Differentiation, of course, is key to being able to
 charge some customers more than others, but the monetization case
-aside, it is also necessary if you are going to support such widely
-varying applications as streaming video (which requires high bandwidth
-but can tolerate larger latencies) and IoT (which has
-minimal bandwidth needs but requires extremely low and predictable
-latencies, connecting a *massively scalable* number of IoT devices).
+is only part of the story. It is also necessary to support
+applications with widely varying requirements. For example, streaming video requires high bandwidth
+but can tolerate larger latencies, while IoT has
+minimal bandwidth needs but sometimes requires extremely low and predictable
+latencies, and entails connecting a *massively scalable* number of
+devices. 
 
 The mechanism that supports this sort of differentiation is called
 network slicing, and it fundamentally comes down to scheduling, both in
@@ -289,10 +291,10 @@ could be reserved for premium customers or other high-priority traffic
 
 Going one level deeper in the implementation details, the real-time
 scheduler running in each DU receives high-level directives from the
-near real-time scheduler running in the CU, and as depicted in
-:numref:`Figure %s <fig-slicing-control>`, these directives make dual
-transmission, handoff, and interference decisions on a per-slice
-basis. A single RAN Slicing control application is responsible for the
+near-real-time scheduler running in the CU, and as depicted in
+:numref:`Figure %s <fig-slicing-control>`, the DUs follow these
+directives in making their scheduling decisions *on a
+per-slice basis*. A single RAN Slicing control application is responsible for the
 macro-scheduling decision by allocating resources among a set of
 slices. Understanding this implementation detail is important because
 all of these control decisions are implemented by software modules,
@@ -304,8 +306,8 @@ the underlying system, as they have historically been in 4G’s eNodeBs.
     :width: 350px
     :align: center
 
-    Centralized near-realtime control applications
-    cooperating with distribute real-time RAN schedulers.
+    Centralized near-real-time control applications
+    cooperating with distributed real-time RAN schedulers.
 
 In summary, the goal of RAN slicing is to programmatically create
 virtual RAN nodes (base stations) that operate on the same hardware
