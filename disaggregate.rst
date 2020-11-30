@@ -306,8 +306,8 @@ the underlying system, as they have historically been in 4G’s eNodeBs.
     :width: 350px
     :align: center
 
-    Centralized near-realtime control applications
-    cooperating with distribute real-time RAN schedulers.
+    Centralized near-real-time control applications
+    cooperating with distributed real-time RAN schedulers.
 
 In summary, the goal of RAN slicing is to programmatically create
 virtual RAN nodes (base stations) that operate on the same hardware
