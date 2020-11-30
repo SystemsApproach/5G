@@ -370,20 +370,7 @@ application) onto the appropriate instance of the service graph. This is
 the job of the NSSF described in an Chapter 3: it is responsible
 for selecting the instance a given slice’s traffic is to traverse.
 
-We conclude this discussion of slicing with an observation. While
-differentiating slices based on the resources allocated to each is a
-familiar network feature, reminiscent of QoS, slices can also
-implement different functionality, specialized for different use
-cases. For example, the AMF/SMF (5G) or MME (4G) functionality of the
-Mobile Core can be customized for different usage patterns, where
-supporting a massively scalable number of IoT devices that
-intermittently transmit small amounts of data is a great example. Not
-only does this break the cellular network out of a one-size-fits-all
-situation, it opens the door for innovation. There won't be just one
-Mobile Core. There will potentially be many (and they will be
-implemented in the cloud).
-
-The similarity between slicing and the much-debated topic of network
+The similarity between slicing and the much-debated topic of network 
 QoS might lead one to conclude that slicing won't take off, as QoS
 never seemed to provide quite enough benefit in large networks to
 justify its complexity. But the one place where QoS *is* effective is
@@ -392,8 +379,8 @@ slicing is likely to be valuable precisely because it allows efficient
 partitioning of the relatively scarce resource that is cellular
 spectrum.
 
-Finally, note that slicing can be viewed as a way to enable overlays on the cellular
-network. The Internet has a long history of supporting
+Finally, note that slicing can be viewed as a way to enable overlays on 
+the cellular network. The Internet has a long history of supporting
 innovation through the use of overlays. Many innovations such as
 multicast and content delivery networks were developed in this way. So
 while we might not know exactly how slicing will be used, it is an
