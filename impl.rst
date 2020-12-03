@@ -76,13 +76,13 @@ POD is a question we do not try to answer in this book.
 
 The RAN and Core related components are ones we’ve described in
 earlier chapters. They include the Control and User planes of the CU
-and Mobile Core, respectively, where to simplify the diagram, we show
+and Mobile Core, respectively. To simplify the diagram, we show
 the SGW and PGW merged into a single S/PGW. One other detail that
 deserves closer attention is the RAN Control component included in the
 CU Control Plane.  This is the Near-RT RIC introduced in Section 4.3,
 which means a CORD POD includes two SDN Controllers: the RIC controls
-the RAN and ONOS shown in :numref:`Figure %s <fig-cord>` controls the
-fabric.  (The RIC running in CORD actually corresponds to a second,
+the RAN and ONOS (shown in :numref:`Figure %s <fig-cord>`) controls the
+fabric.  (The RIC running in CORD actually happens to be a second,
 customized version of ONOS, but that's an implementation detail.)
 
 One aspect of :numref:`Figure %s <fig-cord>` that requires further
@@ -92,7 +92,7 @@ manifestations of the functional components implied by the figure: (1)
 the data plane layer of the CU-U and S/PGW-U are realized as P4
 programs loaded into the programmable switches; (2) the control plane
 layer of the CU-U and S/PGW-U (as well as the Trellis platform module)
-are realized as control applications loaded onto the ONOS Network OS;
+are realized as control applications loaded onto ONOS;
 and (3) the remaining components are realized as Kubernetes-managed
 microservices. (Kubernetes is implied, but not shown in the figure.)
 
@@ -118,8 +118,8 @@ subsystems.
 
 -  **Platform:** The base layer common to all configurations includes
    Kubernetes as the container management system and ONOS as the SDN
-   controller, with Stratum loaded on to each switch. Both ONOS and the
-   control applications it hosts run as a Kubernetes-managed
+   controller, with Stratum (an open source switch OS) loaded on to each switch. Both ONOS and the
+   control applications it hosts run as Kubernetes-managed
    microservices.
 
 -  **Profile:** The deployment-specific collection of microservices and
@@ -180,14 +180,14 @@ managing a network of switches) communicate using the following
 interfaces.
 
 -  **P4:** Defines the forwarding behavior for programmable switching
-   chips as well as model fixed-function ASIC pipelines. A P4 program
+   chips as well as modeling fixed-function ASIC pipelines. A P4 program
    defines a contract that is implemented by the data plane and
    programmable by the control plane.
 
 -  **P4Runtime:** An SDN-ready interface for controlling forwarding
    behavior at runtime. It is the key for populating forwarding tables
-   and manipulating forwarding state, and it does so in a P4 program and
-   hardware agnostic way.
+   and manipulating forwarding state, and it does so in way that is
+   hardware-agnostic.
 
 -  **OpenConfig Models:** Define a base for device configuration and
    management. These models can be programmatically extended for
@@ -223,11 +223,19 @@ premises (denoted “On Site” in the figure).
     distributed) leaf-spine fabric.
 
 The software stack we've just described is substantial, and has the
-potential to disrupt and transform the Internet in ways that can only
-be matched by 5G. Of particular note, the RAN Intelligent Controller
+potential to disrupt the way cellular networks are built and operated.
+Of particular note, the RAN Intelligent Controller
 shown in :numref:`Figure %s <fig-cord>` is implemented as a set of
 extensions to ONOS.  This puts the ONOS-based RIC at the very center
 of the design, where the SDN and 5G worlds intersect.
+
+This discussion, while focused on just one option for implementing 5G
+networks, illustrates one of the reasons 5G is viewed as such a
+transformation of the Telco industry. The 5G architecture, far more
+than any previous Telco network, capitalizes on several significant, broad
+industry trends. These include the rise of SDN, the power of open source
+software and its increasing use in networking, and of course the
+adoption of cloud technologies as the basis for delivering innovative services.
 
 .. _reading_sdn:
 .. admonition:: Further Reading
