@@ -36,14 +36,16 @@ as to subsume the access network.
     :width: 700px
     :align: center
 
-    A multi-tenant / multi-cloud—including virtualized RAN
+    A collection of multi-tenant clouds—including virtualized RAN
     resources alongside conventional compute, storage, and network
     resources—hosting both Telco and Over-the-Top (OTT) services and
     applications.
 
 :numref:`Figure %s <fig-cloud>` gives a high-level overview of how the
 transformation might play out, with the global cloud spanning edge
-clouds, private Telco clouds, and the familiar public clouds. Each
+clouds, private Telco clouds, and the familiar public clouds. We call
+this collection of clouds "multi-cloud" (although note that there are
+a number of other definitions for that term). Each
 individual cloud site is potentially owned by a different organization
 (this includes the cell towers, as well), and as a consequence, each
 site will likely be multi-tenant in that it is able to host (and
@@ -97,7 +99,7 @@ activity. But there is also an open source variant, called Aether, now
 available for early adopters to evaluate and experiment with. Aether
 is an ONF-operated ECaaS with 4G/5G support, built from the open
 source components described throughout this book. Aether works with
-both licensed and unlicensed frequency bands (i.e., CBRS), but it is
+both licensed and unlicensed frequency bands (e.g., CBRS), but it is
 the latter that makes it an easy system to opt into. :numref:`Figure
 %s <fig-aether>` depicts the early stages of Aether's centrally
 managed, multi-site deployment. 
@@ -108,13 +110,13 @@ managed, multi-site deployment.
     :align: center
 
     Aether is an ONF-operated EdgeCloud-as-a-Service built from the
-    SD-RAN and disaggregted Mobile Core components described
+    SD-RAN and disaggregated Mobile Core components described
     throughout this book. Aether includes a centralized operations
     portal running in the Public Cloud.
 
 Note that each edge site in :numref:`Figure %s <fig-aether>`
-corresponds to a CORD POD described in Chapter 6, re-configure to
-off-load the O&M Interface and the Control elements of the Mobile Core
+corresponds to a CORD POD described in Chapter 6, re-configured to
+offload the O&M Interface and the Control elements of the Mobile Core
 to the central cloud.
 
 .. _reading_aether:
@@ -150,7 +152,7 @@ conclude by identifying some example challenges/opportunities.
 
 - **Virtualization:** The access-edge will virtualize the underlying
   hardware using a range of techniques, from VMs to containers to
-  lambdas, interconnected by a range of L2, L3, and L4/7 virtual
+  serverless functions, interconnected by a range of L2, L3, and L4/7 virtual
   networks, some of which will be managed by SDN control
   applications. Research is needed to reconcile the assumptions made
   about by cloud native services and access-oriented Virtualized
@@ -163,12 +165,12 @@ conclude by identifying some example challenges/opportunities.
   different components. It will not be feasible to run the entire
   access-edge in a single trust domain, as different components will
   operate with different levels of autonomy. Research is needed to
-  minimize the overhead isolation imposed on tenants.
+  minimize the overhead isolation imposes on tenants.
   
 - **Customization:** Monetizing the access-edge will require the
   ability to offer differentiated and customized services to different
   classes of subscribers/applications. Sometimes called network
-  slicing, this involves support for performance isolation at the
+  slicing (see Section 5.3), this involves support for performance isolation at the
   granularity of service chains—the sequence of functional elements
   running on behalf of some subscriber. Research is needed to enforce
   performance isolation in support of service guarantees.
@@ -191,8 +193,8 @@ conclude by identifying some example challenges/opportunities.
   
 - **Distributed Services:** Services will become inherently
   distributed, with some aspects running at the access-edge, some
-  aspects running in the datacenter, and some running on premises or
-  end device (e.g., on-vehicle). Supporting such an environment
+  aspects running in the datacenter, and some running on-premises or
+  in an end device (e.g., on-vehicle). Supporting such an environment
   requires a multi-cloud solution that is decoupled from any single
   infrastructure-based platform, with research needed to develop
   heuristics for function placement.
