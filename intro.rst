@@ -10,21 +10,25 @@ hundreds of kilobits-per-second. Today, the industry is at 4G
 megabits-per-second) and transitioning to 5G, with the promise of a
 tenfold increase in data rates.
 
-But 5G is about much more than increased bandwidth. In the same way 3G
+But 5G is about much more than increased bandwidth. 5G represents a
+fundamental rearchitecture of the access network in a way that
+leverages several key technology trends and sets it on a path to enable
+much greater innovation. In the same way that 3G
 defined the transition from voice to broadband, 5G’s promise is primarily
 about the transition from a single access service (broadband
-connectivity) to a richer collection of edge services and devices,
-including support for immersive user interfaces (e.g., AR/VR),
+connectivity) to a richer collection of edge services and devices. 5G
+is expected to provide support for immersive user interfaces (e.g., AR/VR),
 mission-critical applications (e.g., public safety, autonomous
 vehicles), and the Internet-of-Things (IoT). Because these use cases
 will include everything from home appliances to industrial robots to
 self-driving cars, 5G won’t just support humans accessing the Internet
 from their smartphones, but also swarms of autonomous devices working
-together on their behalf. All of this requires a fundamentally
-different architecture.
+together on their behalf. There is more to supporting these services
+than just improving bandwidth or latency to individual users. As we will see, a fundamentally
+different edge network architecture is required.
 
 The requirements for this architecture are ambitious, and can be
-summarized as having three main objectives.
+illustrated by three classes of capabilities:
 
 - To support *Massive Internet-of-Things*, potentially including
   devices with ultra-low energy (10+ years of battery life), ultra-low
@@ -43,6 +47,16 @@ summarized as having three main objectives.
 These targets will certainly not be met overnight, but that's in keeping
 with each generation of the mobile network being a decade-long
 endeavor.
+
+On top of these quantitative improvements to the capabilities of the access
+network, 5G is being viewed as a chance for building a platform to
+support innovation. Whereas prior access networks were generally
+optimized for known services (such as voice calls and SMS), the
+Internet has been hugely successful in large part because it supported
+a wide range of applications that were not even thought of when it was
+first designed. The 5G network is very much being designed with this
+same goal of enabling all sorts of future applications beyond those we
+fully recognize today.
 
 .. _reading_vision:
 .. admonition:: Further Reading
