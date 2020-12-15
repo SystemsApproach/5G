@@ -46,7 +46,16 @@ This book will likely be a work-in-progress for the foreseeable future.
 It’s not intended to be encyclopedic—favoring perspective and end-to-end 
 completeness over every last bit of detail—but we do plan to flesh out 
 the content over time. Your suggestions (and contributions) to this end 
-are welcome. 
+are welcome.
+
+Acknowledgements
+----------------
+
+The software described in this book is due to the hard work of the ONF
+engineering team and the open source community that works with
+them. We acknowledge their contributions. We also thank Bruce Davie,
+Guru Parulkar, and Changhoon Kim for their feedback on early drafts of
+the manuscript.
 
 | Larry Peterson and Oguz Sunay 
 | Open Networking Foundation 
