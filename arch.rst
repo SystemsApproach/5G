@@ -421,24 +421,25 @@ overloading that term here. 3GPP is silent on the specific terminology
 since it is considered an implementation choice rather than part of the
 specification. We describe our implementation choices in later chapters.
 
-3.4 Security
-------------
+3.4 Security and Mobility
+-------------------------
 
-We now take a closer look at the security architecture of the cellular
-network, which also serves to fill in some details about how each
-individual UE connects to the network. The architecture is grounded in
-two trust assumptions.
+We now take a closer look at two unique features of the cellular
+network—its support for security and mobility—both of which
+differentiate it from WiFi. The following also serves to fill in some
+details about how each individual UE connects to the network.
 
-First, each Base Station trusts that it is connected to the Mobile
-Core by a secure private network, over which it establishes the
-tunnels introduced in :numref:`Figure %s <fig-tunnels>`: a GTP/UDP/IP
-tunnel to the Core's User Plane (Core-UP) and a SCTP/IP tunnel to the
-Core's Control Plane (Core-CP). Second, each UE has an
-operator-provided SIM card, which uniquely identifies the subscriber
-(i.e., phone number) and establishes the radio parameters (e.g.,
-frequency band) need to communicate with that operator's Base
-Stations. The SIM card also includes a secret key that the UE uses to
-authenticate itself.
+We start with the security architecture, which is grounded in two
+trust assumptions.  First, each Base Station trusts that it is
+connected to the Mobile Core by a secure private network, over which
+it establishes the tunnels introduced in :numref:`Figure %s
+<fig-tunnels>`: a GTP/UDP/IP tunnel to the Core's User Plane (Core-UP)
+and a SCTP/IP tunnel to the Core's Control Plane (Core-CP). Second,
+each UE has an operator-provided SIM card, which uniquely identifies
+the subscriber (i.e., phone number) and establishes the radio
+parameters (e.g., frequency band) need to communicate with that
+operator's Base Stations. The SIM card also includes a secret key that
+the UE uses to authenticate itself.
 
 .. _fig-secure:
 .. figure:: figures/Slide34.png 
@@ -455,12 +456,11 @@ communicates with a nearby Base Station over a temporary
 request to the Core-CP over the existing tunnel, and the Core-CP
 (specifically, the MME in 4G and the AMF in 5G) initiates an
 authentication protocol with the UE (Step 2). 3GPP identifies a set of
-options for authentication and encryption, where the
-actual protocols used are an implementation choice. For example,
-*Advanced Encryption Standard* (AES) is one of the options for
-encryption. Note that this
-authentication exchange is initially in the clear since the Base Station to UE
-link is not yet secure.
+options for authentication and encryption, where the actual protocols
+used are an implementation choice. For example, *Advanced Encryption
+Standard* (AES) is one of the options for encryption. Note that this
+authentication exchange is initially in the clear since the Base
+Station to UE link is not yet secure.
 
 Once the UE and Core-CP are satisfied with each other's identity, the
 Core-CP informs the other components of the parameters they will need
@@ -471,7 +471,8 @@ to establish an encrypted channel to the UE; and (c) giving the UE the
 symmetric key it will need to use the encrypted channel with the Base
 Station.  The symmetric key is encrypted using the public key of the
 UE (so only the UE can decrypt it, using its secret key). Once
-complete, the UE can use the end-to-end user plane channel through the Core-UP (Step 4). 
+complete, the UE can use the end-to-end user plane channel through the
+Core-UP (Step 4).
 
 There are three additional details of note about this process. First,
 the secure control channel between the UE and the Core-CP set up
@@ -507,6 +508,42 @@ bundled into an single inter-component tunnel, which makes it
 impossible to differentiate the level of service given to any
 particular end-to-end UE channel. This is a limitation of 4G that 5G
 has ambitions to correct.
+
+Support for mobility can now be understood as the process of
+re-executing one or more of the steps shown in :numref:`Figure %s
+<fig-secure>` as the UE moves throughout the RAN.  The unauthenticated
+link indicated by (1) allows the UE to be known to all Base Station
+within range. (We refer to these as *potential links* in later
+chapters.) Based on the signal's measured CQI, the Base Stations
+communicate directly with each other to make a handover decision. Once
+made, the decision is then communicated to the Mobile Core,
+re-triggering the setup functions indicated by (3), which in turn
+re-builds the user plane tunnel between the Base Station and the SGW
+shown in :numref:`Figure %s <fig-per-hop>` (or correspondingly,
+between the Base Station and the UPF in 5G). One of the most unique
+features of the cellular network is that the Mobile Core's user plane
+(e.g., UPF in 5G) buffers data during the handover transition,
+avoiding dropped packets and subsequent end-to-end retransmissions.
+
+In other words, the cellular network maintains the *UE session* in the
+face of mobility (corresponding to the control and data channels
+depicted by (2) and (4) in :numref:`Figure %s <fig-secure>`,
+respectively), but it is able to do so only when the same Mobile Core
+serves the UE (i.e., only the Base Station changes).  This would
+typically be the case for a UE moving within a metopolitan area.
+Moving between metro areas—and hence, between Mobile Cores—is
+indistinguishable from power cycling a UE. The UE is assigned a new IP
+address and no attempt is made to buffer and subsequently deliver
+in-flight data. Independent of mobility, but relevant to this
+discussion, any UE that becomes inactive for a period of time also
+loses its session, with a new session established and a new IP address
+assigned when the UE becomes active again.
+
+Note that this session-based approach can be traced to the cellular
+network's roots as a connection-oriented network. An interesting
+thought experiment is whether the Mobile Core will continue to evolve
+so as to better match the connectionless assumptions of the Internet
+protocols that typically run on top of it.
 
 3.5 Deployment Options
 ----------------------
