@@ -127,7 +127,8 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 #
 html_theme_options = {
-  'prev_next_buttons_location': 'both'
+  'prev_next_buttons_location': 'both',
+  'analytics_id': 'G-9C6ZHKMTSM'
   }
 
 # Add any paths that contain custom static files (such as style sheets) here,
