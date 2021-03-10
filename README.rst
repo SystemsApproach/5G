@@ -37,9 +37,9 @@ To build a web-viewable version, you first need to download the source:
 
 .. code:: shell 
 
-   mkdir ~/5G 
-   cd ~/5G 
-   git clone https://github.com/SystemsApproach/5G.git 
+   $ mkdir ~/5G 
+   $ cd ~/5G 
+   $ git clone https://github.com/SystemsApproach/5G.git 
 
 The build process is stored in the Makefile and requires Python be 
 installed. The Makefile will create a virtualenv (``doc_venv``) which 
