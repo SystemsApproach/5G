@@ -2,7 +2,6 @@ _book/
 *.tex
 .DS_Store
 */.DS_Store
-*.sh
 private/
 MC-Sample/
 scripts/
