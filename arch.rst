@@ -437,7 +437,7 @@ it establishes the tunnels introduced in :numref:`Figure %s
 and a SCTP/IP tunnel to the Core's Control Plane (Core-CP). Second,
 each UE has an operator-provided SIM card, which uniquely identifies
 the subscriber (i.e., phone number) and establishes the radio
-parameters (e.g., frequency band) need to communicate with that
+parameters (e.g., frequency band) needed to communicate with that
 operator's Base Stations. The SIM card also includes a secret key that
 the UE uses to authenticate itself.
 
@@ -530,7 +530,7 @@ face of mobility (corresponding to the control and data channels
 depicted by (2) and (4) in :numref:`Figure %s <fig-secure>`,
 respectively), but it is able to do so only when the same Mobile Core
 serves the UE (i.e., only the Base Station changes).  This would
-typically be the case for a UE moving within a metopolitan area.
+typically be the case for a UE moving within a metropolitan area.
 Moving between metro areas—and hence, between Mobile Cores—is
 indistinguishable from power cycling a UE. The UE is assigned a new IP
 address and no attempt is made to buffer and subsequently deliver
