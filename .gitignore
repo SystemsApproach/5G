@@ -3,10 +3,10 @@ _book/
 .DS_Store
 */.DS_Store
 private/
-MC-Sample/
 scripts/
+figures-hi_res/
+figures-pdf/
 node_modules/
 cover.pdf
 cover.docx
-doc_venv
 _build
