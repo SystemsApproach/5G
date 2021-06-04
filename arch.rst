@@ -124,7 +124,7 @@ become clear in the following discussion.
 
 We now describe the RAN by sketching the role each base station plays.
 Keep in mind this is kind of like describing the Internet by explaining
-how a router works—a not unreasonable place to start, but it doesn’t
+how a router works—a not unreasonable place to start, but it doesn't
 fully do justice to the end-to-end story.
 
 First, each base station establishes the wireless channel for a

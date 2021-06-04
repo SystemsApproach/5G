@@ -11,7 +11,7 @@ megabits-per-second) and transitioning to 5G, with the promise of a
 tenfold increase in data rates.
 
 But 5G is about much more than increased bandwidth. 5G represents a
-fundamental rearchitecture of the access network in a way that
+fundamental rearchitecting of the access network in a way that
 leverages several key technology trends and sets it on a path to enable
 much greater innovation. In the same way that 3G
 defined the transition from voice to broadband, 5G’s promise is primarily
@@ -233,7 +233,7 @@ sometimes referred to as CORD *(Central Office Re-architected as a
 Datacenter)*, supports both the access network and edge services
 co-located on a shared cloud platform. This platform is then replicated
 across hundreds or thousands of sites (including, but not limited to,
-Central Offices). So while we shouldn’t limit ourselves to the Central
+Central Offices). So while we shouldn't limit ourselves to the Central
 Office as the only answer to the question of where the edge cloud is
 located, it is becoming a viable option.
 

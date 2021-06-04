@@ -348,7 +348,7 @@ multiplexes data onto the radio spectrum.
 
 The first is the one identified in the previous section: being able to
 change the waveform. This effectively introduces the ability to
-dynamically change the size and number of scheduleable resource units,
+dynamically change the size and number of schedulable resource units,
 which opens the door to making fine-grain scheduling decisions that
 are critical to predictable, low-latency communication.
 

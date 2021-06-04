@@ -1,7 +1,7 @@
 Chapter 6:  Exemplar Implementation
 ===================================
 
-The steps we’ve taken in the previous chapters to virtualize,
+The steps we've taken in the previous chapters to virtualize,
 disaggregate, optimize, distribute, and slice the cellular network not
 only help us understand the inner-workings of 5G, but they are also
 necessary to reduce the entirety of the 5G cellular network to practice.
@@ -74,7 +74,7 @@ such tenants.  The CORD platform can also host other edge services
 place), but exactly what other edge services might run on a given CORD
 POD is a question we do not try to answer in this book.
 
-The RAN and Core related components are ones we’ve described in
+The RAN and Core related components are ones we've described in
 earlier chapters. They include the Control and User planes of the CU
 and Mobile Core, respectively. To simplify the diagram, we show
 the SGW and PGW merged into a single S/PGW. One other detail that

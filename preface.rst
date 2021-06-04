@@ -1,12 +1,12 @@
 Preface 
 =======
 
-The transition to 5G is happening, and unless you’ve been actively
-trying to ignore it, you’ve undoubtedly heard the hype. But if you are
+The transition to 5G is happening, and unless you've been actively
+trying to ignore it, you've undoubtedly heard the hype. But if you are
 like 99% of the CS-trained, systems-oriented, cloud-savvy people in
-the world, the cellular network is largely a mystery. You know it’s an
+the world, the cellular network is largely a mystery. You know it's an
 important technology used in the last mile to connect people to the
-Internet, but you’ve otherwise abstracted it out of your
+Internet, but you've otherwise abstracted it out of your
 scope-of-concerns. Perhaps you've heard a conspiracy theory or two
 about how 5G is going to cause some awful side-effect—a sign that the
 hype around 5G might not be working as intended.
@@ -35,7 +35,7 @@ had been largely hidden inside proprietary devices, which has made it
 impossible to figure it out for yourself. 
 
 This book is the result of a mobile networking expert teaching a 
-systems person about 5G as we’ve collaborated on an open source 5G 
+systems person about 5G as we've collaborated on an open source 5G 
 implementation. The material has been used to train other software 
 developers, and we are hopeful it will be useful to anyone who wants a 
 deeper understanding of 5G and the opportunity for innovation it 

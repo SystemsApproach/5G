@@ -20,7 +20,7 @@ programming it into specialized hardware. Modern white-box switches with
 programmable packet forwarding pipelines are a perfect example of
 specialized hardware we can exploit in the cellular network.
 :numref:`Figure %s <fig-e2e>` shows the first step in the process
-of doing this. The figure also pulls together all the elements we’ve
+of doing this. The figure also pulls together all the elements we've
 been describing up to this point. 
 
 .. _fig-e2e:
