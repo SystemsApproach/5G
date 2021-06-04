@@ -61,19 +61,33 @@ warning_is_error = True
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones. ***Replace "mathjax" with "imgmath" for epub output.***
 extensions = [
-    'recommonmark',
     'sphinx.ext.coverage',
+    'sphinx.ext.graphviz',
     'sphinx.ext.ifconfig',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
-    'sphinx.ext.autosectionlabel',
-    'sphinxcontrib.actdiag',
-    'sphinxcontrib.blockdiag',
-    'sphinxcontrib.nwdiag',
-    'sphinxcontrib.packetdiag',
-    'sphinxcontrib.rackdiag',
-    'sphinxcontrib.seqdiag',
+    'sphinxcontrib.spelling',
+    "sphinx_multiversion",
 ]
+
+#extensions = [
+#    'recommonmark',
+#    'sphinx.ext.coverage',
+#    'sphinx.ext.ifconfig',
+#    'sphinx.ext.mathjax',
+#    'sphinx.ext.todo',
+#    'sphinx.ext.autosectionlabel',
+#    'sphinxcontrib.actdiag',
+#    'sphinxcontrib.blockdiag',
+#    'sphinxcontrib.nwdiag',
+#    'sphinxcontrib.packetdiag',
+#    'sphinxcontrib.rackdiag',
+#    'sphinxcontrib.seqdiag',
+#]
+
+# Text files with lists of words that shouldn't fail the spellchecker:
+spelling_word_list_filename=['dict.txt', ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -103,7 +117,6 @@ exclude_patterns = [u'_build', 'doc_venv', 'requirements.txt', 'Thumbs.db', '.DS
 pygments_style = None
 
 # Enable numbered figures
-# Remove "." for LaTeX
 numfig = True
 numfig_format = {
     'figure': 'Figure %s.',
@@ -112,7 +125,7 @@ numfig_format = {
 
 # Ignore link check for the following websites
 # linkcheck_ignore = [
-#     'https://5G.systemspproach.org/',
+#     'https://SDN.systemspproach.org/',
 # ]
 
 # -- Options for HTML output -------------------------------------------------
@@ -128,7 +141,7 @@ html_theme = 'sphinx_rtd_theme'
 #
 html_theme_options = {
   'prev_next_buttons_location': 'both'
-  }
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -137,6 +150,9 @@ html_static_path = ['_static']
 
 # HTML Favicon
 html_favicon = 'bridge.ico'
+
+# HTML Index
+html_use_index = False
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -168,11 +184,11 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
+    # 'preamble': 'private/latex/preamble.tex',
 
     # Latex figure (float) alignment
     #
-    'figure_align': 'htbp',
+    'figure_align': 'ht',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -209,9 +225,6 @@ texinfo_documents = [
 
 
 # -- Options for Epub output -------------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = project
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
@@ -251,17 +264,20 @@ todo_include_todos = True
 # -- Configure recommonmark to use AutoStructify -----------------------------
 # Docs: https://recommonmark.readthedocs.io/en/latest/auto_structify.html
 
-import recommonmark
-from recommonmark.transform import AutoStructify
+#import recommonmark
+#from recommonmark.transform import AutoStructify
+
+# -- Set up Google Analytics
+# -- using approach at https://stackoverflow.com/questions/9444342/adding-a-javascript-script-tag-some-place-so-that-it-works-for-every-file-in-sph/41885884#41885884
+
 
 GA_INVOKE_JS = """
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-C4RNJ35K6B');
+  gtag('config', 'G-QLSP3FJWGT');
 """
-
 
 def setup(app):
 
@@ -271,7 +287,7 @@ def setup(app):
             'auto_toc_tree_section': 'Contents',
             }, True)
 
-    app.add_transform(AutoStructify)
+#    app.add_transform(AutoStructify)
 
-    app.add_js_file('https://www.googletagmanager.com/gtag/js?id=G-C4RNJ35K6B')
+    app.add_js_file('https://www.googletagmanager.com/gtag/js?id=G-QLSP3FJWGT')
     app.add_js_file(None, body=GA_INVOKE_JS)
