@@ -276,7 +276,7 @@ GA_INVOKE_JS = """
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-QLSP3FJWGT');
+  gtag('config', 'G-C4RNJ35K6B');
 """
 
 def setup(app):
@@ -289,5 +289,5 @@ def setup(app):
 
 #    app.add_transform(AutoStructify)
 
-    app.add_js_file('https://www.googletagmanager.com/gtag/js?id=G-QLSP3FJWGT')
+    app.add_js_file('https://www.googletagmanager.com/gtag/js?id=G-C4RNJ35K6B')
     app.add_js_file(None, body=GA_INVOKE_JS)
