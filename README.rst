@@ -27,8 +27,8 @@ To track progress and receive notices about new versions, you can follow
 the project on
 `Facebook <https://www.facebook.com/Computer-Networks-A-Systems-Approach-110933578952503/>`__
 and `Twitter <https://twitter.com/SystemsAppr>`__. To read a running
-commentary on how the Internet is evolving, follow the `Systems
-Approach Blog <https://www.systemsapproach.org/blog>`__.
+commentary on how the Internet is evolving, follow the `Systems Approach
+on Substack <https://systemsapproach.substack.com>`__.
 
 Build the Book
 --------------
