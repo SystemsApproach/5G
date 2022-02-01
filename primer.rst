@@ -124,7 +124,7 @@ signal-to-noise ratio, which impacts the receiver’s ability to recover
 the data bits. The base station then uses this information to adapt how
 it allocates the available radio spectrum to the subscribers it is
 serving, as well as which coding and modulation scheme to employ.
-All of these decisions are made by  the scheduler.
+All of these decisions are made by the scheduler.
 
 2.2 Scheduler
 ------------------
@@ -145,7 +145,7 @@ subcarrier frequencies so as to avoid interference, that is, how it
 achieves orthogonality. That topic is beyond the scope of this book.
 We instead take a decidedly abstract perspective of multiplexing,
 focusing on "discrete schedulable units of the radio spectrum" rather
-the the signalling and modulation underpinnings that yield those
+than the signalling and modulation underpinnings that yield those
 schedulable units.
 
 To start, we drill down on these schedulable units. We return to the
