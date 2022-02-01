@@ -24,15 +24,15 @@
   white-space: normal;
 }
 
-
 /* Colors for navigation */
 
 .wy-side-nav-search, .wy-nav-top {
     background: #2F5597;
 }
 
-.wy-menu-vertical header,.wy-menu-vertical p.caption{color:#2F5597}
+/* .wy-menu-vertical header,.wy-menu-vertical p.caption{color:#2F5597} */
 
+.wy-menu-vertical header,.wy-menu-vertical p.caption{color:#18A3FF}
 
 /* Headings */
 h1, h2 {
@@ -64,4 +64,10 @@ h2 {
 h3 {
   margin-top: 1.5rem;
   font-size: 1.25rem;
+}
+
+.pop {
+    color: #18A3FF;
+    font-style: italic;
+    font-weight: bold;
 }

@@ -27,3 +27,4 @@ Larry Peterson and Oguz Sunay
    cloud.rst
    README.rst
    authors.rst
+   latest.rst
