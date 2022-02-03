@@ -3,11 +3,14 @@
 :pop:`Read the Latest!`
 ========================
 
-Stay up-to-date with the latest developments by following the authors
-on `Substack <https://systemsapproach.substack.com/>`__, where they
-connect the lessons in this book to what's happening in the Internet today.
+`Substack Newsletter: <https://systemsapproach.substack.com/>`__ Stay
+up-to-date with the latest developments by following the authors on
+`Substack <https://systemsapproach.substack.com/>`__, where they
+connect the concepts and lessons in this book to what's happening in
+the Internet today.
 
-Also check out our companion on-line books that cover emerging topics:
+`Book Series: <https://systemsapproach.org/books/>`__ Also check out
+our companion books that cover emerging topics in more depth.
 
 * `Software-Defined Networks: A Systems Approach <https://sdn.systemsapproach.org>`__
 
