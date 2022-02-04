@@ -60,7 +60,7 @@ subsets of functional blocks map to the PHY Upper (part of the DU) and
 the PHY Lower (part of the RU), respectively.
 
 Fourth, and somewhat confusingly, :numref:`Figure %s <fig-e2e>`
-shows the PCDP-C
+shows the PDCP-C
 element and the Control Plane (Forwarding) element combined into a
 single functional block, with a data path (blue line) connecting that
 block to both the RLC and the MME. Exactly how this pair is realized is
@@ -145,7 +145,7 @@ can be realized as control applications for an SDN-based underlay.
 Another consequence of disaggregating functionality is that once
 decoupled, different functions can be placed in different physical
 locations. We have already seen this when we split the RAN, placing some
-functions (e.g., the PCDP and RRC) in the Central Unit and others (e.g.,
+functions (e.g., the PDCP and RRC) in the Central Unit and others (e.g.,
 RLC and MAC) in Distributed Units. This allows for simpler (less
 expensive) hardware in remote locations, where there are often space,
 power, and cooling constraints.
@@ -217,7 +217,7 @@ available servers). The following introduces the basic idea, starting
 with the RAN.
 
 But before getting into the details, we note that a network slice is a
-realization of the QoS Class Index (QCI) discussed earlier. 3GPP
+realization of the QoS Class Identifier (QCI) discussed earlier. 3GPP
 specifies a standard set of network slices, called *Standardized Slice
 Type (SST)* values. For example, SST 1 corresponds to mobile broadband,
 SST 2 corresponds to Ultra-Reliable Low Latency Communications, SST 3
