@@ -6,6 +6,7 @@ private/
 scripts/
 figures-hi_res/
 figures-pdf/
+venv-docs
 node_modules/
 cover.pdf
 cover.docx

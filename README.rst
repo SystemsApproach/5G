@@ -37,12 +37,13 @@ To build a web-viewable version, you first need to download the source:
 
 .. code:: shell 
 
-   $ mkdir ~/5G 
-   $ cd ~/5G 
+   $ mkdir ~/systemsapproach
+   $ cd ~/systemsapproach
    $ git clone https://github.com/SystemsApproach/5G.git 
+   $ cd 5G
 
 The build process is stored in the Makefile and requires Python be 
-installed. The Makefile will create a virtualenv (``doc_venv``) which 
+installed. The Makefile will create a virtualenv (``venv-docs``) which 
 installs the documentation generation toolset. 
 
 To generate HTML in ``_build/html``,  run ``make html``.
