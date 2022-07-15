@@ -71,3 +71,11 @@ h3 {
     font-style: italic;
     font-weight: bold;
 }
+aside.sidebar {
+    margin: 0 0 0.5em 1em;
+    border: 1px solid #ddb;
+    padding: 7px 7px 0 7px;
+    background-color: #ffe;
+    width: 40%;
+    float: right;
+}
