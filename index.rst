@@ -28,3 +28,4 @@ Larry Peterson and Oguz Sunay
    README.rst
    authors.rst
    latest.rst
+   print.rst
